@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+
+::backdrop {
+  background-color: #f9f0e2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  min-height: 100%;
+  justify-content: flex-start;
+}
+
+.heading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  gap: 30px;
+  width: 100%;
+}
+
+.heading-small {
+  color: #650909;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  margin: 0;
+}
+
+.heading-large {
+  color: #650909;
+  font-family: "Playfair Display", serif;
+  font-size: 60px;
+  margin: 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: column;
+  width: 100%;
+  margin-top: 100px;
+}
+.rounded-button {
+  background-color: #e1c1ce;
+  padding: 10px;
+  width: 304px;
+  height: 114px;
+  border-radius: 90px;
+  font-size: 24px;
+  font-weight: bold;
+  border: 3px solid #650909;
+  cursor: pointer;
+  display: block;
+  margin: 200px auto;
+  transition: background-color 0.3s ease;
+  color: #650909;
+}
+
+.rounded-button:hover {
+  background-color: #d6a7bb;
+}

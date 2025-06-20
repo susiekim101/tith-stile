@@ -1,0 +1,85 @@
+.parentContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+  align-items: center;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  font-weight: 500;
+  z-index: 10;
+}
+
+.subTitleContainer {
+    font-size: 2em;
+    
+}
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  z-index: 10;
+}
+
+.logoImage {
+  height: 15em;
+  margin: 10px;
+  z-index: 10;
+}
+
+.button {
+  background-color: #e1c1ce;
+  font-size: 1.4em;
+  font-weight: bold;
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  width: 10rem;
+  margin: 0.4rem;
+  border: 3px solid #e1c1ce;
+  z-index: 10;
+}
+
+.button:hover {
+  border: 3px solid #650909;
+}
+
+.backgroundWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.scatteredImage {
+  position: absolute;
+  object-fit: contain;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinningImage {
+  animation: spin 6s linear infinite;
+}

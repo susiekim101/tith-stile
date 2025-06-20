@@ -1,0 +1,77 @@
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f9f0e2;
+}
+
+p {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 6vh;
+  color: #650909;
+  padding-bottom: 2vh;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container input {
+  background-color: #d5e4f4;
+  font-family: "Montserrat";
+  height: 7vh;
+  width: 35vw;
+  border-radius: 1rem;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.button {
+  margin-top: 0.7rem;
+  width: 13vw;
+  padding: 1.5vh 0;
+  border: 0.3vh solid #650909;
+  border-radius: 2vh;
+  background-color: #e1c1ce;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.errorText {
+  font-family: "Montserrat";
+  font-size: large;
+  color: red;
+  align-items: center;
+  font-weight: normal;
+}
+
+.link {
+  color: #650909;
+  font-family: "Montserrat";
+  font-size: 0.8rem;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: #240303;
+}

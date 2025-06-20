@@ -1,0 +1,105 @@
+.rowGroup {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.rowItem {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.columnGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form {
+  padding: 10px;
+  border: 1px solid #650909;
+  border-radius: 5px;
+}
+
+.quizContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 10px;
+}
+.sectionTitle {
+  font-size: 50px;
+}
+
+.label {
+  font-size: 15px;
+  width: 100%;
+}
+
+.email,
+.text,
+.date,
+.multiselect,
+.select,
+.textarea {
+  font-size: 12px;
+  width: 100%;
+  padding: 7px;
+  border-radius: 15px;
+  background-color: #d5e4f4;
+}
+
+.text:focus,
+.select:focus,
+.email:focus,
+.date:focus,
+.textarea:focus,
+.multiselect:focus {
+  outline: none;
+  border-color: #c09726;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.footer {
+  display: flex;
+  padding-right: 10px;
+  width: 100%;
+  justify-content: end;
+}
+
+.footerButtons {
+  display: flex;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.next,
+.prev {
+  margin-bottom: 1rem;
+}
+
+.next:hover,
+.prev:hover {
+  cursor: pointer;
+}
+
+.submitForm {
+  margin-top: 0.7rem;
+  width: 13vw;
+  padding: 1.5vh 0;
+  border: 0.3vh solid #650909;
+  border-radius: 2vh;
+  background-color: #e1c1ce;
+  cursor: pointer;
+  margin-bottom: 0;
+}

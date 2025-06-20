@@ -1,0 +1,148 @@
+.image {
+   border: 2vh solid transparent;
+   border-radius: 25px;
+}
+
+.imageRow {
+   display: flex;
+   justify-content: space-between;
+   gap: 1rem;
+   flex-wrap: wrap;
+   margin: 2rem 0;
+   padding: 0 2rem;
+}
+
+.heading {
+   font-size: xx-large;
+   font-weight: bold;
+   padding-top: 6vh;
+   padding-bottom: 2vh;
+}
+
+.imageContainer {
+   flex: 1 1 30%;
+   max-width: 30%;
+   text-align: center;
+}
+
+.imageContainer:nth-child(1) .image {
+   border-color: #DAB3C1;
+   border-radius: 15px;
+}
+
+.imageContainer:nth-child(2) .image {
+   border-color: #C1CDB5;
+   margin-top: 3rem;
+   border-radius: 15px;
+}
+
+.imageContainer:nth-child(3) .image {
+   border-color: #C3DCD8;
+   border-radius: 15px;
+}
+
+.description {
+   padding-top: 1rem;
+   font-size: small;
+   font-weight: normal;
+}
+
+.svgWrapper {
+   position: relative;
+   width: 100%;
+   height: auto;
+}
+
+.clover {
+   width: 100%;
+   height: auto;
+   display: block;
+   transform: scale(1);
+}
+
+.svgOverlay {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: #650909;
+   text-align: center;
+   pointer-events: none;
+   width: 70%;
+}
+
+.cloverText {
+   color: white;
+   font-family: 'Montserrat';
+   font-weight: normal;
+   font-size: small;
+}
+
+.waveSection {
+   width: 100%;
+   background: url('../assets/svg/BetterWave.svg') no-repeat bottom center;
+   background-size: cover;
+   color: white;
+   padding-top: 5rem;
+   padding-bottom: 7rem;
+   padding-left: 3rem;
+   position: relative;
+}
+
+.waveContent {
+   padding-top: 2rem;
+   margin: 0 auto;
+   text-align: left;
+   padding-bottom: 2rem;
+}
+
+.waveText {
+   font-size: small;
+}
+
+ul {
+   list-style: disc;
+   padding-left: 1.5rem; /* ensures the bullets have space */
+   margin: 0;
+ }
+ 
+ li {
+   margin-bottom: 8px;
+ }
+
+.waveHeading {
+   font-weight: bold;
+   font-size: large;
+}
+
+.button {
+   margin-top: 0.7rem;
+   width: 13vw;
+   padding: 1.5vh 0;
+   border: 0.3vh solid #650909;
+   border-radius: 2vh;
+   background-color: #e1c1ce;
+   cursor: pointer;
+   margin-bottom: 7vh;
+   color: #650909;
+}
+
+.spinningImage {
+   animation: spin 6s linear infinite;
+   z-index: 100;
+   width: 10em;
+   position: absolute;
+   right: 50px;
+   bottom: 150px;
+}
+
+
+@keyframes spin {
+   from {
+      transform: rotate(0deg);
+   }
+
+   to {
+      transform: rotate(360deg);
+   }
+}
