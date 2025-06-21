@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import MultiselectText from "./MultiselectImage"
 import MultiselectImage from "./MultiselectImage"
 
-export default QuestionsRenderer = () => {
+export default QuestionsRenderer = (formValues, setFormValues) => {
     const db = firebase.firestore();
     let questionsRef = db.collection('questions');
 
@@ -14,9 +14,9 @@ export default QuestionsRenderer = () => {
             
             switch (type) {
                 case "image multiselect":
-                    return MultiselectImage(setFormValues, id);
+                    return MultiselectImage(formValues, setFormValues, id);
                 case "text multiselect":
-                    return MultiselectText(setFormValues, id);
+                    return MultiselectText(formValues, setFormValues, id);
             }
         })
     })

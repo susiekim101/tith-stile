@@ -1,26 +1,30 @@
-import firebase from "firebase/app"; 
-import styles from "../../css/questions/Question2.module.css";
+import {doc, getDoc} from "firebase/firestore"; 
+import {useEffect, useState} from "react";
+import {db} from "../../firebase/config";
+import styles from "../../css/Assessment.module.css";
 import ToggleSelection from "./ToggleSelection";
 
-const MultiselectImage = ({ setFormValues, id}) => {
-    const db = firebase.firestore();
-    const questionsRef = db.collection('questions');
-    
-    let options;
-    // Retrieve the options from the db for this question id
-    questionsRef.doc(id).get().then( (doc) => {
-        if(doc.exists) {
-            let data = doc.data();
-            options = data.options;
+const MultiselectImage = ({ formValues, setFormValues, id}) => {
+    const [options, setOptions] = useState([]);
+    const selected = formValues?.[id] || [];
 
-            console.log("Extracted options: ", options);
-        } else {
-            console.log("Document does not exist");
-        }
-    })
-    .catch( (error) => {
-        console.error("Error getting document: ", error);
-    });
+    // Modular Firebase Firestore query
+    useEffect(() => {
+        // Reference to doc and current snapshot
+        const fetchOptions = async () => {
+            // Grab reference of the doc in "questions" collection with id
+            const docRef = doc(db, "questions", id);
+            // Fetches document data
+            const docSnap = await getDoc(docRef);
+
+            if(docSnap.exists()) {
+                setOptions(docSnap.data().options || []);
+            } else {
+                console.log("Document not found");
+            }
+        };
+        fetchOptions();
+    }, [id]);
 
     return (
         <>
@@ -29,10 +33,11 @@ const MultiselectImage = ({ setFormValues, id}) => {
             <div className={styles.grid}>
                 {options.map((opt, idx) => (
                     <div
-                    key={idx}
-                    className={`${styles.imageBorder} ${selected.includes(opt.label) ? styles.selected : ""}`}
+                        key={idx}
+                        className={`${styles.imageBorder} 
+                        ${selected.includes(opt.label) ? styles.selected : ""}`}
                     >
-                        <div className={styles.option}
+                        <div className={styles.imageOption}
                         onClick={() => ToggleSelection(opt.label, setFormValues, id)}
                         >
                             <img src={opt.image} alt={opt.label} className={styles.image} />

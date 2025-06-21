@@ -11,7 +11,7 @@
   width: 100%;
 }
 
-.option {
+.textOption {
   background-color: #e1c1ce;
   margin: 10px;
   width: 50%;
@@ -25,11 +25,11 @@
 }
 
 .selected {
-  border: 3px solid #c09726;
+  border: 3px solid #BE9526;
 }
 
-.option:hover {
-  border: 3px solid #c09726;
+.textOption:hover {
+  border: 3px solid #BE9526;
 }
 
 .caption {
