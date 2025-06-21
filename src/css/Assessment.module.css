@@ -11,7 +11,7 @@
 .caption {
     font-size: 10px;
     font-weight: 400;
-    /* margin-top: 5px; */
+    margin-top: 5px;
 }
 
 .imageOption {
@@ -66,4 +66,17 @@
 
 .selected, .imageBorder:hover, .textOption:hover {
     border: 3px solid #BE9526;
+}
+
+/* TEXT AREA */
+.textResponse {
+    width: 50%;
+    margin: 5px;
+}
+
+.textarea {
+    background-color: #E1C1CE;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
 }
