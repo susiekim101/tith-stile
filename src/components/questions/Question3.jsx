@@ -1,8 +1,15 @@
 import quizQuestions from "../../utils/quizQuestions";
 import styles from "../../css/questions/Question3.module.css";
+import MultiselectImage from "../Assessment/multiSelectImage";
 
 const Question3 = ({ formValues, setFormValues }) => {
-  const questionId = "textures";
+    return (
+    <MultiselectImage 
+    formValues={formValues}
+    setFormValues={setFormValues}
+    id="textures"/>
+  );
+  /*const questionId = "textures";
   const selected = formValues[questionId] || [];
   const options = quizQuestions[1].questions[1].options;
 
@@ -51,7 +58,7 @@ const Question3 = ({ formValues, setFormValues }) => {
         ))}
       </div>
     </>
-  );
+  );*/
 };
 
 export default Question3;

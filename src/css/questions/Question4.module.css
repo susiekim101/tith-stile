@@ -11,7 +11,7 @@
   width: 100%;
 }
 
-.textOption {
+.option {
   background-color: #e1c1ce;
   margin: 10px;
   width: 50%;
@@ -28,7 +28,7 @@
   border: 3px solid #BE9526;
 }
 
-.textOption:hover {
+.option:hover {
   border: 3px solid #BE9526;
 }
 

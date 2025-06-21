@@ -1,14 +1,55 @@
-const SelectText = ({ setFormValues, id }) => {
-    // Access Firestore DB
-    const db = firebase.firestore();
-    // Create reference to Firebase "questions" collection
-    const questionsRef = db.collection('questions');
+import {doc, getDoc} from "firebase/firestore";
+import {useEffect, useState} from "react";
+import {db} from "../../firebase/config";
+import styles from "../../css/Assessment.module.css";
 
-    // const options that holds either the selection from DB or empty string
-    let options;
+const SelectText = ({formValues, setFormValues, id}) => {
+    const [options, setOptions] = useState([]);
+    // Initialize the current selection or empty if not selected yet
+    const selected = formValues[id] || "";
 
-    questionsRef.doc(id).get().then()
-    // Function to handle select. Update selection in DB
+    // Access options from Firebase Firestore query
+    useEffect(() => {
+        const fetchOptions = async () => {
+            // Reference to doc and current snapshot
+            const docRef = doc(db, "questions", id);
+            const docSnap = await getDoc(docRef);
 
+            if(docSnap.exists()) {
+                console.log("Fetching options")
+                setOptions(docSnap.data().options || [])
+            } else {
+                console.log("Document not found");
+            }
+        };
+        fetchOptions();
+    }, [id]);
 
+    const handleSelect = (option) => {
+        setFormValues((prev) => ({
+            ...prev, [id]: option
+        }));
+    };
+
+    return (
+        <>
+        <div className={styles.answerContainer}>
+          <div className={styles.multipleChoice}>
+            {options.map((opt, idx) => (
+              <div
+                key={idx}
+                className={`${styles.textOption} ${
+                  selected === opt ? styles.selected : ""
+                }`}
+                onClick={() => handleSelect(opt)}
+              >
+                {opt}
+              </div>
+            ))}
+          </div>
+        </div>
+        </>
+      );
 }
+
+export default SelectText

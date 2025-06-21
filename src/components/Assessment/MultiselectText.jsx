@@ -35,8 +35,7 @@ const MultiselectText = ({formValues, setFormValues, id}) => {
                     {options.map((opt, idx) => (
                         <div
                             key={idx}
-                            className={`${styles.textOption} 
-                            ${selected.includes(opt) ? styles.selected: ""}`}
+                            className={`${styles.textOption} ${selected.includes(opt) ? styles.selected: ""}`}
                             onClick={() => ToggleSelection(opt, setFormValues, id)}
                         >
                             {opt}

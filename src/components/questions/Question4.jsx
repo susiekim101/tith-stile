@@ -1,5 +1,3 @@
-import quizQuestions from "../../utils/quizQuestions";
-import styles from "../../css/questions/Question4.module.css";
 import MultiselectText from "../Assessment/multiSelectText";
 
 const Question4 = ({ formValues, setFormValues }) => {
