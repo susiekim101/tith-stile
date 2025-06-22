@@ -4,8 +4,8 @@ import {db} from "../../firebase/config";
 import styles from "../../css/Assessment.module.css";
 
 const SelectText = ({formValues, setFormValues, id}) => {
+    // Initialize variable for selected and options to display
     const [options, setOptions] = useState([]);
-    // Initialize the current selection or empty if not selected yet
     const selected = formValues[id] || "";
 
     // Access options from Firebase Firestore query

@@ -11,6 +11,7 @@ const SelectImage = ({formValues, setFormValues, id}) => {
     // Access options from Firebase Firestore query
     useEffect(() => {
         const fetchOptions = async () => {
+            // Reference to doc and current snapshot
             const docRef = doc(db, "questions", id);
             const docSnap = await getDoc(docRef);
 
