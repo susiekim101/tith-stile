@@ -2,6 +2,8 @@ import firebase from "firebase/app";
 import MultiselectText from "./MultiselectImage"
 import MultiselectImage from "./MultiselectImage"
 
+// STILL NEED WORK 
+
 export default QuestionsRenderer = (formValues, setFormValues) => {
     const db = firebase.firestore();
     let questionsRef = db.collection('questions');
