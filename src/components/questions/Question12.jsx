@@ -1,8 +1,14 @@
-import quizQuestions from "../../utils/quizQuestions";
-import styles from "../../css/questions/Question12.module.css";
+import SelectImage from "../Assessment/SelectImage";
 
 const Question12 = ({ formValues, setFormValues }) => {
-  const questionId = "furnitureStyle";
+  return (
+    <SelectImage
+      formValues={formValues}
+      setFormValues={setFormValues}
+      id="furnitureStyle"
+    />
+  );
+  /*const questionId = "furnitureStyle";
   const selected = formValues[questionId] || [];
   const options = quizQuestions[4].questions[0].options;
 
@@ -35,7 +41,7 @@ const Question12 = ({ formValues, setFormValues }) => {
         ))}
       </div>
     </>
-  );
+  );*/
 };
 
 export default Question12;
