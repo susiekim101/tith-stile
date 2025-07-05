@@ -8,8 +8,6 @@ import { useNavigate } from "react-router-dom";
 import { auth, db } from "../firebase/config";
 import { doc, setDoc } from "firebase/firestore";
 
-const user = auth.currentUser;
-
 import Question2 from "../components/questions/Question2.jsx";
 import Question3 from "../components/questions/Question3.jsx";
 import Question4 from "../components/questions/Question4.jsx";

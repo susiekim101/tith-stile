@@ -10,10 +10,8 @@ import TextResponse from "./TextResponse";
 import QuizTitle from "../QuizTitle";
 import styles from "../../css/Assessment.module.css";
 
-// STILL NEED WORK 
-
 const QuestionsRenderer = ({formValues, setFormValues}) => {
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(0); // Questions 0-indexed in array
     const [questions, setQuestions] = useState([]);
     let questionComponent;
 
@@ -62,6 +60,11 @@ const QuestionsRenderer = ({formValues, setFormValues}) => {
                                 setFormValues={setFormValues}
                                 id={id}/>;
             break;
+        case "image select":
+            questionComponent = <SelectImage
+                                formValues={formValues}
+                                setFormValues={setFormValues}
+                                id={id}/>;
         case "text":
             questionComponent = <TextResponse 
                                 formValues={formValues}
@@ -87,29 +90,6 @@ const QuestionsRenderer = ({formValues, setFormValues}) => {
         />
         </>
     );
-
-    // Load the first question
-
-
-    // When we press next, increments index
-        // setIndex, use min
-    // When we press prev, decrements index
-    
-    // If index == 1, disable prev button
-    // If index == questionsRef.size(), disable next button. Replace with "submit"
-    
-    // When quiz first loads, should load from index = 1
-    // next button sets index to += 1
-    // previous button sets index to -= 1
-    // If index is > questionsRef.size, then change button to "Submit"
-    // If index is < 1, disable previous button
-    // setIndex is a function that accepts the new value to set so syntax should be 
-    /*
-    setIndex(prev => prev + 1)
-
-    */
-   
-    
 }
 
 export default QuestionsRenderer;
