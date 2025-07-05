@@ -1,3 +1,5 @@
+/* OLD FILE */
+
 import { useState } from "react";
 import QuizBar from "../components/QuizBar.jsx";
 import QuizTitle from "../components/QuizTitle.jsx";

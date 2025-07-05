@@ -1,3 +1,5 @@
+/* OLD FILE */
+
 import styles from "../css/Quiz.module.css";
 
 const NavigationButton = ({ index, setIndex, total }) => {
