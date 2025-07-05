@@ -1,19 +1,27 @@
 import quizQuestions from "../../utils/quizQuestions";
 import styles from "../../css/questions/Question2.module.css";
-import MultiselectImage from "../Assessment/multiSelectImage";
+import MultiselectImage from "../Assessment/MultiselectImage";
+import QuestionsRenderer from "../Assessment/QuestionsRenderer";
 
 const Question2 = ({ formValues, setFormValues }) => {
   return (
-    <MultiselectImage 
-    formValues={formValues}
-    setFormValues={setFormValues}
-    id="furnitureStyle"/>
+    <>
+    <QuestionsRenderer
+      formValues={formValues}
+      setFormValues={setFormValues}
+    />
+    </>
   );
 };
 
 export default Question2;
 
-  /*const questionId = "colorPalettes";
+  /*
+  <MultiselectImage 
+    formValues={formValues}
+    setFormValues={setFormValues}
+    id="furnitureStyle"/>
+  const questionId = "colorPalettes";
   const selected = formValues[questionId] || [];
   const options = quizQuestions[1].questions[0].options;
 

@@ -1,13 +1,12 @@
 import styles from "../../css/Assessment.module.css";
 
 const TextResponse = ({formValues, setFormValues, id}) => {
-    const response = formValues[id] || "";
-
     const handleResponse = (text) => {
         setFormValues((prev) => ({...prev, [id]: text}));
     };
 
     return (
+        <>
         <div className={styles.textResponse}>
             <textarea
                 className={styles.textarea}
@@ -17,6 +16,7 @@ const TextResponse = ({formValues, setFormValues, id}) => {
                 placeholder="Type your response here..."
             />
         </div>
+        </>
     );
 }
 
