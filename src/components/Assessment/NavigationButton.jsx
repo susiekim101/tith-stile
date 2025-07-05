@@ -17,7 +17,7 @@ const NavigationButton = ({index, setIndex, total}) => {
 
     let submit = <button
                 type="submit"
-                className={styles.submit}
+                className={styles.submitForm}
                 >
                 Submit
                 </button>;
