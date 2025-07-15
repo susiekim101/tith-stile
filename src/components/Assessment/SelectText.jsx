@@ -2,7 +2,7 @@ import {doc, getDoc} from "firebase/firestore";
 import {useEffect, useState} from "react";
 import {db} from "../../firebase/config";
 import styles from "../../css/Assessment.module.css";
-
+import OtherOption from "./OtherOption";
 const SelectText = ({formValues, setFormValues, id}) => {
     // Initialize variable for selected and options to display
     const [options, setOptions] = useState([]);
