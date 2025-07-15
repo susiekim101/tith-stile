@@ -1,7 +1,7 @@
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import {useEffect, useState} from "react";
 import {db} from "../../firebase/config";
-import MultiselectText from "./MultiselectImage"
+import MultiselectText from "./MultiselectText"
 import MultiselectImage from "./MultiselectImage"
 import NavBar from "./NavigationButton";
 import SelectImage from "./SelectImage";

@@ -28,7 +28,7 @@ const MultiselectImage = ({ formValues, setFormValues, id}) => {
 
     return (
         <>
-            <p className={styles.caption}>Select up to three.</p>
+            <p className={styles.caption}>Select up to two.</p>
 
             <div className={styles.grid}>
                 {options.map((opt, idx) => (

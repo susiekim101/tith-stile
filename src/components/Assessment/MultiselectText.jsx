@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import {db} from "../../firebase/config";
 import styles from "../../css/Assessment.module.css";
 import ToggleSelection from "./ToggleSelection";
+import OtherOption from "./OtherOption";
 
 const MultiselectText = ({formValues, setFormValues, id}) => {
     const [options, setOptions] = useState([]);
@@ -28,18 +29,28 @@ const MultiselectText = ({formValues, setFormValues, id}) => {
 
     return (
         <>
-            <p className={styles.caption}>Select up to three.</p>
+            <p className={styles.caption}>Select up to two.</p>
 
             <div className={styles.answerContainer}>
                 <div className={styles.multipleChoice}>
                     {options.map((opt, idx) => (
-                        <div
-                            key={idx}
-                            className={`${styles.textOption} ${selected.includes(opt) ? styles.selected: ""}`}
-                            onClick={() => ToggleSelection(opt, setFormValues, id)}
-                        >
-                            {opt}
-                        </div>
+                        opt === "Other" ? (
+                            <OtherOption 
+                                key={idx}
+                                formValues={formValues}
+                                setFormValues={setFormValues}
+                                id={id}
+                                isSelected={formValues.hasOwnProperty(`${id}_other`)}
+                            />
+                        ) : (
+                            <div
+                                key={idx}
+                                className={`${styles.textOption} ${selected.includes(opt) ? styles.selected: ""}`}
+                                onClick={() => ToggleSelection(opt, setFormValues, id)}
+                            >
+                                {opt}
+                            </div>
+                        )
                     ))}
                 </div>
             </div>
@@ -48,3 +59,25 @@ const MultiselectText = ({formValues, setFormValues, id}) => {
 }
 
 export default MultiselectText
+
+/* 
+                    {selected.some(opt => opt === "Other" || opt.startsWith("Other:")) && 
+                        <OtherOption
+                            otherValue={otherValue}
+                            setOtherValue={setOtherValue}
+                            selected={selected}
+                        />} 
+                        
+                        useEffect(() => {
+        if (selected.some(opt => opt === "Other" || opt.startsWith("Other:"))) {
+            const filtered = selected.filter(opt => !opt.startsWith("Other")); // Keep all but "Other"
+            const updated = [...filtered, `Other: ${otherValue}`]; // Add "Other" with correct format
+            setFormValues((prev) => ({
+            ...prev,
+            [id]: updated
+            }));
+        }
+        console.log(formValues);
+    }, [otherValue]);
+                        
+                        */

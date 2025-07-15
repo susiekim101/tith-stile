@@ -36,16 +36,27 @@ const SelectText = ({formValues, setFormValues, id}) => {
         <div className={styles.answerContainer}>
           <div className={styles.multipleChoice}>
             {options.map((opt, idx) => (
-              <div
-                key={idx}
-                className={`${styles.textOption} ${
-                  selected === opt ? styles.selected : ""
-                }`}
-                onClick={() => handleSelect(opt)}
-              >
-                {opt}
-              </div>
+              opt == "other" ? (
+                <OtherOption 
+                  key={idx}
+                  formValues={formValues}
+                  setFormValues={setFormValues}
+                  id={id}
+                  isSelected={formValues.hasOwnProperty(`${id}_other`)}
+                />
+              ) : (
+                <div
+                  key={idx}
+                  className={`${styles.textOption} ${
+                    selected === opt ? styles.selected : ""
+                  }`}
+                  onClick={() => handleSelect(opt)}
+                >
+                  {opt}
+                </div>
+              )
             ))}
+            
           </div>
         </div>
         </>
