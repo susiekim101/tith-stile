@@ -6,6 +6,7 @@ import ToggleSelection from "./ToggleSelection";
 
 const MultiselectImage = ({ formValues, setFormValues, id}) => {
     const [options, setOptions] = useState([]);
+    const [description, setDescription] = useState("");
     const selected = formValues?.[id] || [];
 
     // Modular Firebase Firestore query
@@ -19,6 +20,7 @@ const MultiselectImage = ({ formValues, setFormValues, id}) => {
 
             if(docSnap.exists()) {
                 setOptions(docSnap.data().options || []);
+                setDescription(docSnap.data().description || "");
             } else {
                 console.log("Document not found");
             }
@@ -28,7 +30,7 @@ const MultiselectImage = ({ formValues, setFormValues, id}) => {
 
     return (
         <>
-            <p className={styles.caption}>Select up to two.</p>
+            {description && (<p className={styles.caption}>{description}</p>)}
 
             <div className={styles.grid}>
                 {options.map((opt, idx) => (

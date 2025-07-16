@@ -9,15 +9,16 @@ import SelectText from "./SelectText";
 import TextResponse from "./TextResponse";
 import QuizTitle from "../QuizTitle";
 import styles from "../../css/Assessment.module.css";
+import ProgressBar from "../ProgressBar";
 
 const QuestionsRenderer = ({formValues, setFormValues}) => {
     const [index, setIndex] = useState(0); // Questions 0-indexed in array
     const [questions, setQuestions] = useState([]);
+    const [totalQuestions, setTotalQuestions] = useState(0);
     let questionComponent;
 
     // Fetch questions from Firestore and store in array
     useEffect(() => {
-        console.log("Use effect running.");
         const fetchQuestions = async () => {
             const colQuery = query(collection(db, "questions"), orderBy("index"));
             const collectionSnap = await getDocs(colQuery);
@@ -26,7 +27,9 @@ const QuestionsRenderer = ({formValues, setFormValues}) => {
                 ...doc.data()
             }));
             setQuestions(fetched);
+            setTotalQuestions(collectionSnap.size);
             console.log(fetched);
+            console.log("Total question: ", totalQuestions);
         }
         fetchQuestions();
     }, []);
@@ -77,17 +80,24 @@ const QuestionsRenderer = ({formValues, setFormValues}) => {
 
     return (
         <>
-        {console.log(id)}
-        {console.log(type)}
-        <QuizTitle title={section} />
-        <div className={styles.label}>{label}</div>
-        {questionComponent}
+        <div className={styles.questionsContainer}>
+            <ProgressBar 
+                index={index}
+                total={totalQuestions}
+            />
+            
+            <QuizTitle title={section} />
 
-        <NavBar
-            index={index}
-            setIndex={setIndex}
-            total={questions.length}
-        />
+            <div className={styles.label}>{label}</div>
+
+            {questionComponent}
+
+            <NavBar
+                index={index}
+                setIndex={setIndex}
+                total={questions.length}
+            />
+        </div>
         </>
     );
 }

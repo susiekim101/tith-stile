@@ -1,6 +1,6 @@
 import quizQuestions from "../../utils/quizQuestions";
 import styles from "../../css/questions/Question3.module.css";
-import MultiselectImage from "../Assessment/multiSelectImage";
+import MultiselectImage from "../Assessment/MultiselectImage";
 
 const Question3 = ({ formValues, setFormValues }) => {
     return (
