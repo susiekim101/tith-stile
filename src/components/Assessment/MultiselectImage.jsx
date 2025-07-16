@@ -39,8 +39,10 @@ const MultiselectImage = ({ formValues, setFormValues, id}) => {
                         className={`${styles.imageBorder} 
                         ${selected.includes(opt.label) ? styles.selected : ""}`}
                     >
-                        <div className={styles.imageOption}
-                        onClick={() => ToggleSelection(opt.label, setFormValues, id)}
+                            
+                        <div 
+                            className={styles.imageOption}
+                            onClick={() => ToggleSelection(opt.label, setFormValues, id)}
                         >
                             <img src={opt.image} alt={opt.label} className={styles.image} />
                         </div>
@@ -51,4 +53,4 @@ const MultiselectImage = ({ formValues, setFormValues, id}) => {
     );
 }
 
-export default MultiselectImage
+export default MultiselectImage;
