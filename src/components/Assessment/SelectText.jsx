@@ -8,6 +8,7 @@ const SelectText = ({formValues, setFormValues, id}) => {
     // Initialize variable for selected and options to display
     const [options, setOptions] = useState([]);
     const [description, setDescription] = useState("");
+    const [otherText, setOtherText] = useState("");
     const selected = formValues[id] || "";
 
     // Access options from Firebase Firestore query
@@ -21,6 +22,7 @@ const SelectText = ({formValues, setFormValues, id}) => {
                 console.log("Fetching options")
                 setOptions(docSnap.data().options || [])
                 setDescription(docSnap.data().description || "");
+                setOtherText(docSnap.data().otherText || "Other");
             } else {
                 console.log("Document not found");
             }
@@ -49,6 +51,7 @@ const SelectText = ({formValues, setFormValues, id}) => {
                     setFormValues={setFormValues}
                     id={id}
                     isSelected={formValues.hasOwnProperty(`${id}_other`)}
+                    otherText={otherText}
                   />
                 ) : (
                   <div

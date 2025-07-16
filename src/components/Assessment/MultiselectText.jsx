@@ -9,6 +9,7 @@ const MultiselectText = ({formValues, setFormValues, id}) => {
     const [options, setOptions] = useState([]);
     const [description, setDescription] = useState("");
     const [select, setSelection] = useState(0);
+    const [otherText, setOtherText] = useState("");
     const selected = formValues[id] || [];
 
     // Modular Firebase Firestore query
@@ -24,6 +25,7 @@ const MultiselectText = ({formValues, setFormValues, id}) => {
                 setOptions(docSnap.data().options || []);
                 setDescription(docSnap.data().description || "");
                 setSelection(docSnap.data().select || 2);
+                setOtherText(docSnap.data().otherText || "Other");
             } else {
                 console.log("Document not found");
             }
@@ -45,6 +47,7 @@ const MultiselectText = ({formValues, setFormValues, id}) => {
                                 setFormValues={setFormValues}
                                 id={id}
                                 isSelected={formValues.hasOwnProperty(`${id}_other`)}
+                                otherText={otherText}
                             />
                         ) : (
                             <div
