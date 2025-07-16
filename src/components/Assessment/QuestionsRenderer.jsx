@@ -7,6 +7,7 @@ import NavBar from "./NavigationButton";
 import SelectImage from "./SelectImage";
 import SelectText from "./SelectText";
 import TextResponse from "./TextResponse";
+import SectionDivider from "./SectionDivider";
 import QuizTitle from "../QuizTitle";
 import styles from "../../css/Assessment.module.css";
 import ProgressBar from "../ProgressBar";
@@ -68,10 +69,15 @@ const QuestionsRenderer = ({formValues, setFormValues}) => {
                                 formValues={formValues}
                                 setFormValues={setFormValues}
                                 id={id}/>;
+            break;
         case "text":
             questionComponent = <TextResponse 
                                 formValues={formValues}
                                 setFormValues={setFormValues}
+                                id={id}/>
+            break;
+        case "section":
+            questionComponent = <SectionDivider
                                 id={id}/>
             break;
         default:
