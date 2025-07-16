@@ -9,7 +9,7 @@ const NavigationButton = ({index, setIndex, total}) => {
             </button>;
     let next = <button
                 type="button"
-                onClick={() => setIndex(prev => Math.min(total, prev + 1))}
+                onClick={() => setIndex(prev => Math.min(total - 1, prev + 1))}
                 disabled={index === total - 1}
                 className={styles.next}>
                 →

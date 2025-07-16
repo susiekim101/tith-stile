@@ -22,7 +22,7 @@ const OtherOption = ({formValues, setFormValues, id, isSelected}) => {
         <>
             <div
                 className={`${styles.textOption} ${isSelected ? styles.selected: ""}`}
-                onClick={() => ToggleSelection(otherValue, setFormValues, `${id}_other`)}
+                onClick={() => ToggleSelection(1, otherValue, setFormValues, `${id}_other`)}
             >
                 Other: 
             </div>

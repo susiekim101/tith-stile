@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import {db} from "../../firebase/config";
 import styles from "../../css/Assessment.module.css";
 
-const SectionDivider = (id) => {
+const SectionDivider = ({id}) => {
     // const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
 

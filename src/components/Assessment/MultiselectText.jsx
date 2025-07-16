@@ -8,6 +8,7 @@ import OtherOption from "./OtherOption";
 const MultiselectText = ({formValues, setFormValues, id}) => {
     const [options, setOptions] = useState([]);
     const [description, setDescription] = useState("");
+    const [select, setSelection] = useState(0);
     const selected = formValues[id] || [];
 
     // Modular Firebase Firestore query
@@ -22,6 +23,7 @@ const MultiselectText = ({formValues, setFormValues, id}) => {
             if(docSnap.exists()) {
                 setOptions(docSnap.data().options || []);
                 setDescription(docSnap.data().description || "");
+                setSelection(docSnap.data().select || 2);
             } else {
                 console.log("Document not found");
             }
@@ -48,7 +50,7 @@ const MultiselectText = ({formValues, setFormValues, id}) => {
                             <div
                                 key={idx}
                                 className={`${styles.textOption} ${selected.includes(opt) ? styles.selected: ""}`}
-                                onClick={() => ToggleSelection(opt, setFormValues, id)}
+                                onClick={() => ToggleSelection(select, opt, setFormValues, id)}
                             >
                                 {opt}
                             </div>
