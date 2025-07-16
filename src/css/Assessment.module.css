@@ -1,0 +1,129 @@
+.questionsContainer {
+  width: 50vw;
+}
+
+/* IMAGE MULTISELECT */
+/* TO-DO: Make image sizes render dynamically.*/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+    gap: 16px;
+    justify-items: center;
+    margin-top: 5px;
+}
+
+.caption {
+    font-size: 10px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.imageOption {
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.image {
+    width: 100px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.imageBorder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 160px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+}
+
+/* TEXT MULTISELECT */
+.answerContainer {
+  width: 100%;
+  margin: 5px;
+}
+
+.multipleChoice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.textOption {
+  background-color: #e1c1ce;
+  margin: 10px;
+  width: 50%;
+  padding: 5px;
+  border: 3px solid #e1c1ce;
+  border-radius: 50px;
+}
+
+.multipleChoice {
+  margin-top: 0;
+}
+
+.selected, .imageBorder:hover, .textOption:hover {
+    border: 3px solid #BE9526;
+}
+
+/* TEXT AREA */
+.textResponse {
+  width: 100%;
+  margin: 10px;
+}
+
+.textarea {
+  background-color: #E1C1CE;
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/* NAVIGATION */
+.footer {
+  display: flex;
+  padding-right: 10px;
+  width: 100%;
+  justify-content: end;
+}
+
+.footerButtons {
+  display: flex;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.next, .prev {
+  margin-bottom: 1rem;
+}
+
+.next:hover,
+.prev:hover {
+  cursor: pointer;
+}
+
+.submitForm {
+  margin-top: 0.7rem;
+  width: 13vw;
+  padding: 1.5vh 0;
+  border: 0.3vh solid #650909;
+  border-radius: 2vh;
+  background-color: #e1c1ce;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+/* QUIZ LABEL */
+.label {
+  font-size: 15px;
+  width: 100%;
+}

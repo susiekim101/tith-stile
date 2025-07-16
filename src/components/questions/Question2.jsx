@@ -1,7 +1,26 @@
 import quizQuestions from "../../utils/quizQuestions";
 import styles from "../../css/questions/Question2.module.css";
+import MultiselectImage from "../Assessment/MultiselectImage";
+import QuestionsRenderer from "../Assessment/QuestionsRenderer";
 
 const Question2 = ({ formValues, setFormValues }) => {
+  return (
+    <>
+    <QuestionsRenderer
+      formValues={formValues}
+      setFormValues={setFormValues}
+    />
+    </>
+  );
+};
+
+export default Question2;
+
+  /*
+  <MultiselectImage 
+    formValues={formValues}
+    setFormValues={setFormValues}
+    id="furnitureStyle"/>
   const questionId = "colorPalettes";
   const selected = formValues[questionId] || [];
   const options = quizQuestions[1].questions[0].options;
@@ -51,7 +70,4 @@ const Question2 = ({ formValues, setFormValues }) => {
         ))}
       </div>
     </>
-  );
-};
-
-export default Question2;
+  );*/

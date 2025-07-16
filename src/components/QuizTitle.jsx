@@ -1,3 +1,5 @@
+/* OLD FILE */
+
 import styles from "../css/QuizTitle.module.css";
 
 const QuizTitle = ({ title }) => {

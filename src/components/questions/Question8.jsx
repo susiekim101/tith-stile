@@ -1,8 +1,17 @@
 import quizQuestions from "../../utils/quizQuestions";
 import styles from "../../css/questions/Question4.module.css";
+import SelectText from "../Assessment/SelectText";
 
 const Question8 = ({ formValues, setFormValues }) => {
-  const questionId = "layoutSafety";
+  return (
+    <SelectText 
+      formValues={formValues}
+      setFormValues={setFormValues}
+      id="layoutSafety"
+    />
+  );
+
+  /*const questionId = "layoutSafety";
   const selected = formValues[questionId] || "";
   const options = quizQuestions[3].questions[0].options;
 
@@ -32,7 +41,7 @@ const Question8 = ({ formValues, setFormValues }) => {
       </div>
     </div>
     </>
-  );
+  );*/
 };
 
 export default Question8;

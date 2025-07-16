@@ -1,8 +1,16 @@
 import quizQuestions from "../../utils/quizQuestions";
 import styles from "../../css/questions/Question6.module.css";
+import TextResponse from "../Assessment/TextResponse";
 
 const Question6 = ({ formValues, setFormValues }) => {
-  const questionId = "allergies";
+  return (
+    <TextResponse
+      formValues={formValues}
+      setFormValues={setFormValues}
+      id="allergies"
+    />
+  );
+  /*const questionId = "allergies";
 
   const handleSelect = (optionValue) => {
     setFormValues((prev) => ({
@@ -21,7 +29,7 @@ const Question6 = ({ formValues, setFormValues }) => {
         placeholder="Type your response here..."
       />
     </div>
-  );
+  );*/
 };
 
 export default Question6;

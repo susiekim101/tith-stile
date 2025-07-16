@@ -1,8 +1,14 @@
-import quizQuestions from "../../utils/quizQuestions";
-import styles from "../../css/questions/Question4.module.css";
+import MultiselectText from "../Assessment/multiSelectText";
 
 const Question4 = ({ formValues, setFormValues }) => {
-  const questionId = "preferredScent";
+  return (
+    <MultiselectText
+      formValues={formValues}
+      setFormValues={setFormValues}
+      id="preferredScent"
+    />
+  );
+  /*const questionId = "preferredScent";
   const selected = formValues[questionId] || [];
   const options = quizQuestions[1].questions[2].options;
 
@@ -48,7 +54,7 @@ const Question4 = ({ formValues, setFormValues }) => {
         </div>
       </div>
     </>
-  );
+  );*/
 };
 
 export default Question4;

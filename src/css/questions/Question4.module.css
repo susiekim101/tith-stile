@@ -1,3 +1,5 @@
+/* OLD FILE */
+
 .answerContainer {
   width: 100%;
   margin: 5px;
@@ -25,11 +27,11 @@
 }
 
 .selected {
-  border: 3px solid #c09726;
+  border: 3px solid #BE9526;
 }
 
 .option:hover {
-  border: 3px solid #c09726;
+  border: 3px solid #BE9526;
 }
 
 .caption {
