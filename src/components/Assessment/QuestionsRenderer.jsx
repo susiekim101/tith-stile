@@ -12,7 +12,7 @@ import QuizTitle from "../QuizTitle";
 import styles from "../../css/Assessment.module.css";
 import ProgressBar from "../ProgressBar";
 
-const QuestionsRenderer = ({formValues, setFormValues}) => {
+const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
     const [index, setIndex] = useState(0); // Questions 0-indexed in array
     const [questions, setQuestions] = useState([]);
     const [totalQuestions, setTotalQuestions] = useState(0);
@@ -102,6 +102,7 @@ const QuestionsRenderer = ({formValues, setFormValues}) => {
                 index={index}
                 setIndex={setIndex}
                 total={questions.length}
+                handleSubmit={handleSubmit}
             />
         </div>
         </>

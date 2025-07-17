@@ -23,10 +23,10 @@ const Quiz = () => {
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState({});
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Submitting form values:", formValues);
-    saveFormToFirestore(formValues);
+    await saveFormToFirestore(formValues);
     navigate("/results", { state: { quizData: formValues } });
   };
 
@@ -37,6 +37,7 @@ const Quiz = () => {
         <QuestionsRenderer
           formValues={formValues}
           setFormValues={setFormValues}
+          handleSubmit={handleSubmit}
         />
       </form>
     </>
