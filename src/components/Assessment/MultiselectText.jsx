@@ -7,7 +7,6 @@ import OtherOption from "./OtherOption";
 
 const MultiselectText = ({formValues, setFormValues, id}) => {
     const [options, setOptions] = useState([]);
-    const [description, setDescription] = useState("");
     const [select, setSelection] = useState(0);
     const [otherText, setOtherText] = useState("");
     const selected = formValues[id] || [];
@@ -23,7 +22,6 @@ const MultiselectText = ({formValues, setFormValues, id}) => {
 
             if(docSnap.exists()) {
                 setOptions(docSnap.data().options || []);
-                setDescription(docSnap.data().description || "");
                 setSelection(docSnap.data().select || 2);
                 setOtherText(docSnap.data().otherText || "Other");
             } else {
@@ -35,8 +33,6 @@ const MultiselectText = ({formValues, setFormValues, id}) => {
 
     return (
         <>
-            {description && (<p className={styles.caption}>{description}</p>)}
-
             <div className={styles.answerContainer}>
                 <div className={styles.multipleChoice}>
                     {options.map((opt, idx) => (
@@ -50,12 +46,16 @@ const MultiselectText = ({formValues, setFormValues, id}) => {
                                 otherText={otherText}
                             />
                         ) : (
-                            <div
-                                key={idx}
-                                className={`${styles.textOption} ${selected.includes(opt) ? styles.selected: ""}`}
-                                onClick={() => ToggleSelection(select, opt, setFormValues, id)}
-                            >
-                                {opt}
+                            <div className={styles.textOption}
+                                onClick={() => ToggleSelection(select, opt, setFormValues, id)}>
+                                <div className={`${styles.optionIcon} ${selected.includes(opt) ? styles.filled : ""}`}></div>
+                                
+                                <div
+                                    key={idx}
+                                    className={`${styles.textOptionStyle} ${selected.includes(opt) ? styles.selected: ""}`}
+                                >
+                                    {opt}
+                                </div>
                             </div>
                         )
                     ))}

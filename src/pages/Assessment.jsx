@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { auth, db } from "../firebase/config";
 import { doc, setDoc } from "firebase/firestore";
 import QuestionsRenderer from "../components/Assessment/QuestionsRenderer";
+import SectionDivider from "../components/Assessment/SectionDivider";
+import styles from "../css/Assessment.module.css";
+import ProgressBar from "../components/ProgressBar";
 
 const saveFormToFirestore = async (results) => {
   if (!auth.currentUser) return;
@@ -34,6 +37,7 @@ const Quiz = () => {
     <>
       <form
       onSubmit={handleSubmit}>
+
         <QuestionsRenderer
           formValues={formValues}
           setFormValues={setFormValues}

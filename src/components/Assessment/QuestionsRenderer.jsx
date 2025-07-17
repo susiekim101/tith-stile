@@ -8,7 +8,6 @@ import SelectImage from "./SelectImage";
 import SelectText from "./SelectText";
 import TextResponse from "./TextResponse";
 import SectionDivider from "./SectionDivider";
-import QuizTitle from "../QuizTitle";
 import styles from "../../css/Assessment.module.css";
 import ProgressBar from "../ProgressBar";
 
@@ -43,6 +42,7 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
     const type = questions[index].type;
     const label = questions[index].label;
     const section = questions[index].section;
+    const description = questions[index].hasOwnProperty("description") ? questions[index].description : "";
 
 
     switch(type) {
@@ -87,16 +87,31 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
     return (
         <>
         <div className={styles.questionsContainer}>
-            <ProgressBar 
-                index={index}
-                total={totalQuestions}
-            />
+            <div className={styles.barContainer}>
+                <ProgressBar 
+                    index={index}
+                    total={totalQuestions}
+                />
+            </div>
+
+            <div className={styles.sectionContainer}>
+                <h1 className={styles.sectionTitle}>{section}</h1>
+            </div>
             
-            <QuizTitle title={section} />
+            <div className={styles.labelContainer}>
+                <div className={styles.label}>{label}</div>
+            </div>
+            
+            <div className={styles.descriptionContainer}>
+                <div className={styles.description}>{description}</div>
+            </div>
 
-            <div className={styles.label}>{label}</div>
-
-            {questionComponent}
+            <div className={styles.questionContainer}>
+                <div className={styles.questionCard}>
+                    {questionComponent}
+                </div>
+            </div>
+            
 
             <NavBar
                 index={index}
