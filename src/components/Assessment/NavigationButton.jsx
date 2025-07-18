@@ -29,15 +29,16 @@ const NavigationButton = ({index, setIndex, total, handleSubmit}) => {
             }
 
             <div className={styles.footerRight}>
-                <button type="button" 
-                        onClick={() => setIndex(prev => Math.min(total - 1, prev + 1))}
-                        disabled={index === total-1}
-                        className={styles.skipContainer}>
-
-                    <div className={styles.skip}> Skip </div>
-
-                    {skipIcon && <img src={skipIcon} className={styles.skipIcon}/>}
-                </button>
+                {index < total - 1 ? (<button type="button" 
+                                        onClick={() => setIndex(prev => Math.min(total - 1, prev + 1))}
+                                        disabled={index === total-1}
+                                        className={styles.skipContainer}>
+                                            <div className={styles.skip}> Skip </div>
+                                            {skipIcon && <img src={skipIcon} className={styles.skipIcon}/>}
+                                        </button>) : 
+                                        (<p></p>)
+                }
+                
 
                 {index < total - 1 ? (<button
                                         type="button"

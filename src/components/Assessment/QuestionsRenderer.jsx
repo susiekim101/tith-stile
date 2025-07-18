@@ -108,12 +108,11 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
             </div>
 
             <div className={styles.questionContainer}>
-                <div className={styles.questionCard}>
+                <div className={`${type === ("image select" || "image multiselect") ? styles.imageCard : styles.questionCard}`}>
                     {questionComponent}
                 </div>
             </div>
             
-
             <NavBar
                 index={index}
                 setIndex={setIndex}

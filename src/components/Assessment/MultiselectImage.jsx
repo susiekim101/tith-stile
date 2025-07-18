@@ -1,7 +1,7 @@
 import {doc, getDoc} from "firebase/firestore"; 
 import {useEffect, useState} from "react";
 import {db} from "../../firebase/config";
-import styles from "../../css/Assessment/MultiselectImage.module.css";
+import styles from "../../css/Assessment/SelectImage.module.css";
 import ToggleSelection from "./ToggleSelection";
 
 const MultiselectImage = ({ formValues, setFormValues, id}) => {
