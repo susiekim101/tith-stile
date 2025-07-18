@@ -94,9 +94,10 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
                 />
             </div>
 
-            <div className={styles.sectionContainer}>
-                <h1 className={styles.sectionTitle}>{section}</h1>
-            </div>
+            {type !== "section" ? (<div className={styles.sectionContainer}>
+                                    <h1 className={styles.sectionTitle}>{section}</h1>
+                                    </div>) 
+                                    : (<></>)}
             
             <div className={styles.labelContainer}>
                 <div className={styles.label}>{label}</div>

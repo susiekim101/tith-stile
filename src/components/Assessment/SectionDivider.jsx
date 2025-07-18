@@ -1,11 +1,11 @@
 import {doc, getDoc} from "firebase/firestore";
 import {useEffect, useState} from "react";
 import {db} from "../../firebase/config";
-import styles from "../../css/Assessment.module.css";
+import styles from "../../css/Assessment/SectionDivider.module.css";
 
 const SectionDivider = ({id}) => {
-    // const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
+    const [brief, setBrief] = useState("");
+    const [section, setSection] = useState("");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -13,8 +13,8 @@ const SectionDivider = ({id}) => {
             const docSnap = await getDoc(docRef);
 
             if(docSnap.exists()) {
-                // setTitle(docSnap.data().label);
-                setDescription(docSnap.data().description);
+                setBrief(docSnap.data().brief);
+                setSection(docSnap.data().section);
             } else {
                 console.log("Document not found)");
             }
@@ -23,9 +23,10 @@ const SectionDivider = ({id}) => {
     }, [id]);
 
     return (
-        <>
-            {description && (<p className={styles.caption}>{description}</p>)}
-        </>
+        <div className={styles.sectionContainer}>
+            {section && (<p className={styles.section}>{section}</p>)}
+            {brief && (<p className={styles.brief}>{brief}</p>)}
+        </div>
     );
 }
 

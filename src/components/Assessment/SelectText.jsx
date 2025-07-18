@@ -1,7 +1,7 @@
 import {doc, getDoc} from "firebase/firestore";
 import {useEffect, useState} from "react";
 import {db} from "../../firebase/config";
-import styles from "../../css/Assessment.module.css";
+import styles from "../../css/Assessment/SelectText.module.css";
 import OtherOption from "./OtherOption";
 
 const SelectText = ({formValues, setFormValues, id}) => {
@@ -39,8 +39,6 @@ const SelectText = ({formValues, setFormValues, id}) => {
 
     return (
         <>
-          {description && (<p className={styles.caption}>{description}</p>)}
-
           <div className={styles.answerContainer}>
             <div className={styles.multipleChoice}>
               {options.map((opt, idx) => (
@@ -54,14 +52,17 @@ const SelectText = ({formValues, setFormValues, id}) => {
                     otherText={otherText}
                   />
                 ) : (
-                  <div
-                    key={idx}
-                    className={`${styles.textOption} ${
-                      selected === opt ? styles.selected : ""
-                    }`}
-                    onClick={() => handleSelect(opt)}
+                  <div className={styles.textOption}
+                      onClick={() => handleSelect(opt)}
                   >
-                    {opt}
+                    <div className={`${styles.optionIcon} ${selected.includes(opt) ? styles.filled : ""}`}></div>
+
+                    <div
+                      key={idx}
+                      className={styles.textOptionStyle}
+                    >
+                      {opt}
+                    </div>
                   </div>
                 )
               ))}

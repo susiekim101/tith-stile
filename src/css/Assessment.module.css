@@ -2,6 +2,7 @@
   width: 90vw;
   height: 90vh;
   margin: 1rem;
+  border: 1px dashed blue;
 }
 
 .loading {
@@ -9,159 +10,17 @@
   font-size: 20px;
 }
 
-/* IMAGE MULTISELECT */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(120px, 1fr));
-    gap: 16px;
-    justify-items: center;
-    margin-top: 5px;
-}
-
-.caption {
-    font-size: 10px;
-    font-weight: 400;
-    margin-top: 5px;
-}
-
-.imageOption {
-    border: 2px solid transparent;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.image {
-    width: 100px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-.imageBorder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 120px;
-    height: 160px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 4px;
-}
-
-/* TEXT MULTISELECT */
-.answerContainer {
-  height: 100%;
-  width: 100%;
-  padding: 1rem;
-  overflow-y: auto;
-}
-
-.multipleChoice {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
-}
-
-.textOption {
-  display: flex;
-  align-items: center;
-  margin: 1rem 0;
-  width: 100%;
-  height: 5rem;
-  border: 2px solid #FFF9F2;
-  border-radius: 1rem;
-}
-
-.optionIcon {
-  width: 2rem;
-  height: 2rem;
-  border: 2px solid #640A09;
-  border-radius: 50%;
-  margin: 0 1rem;
-}
-
-.optionIcon.filled {
-  background-color: #640A09;
-}
-
-.textOptionStyle {
-  font-size: 1.5rem;
-}
-
-.multipleChoice {
-  margin-top: 0;
-}
-
-.imageBorder:hover, .textOption:hover {
-    border: 2px solid #BE9526;
-    background-color: #e0ce9f7f
-}
-
-/* TEXT AREA */
-.textResponse {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.textarea {
-  background-color: #E1C1CE;
-  width: 80%;
-  height: 50%;
-  border-radius: 5px;
-  padding: 5px;
-  flex: 0 0 auto;
-}
-
-/* NAVIGATION */
-.footer {
-  display: flex;
-  padding-right: 10px;
-  width: 100%;
-  justify-content: end;
-}
-
-.footerButtons {
-  display: flex;
-  padding-right: 10px;
-  padding-left: 10px;
-  width: 100%;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.next, .prev {
-  margin-bottom: 1rem;
-}
-
-.next:hover,
-.prev:hover {
-  cursor: pointer;
-}
-
-.submitForm {
-  margin-top: 0.7rem;
-  width: 13vw;
-  padding: 1.5vh 0;
-  border: 0.3vh solid #650909;
-  border-radius: 2vh;
-  background-color: #e1c1ce;
-  cursor: pointer;
-  margin-bottom: 0;
-}
-
 /* QUIZ LABEL */
 .labelContainer{
   width: 100%;
+  margin: 1rem;
 }
 
 .label {
-  font-size: 2vw;
+  font-size: 2.3vw;
   font-weight: 700;
   width: 100%;
+  line-height: 1.2;
 }
 
 /* SECTION LABEL */
@@ -177,7 +36,7 @@
   color: white;
   width: auto;
   height: 100%;
-  font-size: 1vw;
+  font-size: 1.2vw;
   border-radius: 1rem;
   padding: 0.5rem 1rem;
 }
@@ -188,7 +47,7 @@
 }
 
 .description {
-  font-size: 1.2vw;
+  font-size: 1.5vw;
 }
 
 /* PROGRESS BAR */

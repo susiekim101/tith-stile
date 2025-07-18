@@ -1,7 +1,7 @@
 import {doc, getDoc} from "firebase/firestore";
 import {useEffect, useState} from "react";
 import {db} from "../../firebase/config";
-import styles from "../../css/Assessment.module.css";
+import styles from "../../css/Assessment/SelectText.module.css";
 import ToggleSelection from "./ToggleSelection";
 import OtherOption from "./OtherOption";
 
@@ -52,7 +52,7 @@ const MultiselectText = ({formValues, setFormValues, id}) => {
                                 
                                 <div
                                     key={idx}
-                                    className={`${styles.textOptionStyle} ${selected.includes(opt) ? styles.selected: ""}`}
+                                    className={styles.textOptionStyle}
                                 >
                                     {opt}
                                 </div>

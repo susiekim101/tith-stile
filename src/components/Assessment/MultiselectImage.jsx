@@ -1,14 +1,13 @@
 import {doc, getDoc} from "firebase/firestore"; 
 import {useEffect, useState} from "react";
 import {db} from "../../firebase/config";
-import styles from "../../css/Assessment.module.css";
+import styles from "../../css/Assessment/MultiselectImage.module.css";
 import ToggleSelection from "./ToggleSelection";
 
 const MultiselectImage = ({ formValues, setFormValues, id}) => {
     const [options, setOptions] = useState([]);
     const [description, setDescription] = useState("");
     const [select, setSelection] = useState(0);
-    const selected = formValues?.[id] || [];
 
     // Modular Firebase Firestore query
     useEffect(() => {
@@ -38,8 +37,7 @@ const MultiselectImage = ({ formValues, setFormValues, id}) => {
                 {options.map((opt, idx) => (
                     <div
                         key={idx}
-                        className={`${styles.imageBorder} 
-                        ${selected.includes(opt.label) ? styles.selected : ""}`}
+                        className={styles.imageBorder}
                     >
                             
                         <div 

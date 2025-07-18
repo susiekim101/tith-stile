@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 
 ::backdrop {
   background-color: #f9f0e2;
@@ -31,14 +31,14 @@ body,
 
 .heading-small {
   color: #650909;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Didact Gothic", sans-serif;
   font-size: 30px;
   margin: 0;
 }
 
 .heading-large {
   color: #650909;
-  font-family: "Playfair Display", serif;
+  font-family: "Didact Gothic", sans-serif;
   font-size: 60px;
   margin: 0;
 }
