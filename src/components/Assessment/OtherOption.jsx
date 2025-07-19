@@ -5,6 +5,7 @@ import ToggleSelection from "./ToggleSelection";
 const OtherOption = ({formValues, setFormValues, id, isSelected}) => {
     const [otherValue, setOtherValue] = useState(formValues.hasOwnProperty(`${id}_other`) ? formValues[`${id}_other`][0] : "");
 
+    // If "Other" field is empty, remove it from formValues. If there is text in "Other", add it to formValues
     useEffect(() => {
         if(otherValue.trim() !== '') {
             setFormValues((prev) => ({
@@ -25,6 +26,7 @@ const OtherOption = ({formValues, setFormValues, id, isSelected}) => {
             >
                 Other: 
             </div>
+
             <textarea
                 className={`${styles.textarea} ${isSelected ? styles.selected: ""}`}
                 value={otherValue}
@@ -36,4 +38,4 @@ const OtherOption = ({formValues, setFormValues, id, isSelected}) => {
     )
 }
 
-export default OtherOption
+export default OtherOption;

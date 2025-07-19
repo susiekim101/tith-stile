@@ -36,7 +36,7 @@ const QuestionsRenderer = ({formValues, setFormValues}) => {
 
     const currentQuestion = questions[index];
     if(!currentQuestion)
-        return <p>Loading Question...</p>
+        return <p className={styles.loading}>Loading Question...</p>
 
     const id = questions[index].id;
     const type = questions[index].type;

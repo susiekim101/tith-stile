@@ -6,6 +6,7 @@ import styles from "../../css/Assessment.module.css";
 const SelectImage = ({formValues, setFormValues, id}) => {
     // Initialize variable for selected and options to display
     const [options, setOptions] = useState([]);
+    const [description, setDescription] = useState("");
     const selected = formValues[id] || [];
 
     // Access options from Firebase Firestore query
@@ -18,6 +19,7 @@ const SelectImage = ({formValues, setFormValues, id}) => {
             if(docSnap.exists()) {
                 console.log("Fetching options");
                 setOptions(docSnap.data().options || []);
+                setDescription(docSnap.data().description || "");
             } else {
                 console.log("Document not found");
             }
@@ -25,6 +27,7 @@ const SelectImage = ({formValues, setFormValues, id}) => {
         fetchOptions();
     }, [id]);
 
+    // Updates setFormValues with new selections
     const handleSelect = (option) => {
         setFormValues((prev) => ({
             ...prev, [id]: option
@@ -33,15 +36,15 @@ const SelectImage = ({formValues, setFormValues, id}) => {
 
       return (
         <>
-        <p className={styles.caption}>(Click 'Next' to skip)</p>
+          {description && (<p className={styles.captiion}>{description}</p>)}
+
           <div className={styles.grid}>
             {options.map((opt, idx) => (
               <div
                 key={idx}
-                className={`${styles.imageBorder} ${
-                  selected.includes(opt.label) ? styles.selected : ""
-                }`}
+                className={`${styles.imageBorder} ${selected.includes(opt.label) ? styles.selected : ""}`}
               >
+                
                 <div
                   className={styles.imageOption}
                   onClick={() => handleSelect(opt.label)}

@@ -2,6 +2,11 @@
   width: 50vw;
 }
 
+.loading {
+  margin: 10px;
+  font-size: 20px;
+}
+
 /* IMAGE MULTISELECT */
 /* TO-DO: Make image sizes render dynamically.*/
 .grid {

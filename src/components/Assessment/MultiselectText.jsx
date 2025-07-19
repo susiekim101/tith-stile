@@ -22,7 +22,6 @@ const MultiselectText = ({formValues, setFormValues, id}) => {
             if(docSnap.exists()) {
                 setOptions(docSnap.data().options || []);
                 setDescription(docSnap.data().description || "");
-                console.log(description);
             } else {
                 console.log("Document not found");
             }
@@ -61,26 +60,4 @@ const MultiselectText = ({formValues, setFormValues, id}) => {
     );
 }
 
-export default MultiselectText
-
-/* 
-                    {selected.some(opt => opt === "Other" || opt.startsWith("Other:")) && 
-                        <OtherOption
-                            otherValue={otherValue}
-                            setOtherValue={setOtherValue}
-                            selected={selected}
-                        />} 
-                        
-                        useEffect(() => {
-        if (selected.some(opt => opt === "Other" || opt.startsWith("Other:"))) {
-            const filtered = selected.filter(opt => !opt.startsWith("Other")); // Keep all but "Other"
-            const updated = [...filtered, `Other: ${otherValue}`]; // Add "Other" with correct format
-            setFormValues((prev) => ({
-            ...prev,
-            [id]: updated
-            }));
-        }
-        console.log(formValues);
-    }, [otherValue]);
-                        
-                        */
+export default MultiselectText;
