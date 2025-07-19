@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 @import "tailwindcss";
 
 #root {
@@ -7,6 +7,7 @@
   padding: 0;
   text-align: center;
   min-height: 100vh;
+  font-family: "Didact Gothic", sans-serif;
 }
 
 .logo {
@@ -48,14 +49,12 @@
   color: #888;
 }
 
-body,
-html {
+html,
+body {
   height: auto;
   min-height: 100vh;
   margin: 0;
-
   background-color: #f9f0e2;
-  font-family: "Montserrat", sans-serif;
   color: #650909;
   overflow: scroll;
   overscroll-behavior: none;

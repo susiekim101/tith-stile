@@ -1,13 +1,13 @@
 import {doc, getDoc} from "firebase/firestore"; 
 import {useEffect, useState} from "react";
 import {db} from "../../firebase/config";
-import styles from "../../css/Assessment.module.css";
+import styles from "../../css/Assessment/SelectImage.module.css";
 import ToggleSelection from "./ToggleSelection";
 
 const MultiselectImage = ({ formValues, setFormValues, id}) => {
     const [options, setOptions] = useState([]);
     const [description, setDescription] = useState("");
-    const selected = formValues?.[id] || [];
+    const [select, setSelection] = useState(0);
 
     // Modular Firebase Firestore query
     useEffect(() => {
@@ -21,6 +21,7 @@ const MultiselectImage = ({ formValues, setFormValues, id}) => {
             if(docSnap.exists()) {
                 setOptions(docSnap.data().options || []);
                 setDescription(docSnap.data().description || "");
+                setSelection(docSnap.data().select || 2);
             } else {
                 console.log("Document not found");
             }
@@ -36,11 +37,12 @@ const MultiselectImage = ({ formValues, setFormValues, id}) => {
                 {options.map((opt, idx) => (
                     <div
                         key={idx}
-                        className={`${styles.imageBorder} 
-                        ${selected.includes(opt.label) ? styles.selected : ""}`}
+                        className={styles.imageBorder}
                     >
-                        <div className={styles.imageOption}
-                        onClick={() => ToggleSelection(opt.label, setFormValues, id)}
+                            
+                        <div 
+                            className={styles.imageOption}
+                            onClick={() => ToggleSelection(select, opt.label, setFormValues, id)}
                         >
                             <img src={opt.image} alt={opt.label} className={styles.image} />
                         </div>
@@ -51,4 +53,4 @@ const MultiselectImage = ({ formValues, setFormValues, id}) => {
     );
 }
 
-export default MultiselectImage
+export default MultiselectImage;

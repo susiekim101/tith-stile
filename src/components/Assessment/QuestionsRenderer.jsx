@@ -7,11 +7,11 @@ import NavBar from "./NavigationButton";
 import SelectImage from "./SelectImage";
 import SelectText from "./SelectText";
 import TextResponse from "./TextResponse";
-import QuizTitle from "../QuizTitle";
+import SectionDivider from "./SectionDivider";
 import styles from "../../css/Assessment.module.css";
 import ProgressBar from "../ProgressBar";
 
-const QuestionsRenderer = ({formValues, setFormValues}) => {
+const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
     const [index, setIndex] = useState(0); // Questions 0-indexed in array
     const [questions, setQuestions] = useState([]);
     const [totalQuestions, setTotalQuestions] = useState(0);
@@ -36,12 +36,13 @@ const QuestionsRenderer = ({formValues, setFormValues}) => {
 
     const currentQuestion = questions[index];
     if(!currentQuestion)
-        return <p>Loading Question...</p>
+        return <p className={styles.loading}>Loading Question...</p>
 
     const id = questions[index].id;
     const type = questions[index].type;
     const label = questions[index].label;
     const section = questions[index].section;
+    const description = questions[index].hasOwnProperty("description") ? questions[index].description : "";
 
 
     switch(type) {
@@ -68,10 +69,15 @@ const QuestionsRenderer = ({formValues, setFormValues}) => {
                                 formValues={formValues}
                                 setFormValues={setFormValues}
                                 id={id}/>;
+            break;
         case "text":
             questionComponent = <TextResponse 
                                 formValues={formValues}
                                 setFormValues={setFormValues}
+                                id={id}/>
+            break;
+        case "section":
+            questionComponent = <SectionDivider
                                 id={id}/>
             break;
         default:
@@ -81,21 +87,40 @@ const QuestionsRenderer = ({formValues, setFormValues}) => {
     return (
         <>
         <div className={styles.questionsContainer}>
-            <ProgressBar 
-                index={index}
-                total={totalQuestions}
-            />
+            <div>
+            <div className={styles.barContainer}>
+                <ProgressBar 
+                    index={index}
+                    total={totalQuestions}
+                />
+            </div>
+
+                {type !== "section" ? (<div className={styles.sectionContainer}>
+                                        <h1 className={styles.sectionTitle}>{section}</h1>
+                                        </div>) 
+                                        : (<></>)}
+            </div>
             
-            <QuizTitle title={section} />
+            <div>
+                <div className={styles.labelContainer}>
+                    <div className={styles.label}>{label}</div>
+                </div>
+                
+                <div className={styles.descriptionContainer}>
+                    <div className={styles.description}>{description}</div>
+                </div>
 
-            <div className={styles.label}>{label}</div>
-
-            {questionComponent}
-
+                <div className={styles.questionContainer}>
+                    <div className={`${type === ("image select" || "image multiselect") ? styles.imageCard : styles.questionCard}`}>
+                        {questionComponent}
+                    </div>
+                </div>
+            </div>
             <NavBar
                 index={index}
                 setIndex={setIndex}
                 total={questions.length}
+                handleSubmit={handleSubmit}
             />
         </div>
         </>

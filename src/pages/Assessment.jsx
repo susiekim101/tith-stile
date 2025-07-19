@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { auth, db } from "../firebase/config";
 import { doc, setDoc } from "firebase/firestore";
 import QuestionsRenderer from "../components/Assessment/QuestionsRenderer";
+import SectionDivider from "../components/Assessment/SectionDivider";
+import styles from "../css/Assessment.module.css";
+import ProgressBar from "../components/ProgressBar";
 
 const saveFormToFirestore = async (results) => {
   if (!auth.currentUser) return;
@@ -23,10 +26,10 @@ const Quiz = () => {
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState({});
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Submitting form values:", formValues);
-    saveFormToFirestore(formValues);
+    await saveFormToFirestore(formValues);
     navigate("/results", { state: { quizData: formValues } });
   };
 
@@ -34,9 +37,11 @@ const Quiz = () => {
     <>
       <form
       onSubmit={handleSubmit}>
+
         <QuestionsRenderer
           formValues={formValues}
           setFormValues={setFormValues}
+          handleSubmit={handleSubmit}
         />
       </form>
     </>
