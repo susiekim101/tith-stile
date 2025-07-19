@@ -11,11 +11,12 @@
   height: 5rem;
   border: 2px solid #FFF9F2;
   border-radius: 1rem;
-  font-size: 1.8vw;
+  font-size: 2em;
+  margin: 0.5rem 0;
 }
 
 .textOptionStyle {
-  font-size: 1.8vw;
+  font-size: 1em;
 }
 
 .textOption:hover {
@@ -32,7 +33,7 @@
   padding: 5px;
   flex: 0 0 auto;
   margin: 0 1rem;
-  font-size: 1.5rem;
+  font-size: 1.5em;
 }
 
 .textarea:focus {
@@ -40,8 +41,8 @@
 }
 
 .optionIcon {
-  width: 1.2vw;
-  height: 1.2vw;
+  width: 0.6em;
+  height: 0.6em;
   border: 2px solid #640A09;
   border-radius: 50%;
   margin: 0 1rem;

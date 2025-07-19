@@ -87,6 +87,7 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
     return (
         <>
         <div className={styles.questionsContainer}>
+            <div>
             <div className={styles.barContainer}>
                 <ProgressBar 
                     index={index}
@@ -94,25 +95,27 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
                 />
             </div>
 
-            {type !== "section" ? (<div className={styles.sectionContainer}>
-                                    <h1 className={styles.sectionTitle}>{section}</h1>
-                                    </div>) 
-                                    : (<></>)}
-            
-            <div className={styles.labelContainer}>
-                <div className={styles.label}>{label}</div>
+                {type !== "section" ? (<div className={styles.sectionContainer}>
+                                        <h1 className={styles.sectionTitle}>{section}</h1>
+                                        </div>) 
+                                        : (<></>)}
             </div>
             
-            <div className={styles.descriptionContainer}>
-                <div className={styles.description}>{description}</div>
-            </div>
+            <div>
+                <div className={styles.labelContainer}>
+                    <div className={styles.label}>{label}</div>
+                </div>
+                
+                <div className={styles.descriptionContainer}>
+                    <div className={styles.description}>{description}</div>
+                </div>
 
-            <div className={styles.questionContainer}>
-                <div className={`${type === ("image select" || "image multiselect") ? styles.imageCard : styles.questionCard}`}>
-                    {questionComponent}
+                <div className={styles.questionContainer}>
+                    <div className={`${type === ("image select" || "image multiselect") ? styles.imageCard : styles.questionCard}`}>
+                        {questionComponent}
+                    </div>
                 </div>
             </div>
-            
             <NavBar
                 index={index}
                 setIndex={setIndex}
