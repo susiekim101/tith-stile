@@ -10,12 +10,14 @@ import TextResponse from "./TextResponse";
 import SectionDivider from "./SectionDivider";
 import styles from "../../css/Assessment.module.css";
 import ProgressBar from "../ProgressBar";
+import BreakButton from "./BreakButton";
 
 const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
     const [index, setIndex] = useState(0); // Questions 0-indexed in array
     const [questions, setQuestions] = useState([]);
     const [totalQuestions, setTotalQuestions] = useState(0);
     let questionComponent;
+    let cardStyle = styles.questionCard;
 
     // Fetch questions from Firestore and store in array
     useEffect(() => {
@@ -51,6 +53,7 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
                                 formValues={formValues}
                                 setFormValues={setFormValues}
                                 id={id}/>
+            cardStyle=styles.imageCard;
             break;
         case "text multiselect":
             questionComponent = <MultiselectText
@@ -69,6 +72,7 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
                                 formValues={formValues}
                                 setFormValues={setFormValues}
                                 id={id}/>;
+            cardStyle=styles.imageCard;
             break;
         case "text":
             questionComponent = <TextResponse 
@@ -79,6 +83,7 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
         case "section":
             questionComponent = <SectionDivider
                                 id={id}/>
+            cardStyle=styles.sectionCard;
             break;
         default:
             questionComponent = <p>Unsupported question type</p>
@@ -88,17 +93,24 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
         <>
         <div className={styles.questionsContainer}>
             <div>
-            <div className={styles.barContainer}>
-                <ProgressBar 
-                    index={index}
-                    total={totalQuestions}
-                />
-            </div>
+                <div className={styles.header}>
+                    <BreakButton/>
+                    <BreakButton/>
+                </div>
+                
+                <div>
+                    <div className={styles.barContainer}>
+                        <ProgressBar 
+                            index={index}
+                            total={totalQuestions}
+                        />
+                    </div>
 
-                {type !== "section" ? (<div className={styles.sectionContainer}>
-                                        <h1 className={styles.sectionTitle}>{section}</h1>
-                                        </div>) 
-                                        : (<></>)}
+                    {type !== "section" ? (<div className={styles.sectionContainer}>
+                                            <h1 className={styles.sectionTitle}>{section}</h1>
+                                            </div>) 
+                                            : (<></>)}
+                </div>
             </div>
             
             <div>
@@ -110,8 +122,8 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
                     <div className={styles.description}>{description}</div>
                 </div>
 
-                <div className={styles.questionContainer}>
-                    <div className={`${type === ("image select" || "image multiselect") ? styles.imageCard : styles.questionCard}`}>
+                <div className={type === "image multiselect" || type === "image select" ? styles.imageContainer : styles.questionContainer}>
+                    <div className={cardStyle}>
                         {questionComponent}
                     </div>
                 </div>

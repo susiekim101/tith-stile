@@ -7,7 +7,7 @@
 }
 
 .textarea {
-  background-color: #E1C1CE;
+  border: 1px solid #640A09;
   width: 80%;
   height: 50%;
   border-radius: 5px;

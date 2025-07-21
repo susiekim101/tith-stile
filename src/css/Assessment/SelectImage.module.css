@@ -5,32 +5,82 @@
 }
 
 .grid {
-    border: 1px solid black;
+    border: 1px solid blue;
     width: 100%;
     height: 100%;
     padding: 1rem;
     display: grid;
     grid-template-columns: repeat(3, minmax(120px, 1fr));
-    gap: 1rem;
+    gap: 0.5rem;
     justify-items: center;
-    margin-top: 5px;
 }
 
 .imageBorder {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
     border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+    max-height: 250px;
+    padding: 10px;
+    gap: 5px;
+    background-color: #F9F0E3;
+}
+
+.imageBorder:hover {
+    background-color: #f9e9d2;
+    cursor: pointer;
+
+}
+
+.imageBorder:hover .imageSelect {
+    border: 5px solid #640A09;
 }
 
 .imageOption {
-    border: 2px solid transparent;
     border-radius: 8px;
     cursor: pointer;
+    width: 100%;
+    height: 100%;
 }
 
 .image {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 8px;
+}
+
+.imageFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.imageSelect, .imageFilled {
+    height: 100%;
+    width: 100%;
+    border: 2px solid #640A09;
+    border-radius: 5px;
+}
+
+.imageFilled {
+    background-color: #640A09;
+}
+
+.check {
+    position: relative;
+    height: 100%;
+    width: 15%;
+}
+
+.checkMark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
