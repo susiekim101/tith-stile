@@ -3,24 +3,25 @@ import {useEffect, useState} from "react";
 import {db} from "../../firebase/config";
 import styles from "../../css/Assessment/SectionDivider.module.css";
 
-const SectionDivider = ({id}) => {
+const SectionDivider = ({sectionId, id}) => {
     const [brief, setBrief] = useState("");
     const [section, setSection] = useState("");
 
     useEffect(() => {
         const fetchData = async () => {
-            const docRef = doc(db, "questions", id);
+            const docRef = doc(db, "assessment", sectionId, "questions", id);
             const docSnap = await getDoc(docRef);
+
 
             if(docSnap.exists()) {
                 setBrief(docSnap.data().brief);
                 setSection(docSnap.data().section);
             } else {
-                console.log("Document not found)");
+                console.log("Document not found");
             }
         }
         fetchData();
-    }, [id]);
+    }, [id, sectionId]);
 
     return (
         <div className={styles.sectionContainer}>

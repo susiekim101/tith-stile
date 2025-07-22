@@ -34,9 +34,9 @@ const BreakButton = () => {
             <dialog ref={dialogRef}>
                 <div className={styles.dialogContainer}>
                     <div className={styles.iconContainer}>
-                        <div className={styles.iconCircle}></div>
                         <img src={coffeeIcon} className={styles.dialogIcon}></img>
                     </div>
+
                     <div className={styles.dialogTitle}>Break Time!</div>
                     <div className={styles.dialogText}>Take a moment to rest and recharge. When you're ready, click the button below to continue with your design assessment.</div>
                     <button type="button" 

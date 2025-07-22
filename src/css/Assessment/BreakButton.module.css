@@ -7,8 +7,8 @@ dialog {
   color: #640A09;
   padding: 1rem;
   border-radius: 15px;
-  width: 35%;
-  height: 40%;
+  width: 50vw;
+  height: 30vh;
 }
 
 dialog::backdrop {
@@ -16,7 +16,7 @@ dialog::backdrop {
 }
 
 .button {
-    font-size: 1vw;
+    font-size: 1em;
     background-color: #CDA532;
     color: white;
     padding: 0.5rem 1rem;
@@ -32,6 +32,7 @@ dialog::backdrop {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    overflow-y: scroll;
 }
 
 .dialogClose {
@@ -39,7 +40,7 @@ dialog::backdrop {
     color: white;
     padding: 5px 10px;
     border-radius: 20px;
-    font-size: 1.5vw;
+    font-size: 1em;
 }
 
 .dialogClose:hover {
@@ -47,52 +48,22 @@ dialog::backdrop {
     background-color: #af8e28;
 }
 .dialogTitle {
-    font-size: 2vw;
+    font-size: 2em;
 }
 
 .dialogText {
-    font-size: 1.5vw;
+    font-size: 1.5em;
 }
 
 .iconContainer {
-    position: relative;
-    height: 30%;
+    display: flex;
+    justify-content: center;
+    height: 5em;
 }
 
-.iconCircle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 6rem;
-    height: 6rem;
-    background-color: #E1C2CF;
-    border-radius: 50%;
-}
 .dialogIcon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 4rem;
-    height: 4rem;
-}
-
-.dialogCircle {
-    position: absolute;
-    background-color: #E1C2CF;
-    border-radius: 50%;
-    width: 10vw;
-    height: 10vw;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.dialogImg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 5vw;
-    height: 5vw;
+    z-index: 1;
+    width: 5em;
+    height: 5em;
+    
 }

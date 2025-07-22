@@ -5,7 +5,7 @@ import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import styles from "../../css/Assessment/SelectImage.module.css";
 import ToggleSelection from "./ToggleSelection";
 
-const MultiselectImage = ({ formValues, setFormValues, id}) => {
+const MultiselectImage = ({ formValues, setFormValues, sectionId, id}) => {
     const [options, setOptions] = useState([]);
     const [description, setDescription] = useState("");
     const [select, setSelection] = useState(0);
@@ -17,7 +17,7 @@ const MultiselectImage = ({ formValues, setFormValues, id}) => {
         // Reference to doc and current snapshot
         const fetchOptions = async () => {
             // Grab reference of the doc in "questions" collection with id
-            const docRef = doc(db, "questions", id);
+            const docRef = doc(db, "assessment", sectionId, "questions", id);
             // Fetches document data
             const docSnap = await getDoc(docRef);
 

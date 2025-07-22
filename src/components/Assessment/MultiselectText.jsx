@@ -5,7 +5,7 @@ import styles from "../../css/Assessment/SelectText.module.css";
 import ToggleSelection from "./ToggleSelection";
 import OtherOption from "./OtherOption";
 
-const MultiselectText = ({formValues, setFormValues, id}) => {
+const MultiselectText = ({formValues, setFormValues, sectionId, id}) => {
     const [options, setOptions] = useState([]);
     const [select, setSelection] = useState(0);
     const [otherText, setOtherText] = useState("");
@@ -16,7 +16,7 @@ const MultiselectText = ({formValues, setFormValues, id}) => {
         // Reference to doc and current snapshot
         const fetchOptions = async () => {
             // Grab reference of the doc in "questions" collection with id
-            const docRef = doc(db, "questions", id);
+            const docRef = doc(db, "assessment", sectionId, "questions", id);
             // Fetches document data
             const docSnap = await getDoc(docRef);
 

@@ -22,17 +22,29 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
     // Fetch questions from Firestore and store in array
     useEffect(() => {
         const fetchQuestions = async () => {
-            const colQuery = query(collection(db, "questions"), orderBy("index"));
-            const collectionSnap = await getDocs(colQuery);
-            const fetched = collectionSnap.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }));
-            setQuestions(fetched);
-            setTotalQuestions(collectionSnap.size);
-            console.log(fetched);
-            console.log("Total question: ", totalQuestions);
-        }
+            const assessQuery = query(collection(db, "assessment"), orderBy("index"));
+            const sectionSnap = await getDocs(assessQuery);
+
+            let allQuestions = [];
+            
+            for(const sectionDoc of sectionSnap.docs) {
+                const sectionId = sectionDoc.id;
+                const sectionName = sectionDoc.data().section;
+                const questionsRef = query(collection(db, "assessment", sectionId, "questions"), orderBy("index"));
+                const questionsSnap = await getDocs(questionsRef);
+
+                const sectionQuestions = questionsSnap.docs.map(doc => ({
+                    id: doc.id,
+                    sectionId: sectionId,
+                    sectionName: sectionName,
+                    ...doc.data()
+                }));
+                console.log(sectionQuestions);
+                allQuestions = [...allQuestions, ...sectionQuestions];
+            }
+            setQuestions(allQuestions);
+            setTotalQuestions(allQuestions.length);
+        };
         fetchQuestions();
     }, []);
 
@@ -41,9 +53,10 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
         return <p className={styles.loading}>Loading Question...</p>
 
     const id = questions[index].id;
+    const sectionId = questions[index].sectionId;
     const type = questions[index].type;
     const label = questions[index].label;
-    const section = questions[index].section;
+    const section = questions[index].sectionName;
     const description = questions[index].hasOwnProperty("description") ? questions[index].description : "";
 
 
@@ -52,6 +65,7 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
             questionComponent = <MultiselectImage
                                 formValues={formValues}
                                 setFormValues={setFormValues}
+                                sectionId={sectionId}
                                 id={id}/>
             cardStyle=styles.imageCard;
             break;
@@ -59,18 +73,21 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
             questionComponent = <MultiselectText
                                 formValues={formValues}
                                 setFormValues={setFormValues}
+                                sectionId={sectionId}
                                 id={id} />;
             break;
         case "text select":
             questionComponent = <SelectText
                                 formValues={formValues}
                                 setFormValues={setFormValues}
+                                sectionId={sectionId}
                                 id={id}/>;
             break;
         case "image select":
             questionComponent = <SelectImage
                                 formValues={formValues}
                                 setFormValues={setFormValues}
+                                sectionId={sectionId}
                                 id={id}/>;
             cardStyle=styles.imageCard;
             break;
@@ -82,6 +99,7 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
             break;
         case "section":
             questionComponent = <SectionDivider
+                                sectionId={sectionId}
                                 id={id}/>
             cardStyle=styles.sectionCard;
             break;

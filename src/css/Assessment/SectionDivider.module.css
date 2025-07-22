@@ -1,5 +1,5 @@
 .sectionContainer {
-    padding: 1rem;
+    padding: 2rem;
 }
 .section {
     font-size: 2rem;
@@ -7,6 +7,6 @@
 }
 
 .brief {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: white;
 }
