@@ -4,6 +4,8 @@ import styles from "../../css/Assessment/BreakButton.module.css";
 
 const BreakButton = () => {
     const dialogRef = useRef(null);
+    const timeoutRef = useRef(null);
+    const TIMER = 1; // MINUTES
     const [coffeeIcon, setCoffeeURL] = useState(null);
 
     useEffect(() => {
@@ -13,14 +15,24 @@ const BreakButton = () => {
         getDownloadURL(coffeeRef)
             .then(url => setCoffeeURL(url))
             .catch(error => console.error("Failed to fetch coffee icon, ", error));
+
+        timeoutRef.current = setTimeout(openDialog, TIMER * 60 * 1000);
+
+        return () => {clearTimeout(timeoutRef.current)};
     }, []);
 
     const openDialog = () => {
         dialogRef.current?.showModal();
+        if(timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            console.log("Clearing timeout in openDialog");
+        }
     }
 
     const closeDialog = () => {
         dialogRef.current?.close();
+        timeoutRef.current = setTimeout(openDialog, TIMER * 60 * 1000);
+        
     }
 
     return (

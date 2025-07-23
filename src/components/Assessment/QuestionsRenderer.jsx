@@ -112,7 +112,10 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
         <div className={styles.questionsContainer}>
             <div>
                 <div className={styles.header}>
-                    <BreakButton/>
+                    <button type="button"
+                            onClick={() => console.log("Temporary button clicked.")}>
+                        <div>Temporary Button</div>
+                    </button>
                     <BreakButton/>
                 </div>
                 
