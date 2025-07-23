@@ -1,11 +1,11 @@
-const ToggleSelection = (option, setFormValues, id) => {
-    let SELECT = 2;
+const ToggleSelection = (select, option, setFormValues, id) => {
+
     setFormValues((prev) => {
         const selected = prev[id] || []; // Access current selection
         const isSelected = selected.includes(option); // If current option is selected or not
         let newFormValues;
         // Already at max selection
-        if(!isSelected && selected.length >= SELECT) {
+        if(!isSelected && selected.length >= select) {
             return prev;
         }
 

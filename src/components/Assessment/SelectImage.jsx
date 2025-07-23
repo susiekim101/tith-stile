@@ -1,9 +1,9 @@
 import {doc, getDoc} from "firebase/firestore";
 import {useEffect, useState} from "react";
 import {db} from "../../firebase/config";
-import styles from "../../css/Assessment.module.css";
+import styles from "../../css/Assessment/SelectImage.module.css";
 
-const SelectImage = ({formValues, setFormValues, id}) => {
+const SelectImage = ({formValues, setFormValues, sectionId, id}) => {
     // Initialize variable for selected and options to display
     const [options, setOptions] = useState([]);
     const [description, setDescription] = useState("");
@@ -13,7 +13,7 @@ const SelectImage = ({formValues, setFormValues, id}) => {
     useEffect(() => {
         const fetchOptions = async () => {
             // Reference to doc and current snapshot
-            const docRef = doc(db, "questions", id);
+            const docRef = doc(db, "assessment", sectionId, "questions", id);
             const docSnap = await getDoc(docRef);
 
             if(docSnap.exists()) {
@@ -36,7 +36,7 @@ const SelectImage = ({formValues, setFormValues, id}) => {
 
       return (
         <>
-          {description && (<p className={styles.captiion}>{description}</p>)}
+          {description && (<p className={styles.caption}>{description}</p>)}
 
           <div className={styles.grid}>
             {options.map((opt, idx) => (

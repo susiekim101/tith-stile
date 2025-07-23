@@ -1,8 +1,8 @@
-import styles from "../../css/Assessment.module.css";
+import styles from "../../css/Assessment/OtherOption.module.css";
 import {useState, useEffect} from "react";
 import ToggleSelection from "./ToggleSelection";
 
-const OtherOption = ({formValues, setFormValues, id, isSelected}) => {
+const OtherOption = ({formValues, setFormValues, id, isSelected, otherText}) => {
     const [otherValue, setOtherValue] = useState(formValues.hasOwnProperty(`${id}_other`) ? formValues[`${id}_other`][0] : "");
 
     // If "Other" field is empty, remove it from formValues. If there is text in "Other", add it to formValues
@@ -20,11 +20,15 @@ const OtherOption = ({formValues, setFormValues, id, isSelected}) => {
 
     return (
         <>
-            <div
-                className={`${styles.textOption} ${isSelected ? styles.selected: ""}`}
-                onClick={() => ToggleSelection(otherValue, setFormValues, `${id}_other`)}
-            >
-                Other: 
+        <div className={styles.optionContainer}>
+            <div className={styles.textOption}>
+                <div className={`${styles.optionIcon} ${isSelected ? styles.filled : ""}`}></div>
+                <div
+                    className={`${styles.textOptionStyle} ${isSelected ? styles.selected: ""}`}
+                    onClick={() => ToggleSelection(1, otherValue, setFormValues, `${id}_other`)}
+                >
+                    {otherText} 
+                </div>
             </div>
 
             <textarea
@@ -34,6 +38,7 @@ const OtherOption = ({formValues, setFormValues, id, isSelected}) => {
                 rows={1}
                 placeholder="Type your response here..."
             />
+        </div>
         </>
     )
 }

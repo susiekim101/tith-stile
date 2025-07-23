@@ -1,26 +1,26 @@
 import {doc, getDoc} from "firebase/firestore";
 import {useEffect, useState} from "react";
 import {db} from "../../firebase/config";
-import styles from "../../css/Assessment.module.css";
+import styles from "../../css/Assessment/SelectText.module.css";
 import OtherOption from "./OtherOption";
 
-const SelectText = ({formValues, setFormValues, id}) => {
+const SelectText = ({formValues, setFormValues, sectionId, id}) => {
     // Initialize variable for selected and options to display
     const [options, setOptions] = useState([]);
-    const [description, setDescription] = useState("");
+    const [otherText, setOtherText] = useState("");
     const selected = formValues[id] || "";
 
     // Access options from Firebase Firestore query
     useEffect(() => {
         const fetchOptions = async () => {
             // Reference to doc and current snapshot
-            const docRef = doc(db, "questions", id);
+            const docRef = doc(db, "assessment", sectionId, "questions", id);
             const docSnap = await getDoc(docRef);
 
             if(docSnap.exists()) {
                 console.log("Fetching options")
                 setOptions(docSnap.data().options || [])
-                setDescription(docSnap.data().description || "");
+                setOtherText(docSnap.data().otherText || "Other");
             } else {
                 console.log("Document not found");
             }
@@ -37,8 +37,6 @@ const SelectText = ({formValues, setFormValues, id}) => {
 
     return (
         <>
-          {description && (<p className={styles.caption}>{description}</p>)}
-
           <div className={styles.answerContainer}>
             <div className={styles.multipleChoice}>
               {options.map((opt, idx) => (
@@ -49,16 +47,20 @@ const SelectText = ({formValues, setFormValues, id}) => {
                     setFormValues={setFormValues}
                     id={id}
                     isSelected={formValues.hasOwnProperty(`${id}_other`)}
+                    otherText={otherText}
                   />
                 ) : (
-                  <div
-                    key={idx}
-                    className={`${styles.textOption} ${
-                      selected === opt ? styles.selected : ""
-                    }`}
-                    onClick={() => handleSelect(opt)}
+                  <div className={styles.textOption}
+                      onClick={() => handleSelect(opt)}
                   >
-                    {opt}
+                    <div className={`${styles.optionIcon} ${selected.includes(opt) ? styles.filled : ""}`}></div>
+
+                    <div
+                      key={idx}
+                      className={styles.textOptionStyle}
+                    >
+                      {opt}
+                    </div>
                   </div>
                 )
               ))}
