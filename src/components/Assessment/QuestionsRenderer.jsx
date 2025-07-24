@@ -11,6 +11,7 @@ import SectionDivider from "./SectionDivider";
 import styles from "../../css/Assessment.module.css";
 import ProgressBar from "../ProgressBar";
 import BreakButton from "./BreakButton";
+import DateInput from "./DateInput";
 
 const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
     const [index, setIndex] = useState(0); // Questions 0-indexed in array
@@ -74,7 +75,7 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
                                 formValues={formValues}
                                 setFormValues={setFormValues}
                                 sectionId={sectionId}
-                                id={id} />;
+                                id={id}/>;
             break;
         case "text select":
             questionComponent = <SelectText
@@ -96,6 +97,13 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
                                 formValues={formValues}
                                 setFormValues={setFormValues}
                                 id={id}/>
+            break;
+        case "date":
+            questionComponent = <DateInput
+                                formValues={formValues}
+                                setFormValues={setFormValues}
+                                id={id}
+                                />
             break;
         case "section":
             questionComponent = <SectionDivider

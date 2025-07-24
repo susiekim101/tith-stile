@@ -3,8 +3,8 @@ dialog {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #F9F0E3;
-  color: #640A09;
+  background-color: var(--main-beige);
+  color: var(--main-maroon);
   padding: 1rem;
   border-radius: 15px;
   width: 50vw;
@@ -17,7 +17,7 @@ dialog::backdrop {
 
 .button {
     font-size: 1em;
-    background-color: #CDA532;
+    background-color: var(--main-mustard);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 10px;
@@ -36,7 +36,7 @@ dialog::backdrop {
 }
 
 .dialogClose {
-    background-color: #CDA532;
+    background-color: var(--main-mustard);
     color: white;
     padding: 5px 10px;
     border-radius: 20px;
@@ -45,7 +45,7 @@ dialog::backdrop {
 
 .dialogClose:hover {
     cursor: pointer;
-    background-color: #af8e28;
+    background-color: var(--main-mustard);
 }
 .dialogTitle {
     font-size: 2em;

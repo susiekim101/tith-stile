@@ -10,6 +10,7 @@ const MultiselectImage = ({ formValues, setFormValues, sectionId, id}) => {
     const [description, setDescription] = useState("");
     const [select, setSelection] = useState(0);
     const [checkIcon, setCheckURL] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
     const selected = formValues[id] || [];
 
     // Modular Firebase Firestore query

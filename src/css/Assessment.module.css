@@ -9,8 +9,8 @@
 
 
 .loading {
-  margin: 10px;
-  font-size: 20px;
+  font-size: 3rem;
+  margin: 1em;
 }
 
 /* SECTION LABEL */
@@ -22,7 +22,7 @@
 }
 
 .sectionTitle {
-  background-color: #CDA532;
+  background-color: var(--main-mustard);
   color: white;
   width: auto;
   height: 100%;
@@ -91,7 +91,7 @@
 }
 
 .sectionCard {
-  background-color: #CDA532;
+  background-color: var(--main-mustard);
 }
 
 .imageCard {

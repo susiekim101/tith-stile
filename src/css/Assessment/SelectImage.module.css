@@ -21,7 +21,7 @@
     border-radius: 0.5em;
     padding: 0.5em;
     gap: 5px;
-    background-color: #F9F0E3;
+    background-color: var(--main-beige);
 }
 
 .imageBorder:hover {
@@ -31,7 +31,7 @@
 }
 
 .imageBorder:hover .imageSelect {
-    border: 5px solid #640A09;
+    border: 5px solid var(--main-maroon);
 }
 
 .imageOption {
@@ -60,12 +60,12 @@
 .imageSelect, .imageFilled {
     height: 1.5em;
     width: 1.5em;
-    border: 2px solid #640A09;
+    border: 2px solid var(--main-maroon);
     border-radius: 5px;
 }
 
 .imageFilled {
-    background-color: #640A09;
+    background-color: var(--main-maroon);
 }
 
 .check {

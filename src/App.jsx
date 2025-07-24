@@ -5,6 +5,7 @@ import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup";
 import Results from "./components/Results.jsx";
 import Assessment from "./pages/Assessment.jsx";
+import "./css/colors.css";
 
 function App() {
   return (

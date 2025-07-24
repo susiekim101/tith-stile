@@ -20,13 +20,13 @@
 }
 
 .textOption:hover {
-    border: 2px solid #BE9526;
+    border: 2px solid var(--main-mustard);
     background-color: #e0ce9f7f
 }
 
 .textarea {
   background-color: #FFF9F2;
-  border: 1px solid #640A09;
+  border: 1px solid var(--main-maroon);
   width: auto;
   height: 50%;
   border-radius: 5px;
@@ -43,11 +43,11 @@
 .optionIcon {
   width: 0.6em;
   height: 0.6em;
-  border: 2px solid #640A09;
+  border: 2px solid var(--main-maroon);
   border-radius: 50%;
   margin: 0 1rem;
 }
 
 .optionIcon.filled {
-  background-color: #640A09;
+  background-color: var(--main-maroon);
 }

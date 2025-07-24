@@ -26,13 +26,13 @@
 .optionIcon {
   width: 1.2em;
   height: 1.2em;
-  border: 2px solid #640A09;
+  border: 2px solid var(--main-maroon);
   border-radius: 50%;
   margin: 0 1rem;
 }
 
 .optionIcon.filled {
-  background-color: #640A09;
+  background-color: var(--main-maroon);
 }
 
 .textOptionStyle {
@@ -40,6 +40,6 @@
 }
 
 .imageBorder:hover, .textOption:hover {
-    border: 2px solid #BE9526;
+    border: 2px solid var(--main-mustard);
     background-color: #e0ce9f7f
 }

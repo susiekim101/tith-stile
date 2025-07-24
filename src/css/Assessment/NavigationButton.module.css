@@ -16,7 +16,7 @@
 }
 
 .next, .submitForm {
-  background-color: #e1c1ce;
+  background-color: var(--main-pink);
 }
 
 .next:hover, .submitForm:hover {
