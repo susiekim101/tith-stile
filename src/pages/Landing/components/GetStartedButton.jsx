@@ -1,16 +1,9 @@
 import styles from "./GetStartedButton.module.css";
-import { useNavigate } from "react-router-dom";
 
-const GetStartedButton = ({ textColor, bgColor }) => {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("/signup");
-  };
-
+const GetStartedButton = ({ textColor, bgColor, onClick }) => {
   return (
     <button
-      onClick={handleClick}
+      onClick={onClick}
       className={`${styles.button} ${styles[textColor]} ${styles[bgColor]}`}
     >
       Start your design journey &rarr;

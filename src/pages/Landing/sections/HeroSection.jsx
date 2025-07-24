@@ -1,7 +1,10 @@
 import GetStartedButton from "../components/GetStartedButton";
 import styles from "./HeroSection.module.css";
+import AuthModal from "../components/AuthModal";
+import { useState } from "react";
 
 const HeroSection = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <>
       <section className={styles.hero}>
@@ -19,7 +22,13 @@ const HeroSection = () => {
           with you to co-create a home that feels safe, reflective of who you
           are, & supportive of you holistically in this next chapter
         </p>
-        <GetStartedButton textColor="text-dark" bgColor="bgMuave" />
+        <GetStartedButton
+          textColor="text-dark"
+          bgColor="bgMuave"
+          onClick={() => setShowModal(true)}
+        />
+
+        {showModal && <AuthModal onClose={() => setShowModal(false)} />}
       </section>
     </>
   );
