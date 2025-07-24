@@ -1,7 +1,10 @@
 import styles from "./FooterSection.module.css";
 import GetStartedButton from "../components/GetStartedButton";
+import AuthModal from "../AuthModal/AuthModal";
+import { useState } from "react";
 
 const FooterSection = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <section className={styles.footer}>
       <h1>Ready to Transform Your Space?</h1>
@@ -15,7 +18,13 @@ const FooterSection = () => {
         storytelling (such as in photos, videos, or captions), feel free to
         share it in the quiz.
       </p>
-      <GetStartedButton textColor="text-light" bgColor="bgMaroon" />
+      <GetStartedButton
+        textColor="text-light"
+        bgColor="bgMaroon"
+        onClick={() => setShowModal(true)}
+      />
+
+      {showModal && <AuthModal onClose={() => setShowModal(false)} />}
     </section>
   );
 };

@@ -1,11 +1,9 @@
 import styles from "./AuthModal.module.css";
-import { login } from "../../../firebase/auth.js";
+import { signup } from "../../../firebase/auth.js";
 import { useState } from "react";
-/*import { Link, useNavigate } from "react-router-dom";*/
-import { getDoc, doc } from "firebase/firestore";
-import { db } from "../../../firebase/config";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function LoginForm({ onSuccess }) {
+export default function SignupForm({ onSuccess }) {
   const [form, setForm] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({ email: "", password: "", submit: "" });
 
@@ -20,23 +18,17 @@ export default function LoginForm({ onSuccess }) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(form.email)) {
-      newErrors.email("Please enter a valid email address.");
+      newErrors.email = "Please enter a valid email address.";
     }
 
     if (form.password.length < 6) {
-      newErrors.password("Password must be at least 6 characters.");
+      newErrors.password = "Password must be at least 6 characters.";
     }
 
     return newErrors;
   };
 
-  const checkForPrevResults = async (user) => {
-    const docRef = doc(db, "form", user.uid);
-    const docSnap = await getDoc(docRef);
-    return docSnap.exists() ? docSnap.data() : null;
-  };
-
-  const handleLogin = async (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     const newErrors = validate();
     if (Object.keys(newErrors).length > 0) {
@@ -45,19 +37,20 @@ export default function LoginForm({ onSuccess }) {
     }
 
     try {
-      const user = await login(form.email, form.password);
-      const previous = await checkForPrevResults(user);
-      onSuccess(previous);
+      const user = await signup(form.email, form.password);
+      console.log("Signuped up user:", user);
+      onSuccess();
     } catch (err) {
+      console.error("Signup error:", err);
       setErrors((prev) => ({
         ...prev,
-        submit: "Login failed. Please check your credentials.",
+        submit: "Sign up failed. Please check your credentials.",
       }));
     }
   };
 
   return (
-    <form onSubmit={handleLogin} noValidate className={styles.form}>
+    <form onSubmit={handleSignup} noValidate className={styles.form}>
       <input
         type="email"
         name="email"
@@ -78,7 +71,7 @@ export default function LoginForm({ onSuccess }) {
       />
       {errors.password && <p className={styles.errorText}>{errors.password}</p>}
       <button type="submit" className={styles.submitButton}>
-        Log In and Start Assessment
+        Sign Up
       </button>
       {errors.submit && <p className={styles.errorText}>{errors.submit}</p>}
     </form>

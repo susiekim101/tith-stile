@@ -1,6 +1,6 @@
 import GetStartedButton from "../components/GetStartedButton";
 import styles from "./HeroSection.module.css";
-import AuthModal from "../components/AuthModal";
+import AuthModal from "../AuthModal/AuthModal";
 import { useState } from "react";
 
 const HeroSection = () => {
