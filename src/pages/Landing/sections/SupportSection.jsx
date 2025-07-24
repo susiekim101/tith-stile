@@ -1,5 +1,5 @@
 import styles from "./SupportSection.module.css";
-import supportheart from "../../assets/supportheart.png";
+import supportheart from "../assets/supportheart.png";
 
 const SupportSection = () => {
   return (

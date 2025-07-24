@@ -1,4 +1,4 @@
-import MeetingCard from "./MeetingCard";
+import MeetingCard from "../components/MeetingCard";
 import styles from "./OverviewSection.module.css";
 
 const OverviewSection = () => {

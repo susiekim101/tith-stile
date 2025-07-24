@@ -1,5 +1,5 @@
 import styles from "./FooterSection.module.css";
-import GetStartedButton from "./GetStartedButton";
+import GetStartedButton from "../components/GetStartedButton";
 
 const FooterSection = () => {
   return (

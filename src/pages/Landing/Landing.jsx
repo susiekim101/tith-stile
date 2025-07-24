@@ -1,9 +1,9 @@
 import styles from "./Landing.module.css";
-import HeroSection from "./HeroSection";
-import OverviewSection from "./OverviewSection";
-import SupportSection from "./SupportSection";
-import StartSection from "./StartSection";
-import FooterSection from "./FooterSection";
+import HeroSection from "./sections/HeroSection";
+import OverviewSection from "./sections/OverviewSection";
+import SupportSection from "./sections/SupportSection";
+import StartSection from "./sections/StartSection";
+import FooterSection from "./sections/FooterSection";
 
 /*
  * Section - Tagline Mapping

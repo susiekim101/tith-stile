@@ -1,4 +1,4 @@
-import GetStartedButton from "./GetStartedButton";
+import GetStartedButton from "../components/GetStartedButton";
 import styles from "./HeroSection.module.css";
 
 const HeroSection = () => {

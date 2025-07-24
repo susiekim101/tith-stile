@@ -1,5 +1,5 @@
-import check from "../../assets/check.svg";
-import styles from "./StartSection.module.css";
+import check from "../assets/check.svg";
+import styles from "../sections/StartSection.module.css";
 
 const StartChecklist = ({ title, description }) => {
   return (

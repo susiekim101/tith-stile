@@ -1,5 +1,5 @@
 import styles from "./StartSection.module.css";
-import StartChecklist from "./StartChecklist";
+import StartChecklist from "../components/StartChecklist";
 
 const StartSection = () => {
   return (
