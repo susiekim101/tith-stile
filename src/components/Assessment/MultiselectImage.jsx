@@ -48,10 +48,10 @@ const MultiselectImage = ({ formValues, setFormValues, sectionId, id}) => {
 
             <div className={styles.grid}>
                 {options.map((opt, idx) => (
-                    <div key={idx} className={styles.imageBorder}>
+                    <div key={idx} className={styles.imageBorder} 
+                                    onClick={() => ToggleSelection(select, opt.label, setFormValues, id)}>
                         
-                        <div className={styles.imageOption}
-                            onClick={() => ToggleSelection(select, opt.label, setFormValues, id)}>
+                        <div className={styles.imageOption}>
                             <img src={opt.image} alt={opt.label} className={styles.image} />
                         </div>
 

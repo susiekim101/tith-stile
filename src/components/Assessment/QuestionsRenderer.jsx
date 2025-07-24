@@ -12,6 +12,7 @@ import styles from "../../css/Assessment.module.css";
 import ProgressBar from "../ProgressBar";
 import BreakButton from "./BreakButton";
 import DateInput from "./DateInput";
+import ImageUpload from "./ImageUpload";
 
 const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
     const [index, setIndex] = useState(0); // Questions 0-indexed in array
@@ -110,6 +111,12 @@ const QuestionsRenderer = ({formValues, setFormValues, handleSubmit}) => {
                                 sectionId={sectionId}
                                 id={id}/>
             cardStyle=styles.sectionCard;
+            break;
+        case "image upload":
+            questionComponent = <ImageUpload 
+                                formValues={formValues}
+                                setFormValues={setFormValues}
+                                id={id}/>
             break;
         default:
             questionComponent = <p>Unsupported question type</p>

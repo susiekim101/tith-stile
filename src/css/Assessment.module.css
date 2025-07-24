@@ -73,7 +73,6 @@
 
 .imageContainer {
   height: 70vh;
-  border: 1px dotted red;
 }
 
 .questionCard, .sectionCard, .imageCard {
