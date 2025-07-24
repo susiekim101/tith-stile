@@ -1,9 +1,9 @@
-import styles from "../css/Login.module.css";
-import { signup } from "../firebase/auth.js";
+import styles from "./AuthModal.module.css";
+import { signup } from "../../../firebase/auth.js";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function Signup() {
+export default function SignupForm({ onSuccess }) {
   const [form, setForm] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({ email: "", password: "", submit: "" });
 
@@ -18,11 +18,11 @@ export default function Signup() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(form.email)) {
-      newErrors.email("Please enter a valid email address.");
+      newErrors.email = "Please enter a valid email address.";
     }
 
     if (form.password.length < 6) {
-      newErrors.password("Password must be at least 6 characters.");
+      newErrors.password = "Password must be at least 6 characters.";
     }
 
     return newErrors;
@@ -38,8 +38,10 @@ export default function Signup() {
 
     try {
       const user = await signup(form.email, form.password);
+      console.log("Signuped up user:", user);
       onSuccess();
     } catch (err) {
+      console.error("Signup error:", err);
       setErrors((prev) => ({
         ...prev,
         submit: "Sign up failed. Please check your credentials.",
@@ -47,41 +49,8 @@ export default function Signup() {
     }
   };
 
-  {
-    /*
-  const handleSignup = async (e) => {
-    e.preventDefault();
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    let valid = true;
-
-    if (!emailRegex.test(email)) {
-      setEmailError("Please enter a valid email address.");
-      valid = false;
-    }
-
-    if (password.length < 6) {
-      setPasswordError("Password must be at least 6 characters.");
-      valid = false;
-    }
-
-    if (!valid) return;
-
-    try {
-      const user = await signup(email, password);
-      console.log("User signed up:", user);
-      setError("");
-      navigate("/quiz");
-    } catch (error) {
-      setError("Sign up failed. Please check your credentials.");
-      console.error("Error signing up in:", error);
-    }
-  };
-  */
-  }
-
   return (
-    <form onSubmit={handleSignup} noValidate>
+    <form onSubmit={handleSignup} noValidate className={styles.form}>
       <input
         type="email"
         name="email"
@@ -101,7 +70,7 @@ export default function Signup() {
         required
       />
       {errors.password && <p className={styles.errorText}>{errors.password}</p>}
-      <button type="submit" className={styles.button}>
+      <button type="submit" className={styles.submitButton}>
         Sign Up
       </button>
       {errors.submit && <p className={styles.errorText}>{errors.submit}</p>}

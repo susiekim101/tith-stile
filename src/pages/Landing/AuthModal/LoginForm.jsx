@@ -1,9 +1,11 @@
-import styles from "../css/Login.module.css";
-import { signup } from "../firebase/auth.js";
+import styles from "./AuthModal.module.css";
+import { login } from "../../../firebase/auth.js";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+/*import { Link, useNavigate } from "react-router-dom";*/
+import { getDoc, doc } from "firebase/firestore";
+import { db } from "../../../firebase/config.js";
 
-export default function Signup() {
+export default function LoginForm({ onSuccess }) {
   const [form, setForm] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({ email: "", password: "", submit: "" });
 
@@ -18,17 +20,23 @@ export default function Signup() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(form.email)) {
-      newErrors.email("Please enter a valid email address.");
+      newErrors.email = "Please enter a valid email address.";
     }
 
     if (form.password.length < 6) {
-      newErrors.password("Password must be at least 6 characters.");
+      newErrors.password = "Password must be at least 6 characters.";
     }
 
     return newErrors;
   };
 
-  const handleSignup = async (e) => {
+  const checkForPrevResults = async (user) => {
+    const docRef = doc(db, "form", user.uid);
+    const docSnap = await getDoc(docRef);
+    return docSnap.exists() ? docSnap.data() : null;
+  };
+
+  const handleLogin = async (e) => {
     e.preventDefault();
     const newErrors = validate();
     if (Object.keys(newErrors).length > 0) {
@@ -37,51 +45,20 @@ export default function Signup() {
     }
 
     try {
-      const user = await signup(form.email, form.password);
-      onSuccess();
+      const user = await login(form.email, form.password);
+      const previous = await checkForPrevResults(user);
+      onSuccess(previous);
     } catch (err) {
+      console.error("Login error:", err);
       setErrors((prev) => ({
         ...prev,
-        submit: "Sign up failed. Please check your credentials.",
+        submit: "Login failed. Please check your credentials.",
       }));
     }
   };
 
-  {
-    /*
-  const handleSignup = async (e) => {
-    e.preventDefault();
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    let valid = true;
-
-    if (!emailRegex.test(email)) {
-      setEmailError("Please enter a valid email address.");
-      valid = false;
-    }
-
-    if (password.length < 6) {
-      setPasswordError("Password must be at least 6 characters.");
-      valid = false;
-    }
-
-    if (!valid) return;
-
-    try {
-      const user = await signup(email, password);
-      console.log("User signed up:", user);
-      setError("");
-      navigate("/quiz");
-    } catch (error) {
-      setError("Sign up failed. Please check your credentials.");
-      console.error("Error signing up in:", error);
-    }
-  };
-  */
-  }
-
   return (
-    <form onSubmit={handleSignup} noValidate>
+    <form onSubmit={handleLogin} noValidate className={styles.form}>
       <input
         type="email"
         name="email"
@@ -101,8 +78,8 @@ export default function Signup() {
         required
       />
       {errors.password && <p className={styles.errorText}>{errors.password}</p>}
-      <button type="submit" className={styles.button}>
-        Sign Up
+      <button type="submit" className={styles.submitButton}>
+        Log In and Start Assessment
       </button>
       {errors.submit && <p className={styles.errorText}>{errors.submit}</p>}
     </form>
