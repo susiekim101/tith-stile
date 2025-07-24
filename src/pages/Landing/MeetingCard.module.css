@@ -1,7 +1,7 @@
 .card {
   background-color: #cda532;
   border-radius: 1rem;
-  padding: 1.5rem 1rem;
+  padding: 0rem 1rem 1rem;
   width: 15rem;
   box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
   display: flex;
@@ -40,7 +40,7 @@
 
 @media (max-width: 768px) {
   .card {
-    width: 80%;
+    width: 100%;
     max-width: 18rem;
   }
   .title {
