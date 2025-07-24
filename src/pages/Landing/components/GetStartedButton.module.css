@@ -1,0 +1,28 @@
+button {
+  border-radius: 5rem;
+  padding: 0.5em 5em;
+  border: none;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #e1c2cfd8;
+}
+
+.bgMuave {
+  background-color: #e1c2cf;
+}
+
+.bgMaroon {
+  background-color: #640a09;
+}
+
+.text-dark {
+  color: black;
+}
+
+.text-light {
+  color: white;
+}

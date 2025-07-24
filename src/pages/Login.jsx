@@ -1,17 +1,63 @@
 import styles from "../css/Login.module.css";
-import { login, loginWithGoogle } from "../firebase/auth.js";
+import { login } from "../firebase/auth.js";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+/*import { Link, useNavigate } from "react-router-dom";*/
 import { getDoc, doc } from "firebase/firestore";
-import { auth, db } from "../firebase/config";
+import { db } from "../firebase/config";
 
 export default function Login() {
+  const [form, setForm] = useState({ email: "", password: "" });
+  const [errors, setErrors] = useState({ email: "", password: "", submit: "" });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: "", submit: " " }));
+  };
+
+  const validate = () => {
+    const newErrors = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(form.email)) {
+      newErrors.email("Please enter a valid email address.");
+    }
+
+    if (form.password.length < 6) {
+      newErrors.password("Password must be at least 6 characters.");
+    }
+
+    return newErrors;
+  };
+
   const checkForPrevResults = async (user) => {
     const docRef = doc(db, "form", user.uid);
     const docSnap = await getDoc(docRef);
     return docSnap.exists() ? docSnap.data() : null;
   };
 
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const newErrors = validate();
+    if (Object.keys(newErrors).length > 0) {
+      setErrors((prev) => ({ ...prev, ...newErrors }));
+      return;
+    }
+
+    try {
+      const user = await login(form.email, form.password);
+      const previous = await checkForPrevResults(user);
+      onSuccess(previous);
+    } catch (err) {
+      setErrors((prev) => ({
+        ...prev,
+        submit: "Login failed. Please check your credentials.",
+      }));
+    }
+  };
+
+  {
+    /*
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -60,43 +106,35 @@ export default function Login() {
   };
 
   console.log("Login component rendered");
-  return (
-    <div className={styles.container}>
-      <div>
-        <p>Log In</p>
-      </div>
-      <form onSubmit={handleLogin} noValidate>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-            setEmailError("");
-          }}
-          required
-        />
-        {emailError && <p className={styles.errorText}>{emailError}</p>}
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-            setPasswordError("");
-          }}
-          required
-        />
-        {passwordError && <p className={styles.errorText}>{passwordError}</p>}
-        <button type="submit" className={styles.button}>
-          Log In
-        </button>
-      </form>
 
-      {error && <p className={styles.errorText}>{error}</p>}
-      <Link to="/signup" className={styles.link}>
-        Don't have an account? Sign up
-      </Link>
-    </div>
+  */
+  }
+
+  return (
+    <form onSubmit={handleLogin} noValidate>
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        value={form.email}
+        onChange={handleChange}
+        required
+      />
+      {errors.email && <p className={styles.errorText}>{errors.email}</p>}
+
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        value={form.password}
+        onChange={handleChange}
+        required
+      />
+      {errors.password && <p className={styles.errorText}>{errors.password}</p>}
+      <button type="submit" className={styles.button}>
+        Log In
+      </button>
+      {errors.submit && <p className={styles.errorText}>{errors.submit}</p>}
+    </form>
   );
 }

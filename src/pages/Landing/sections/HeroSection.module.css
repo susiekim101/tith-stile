@@ -1,0 +1,38 @@
+.p {
+  max-width: 50%;
+  font-size: 1rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.h1 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 3rem;
+}
+
+.heroLogo {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+@media (max-width: 768px) {
+  .p {
+    font-size: 0.95rem;
+    max-width: 80%;
+  }
+
+  .h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .p {
+    font-size: 0.9rem;
+    max-width: 80%;
+  }
+  .h1 {
+    font-size: 1.8rem;
+  }
+}
