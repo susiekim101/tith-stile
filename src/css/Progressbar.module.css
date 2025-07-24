@@ -9,7 +9,7 @@
 
 .fillBar {
     height: 100%;
-    background-color: var(--main-mustard);
+    background-color: var(--main-maroon);
     transition: 1s ease-in-out;
     border-radius: 10px;
 }
