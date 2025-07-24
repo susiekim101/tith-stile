@@ -12,9 +12,7 @@
 
 @media (max-width: 768px) {
   .cardContainer {
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
+    gap: 1.5rem;
   }
 }
 

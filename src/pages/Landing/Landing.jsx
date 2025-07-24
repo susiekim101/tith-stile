@@ -1,8 +1,8 @@
 import "./Landing.css";
 import HeroSection from "./HeroSection";
 import OverviewSection from "./OverviewSection";
-/*import Support from "./SupportSection";
-import Start from "./StartSection";*/
+import SupportSection from "./SupportSection";
+import StartSection from "./StartSection";
 
 /*
  * Section - Tagline Mapping
@@ -14,14 +14,12 @@ import Start from "./StartSection";*/
 
 function Landing() {
   return (
-    <>
+    <div className="landingWrapper">
       <HeroSection />
       <OverviewSection />
-      {/*
       <SupportSection />
       <StartSection />
-      */}
-    </>
+    </div>
   );
 }
 
