@@ -1,7 +1,7 @@
 import {doc, getDoc} from "firebase/firestore";
 import {useEffect, useState} from "react";
-import {db} from "../../firebase/config";
-import styles from "../../css/Assessment/SelectImage.module.css";
+import {db} from "../../../firebase/config";
+import styles from "./SelectImage.module.css";
 
 const SelectImage = ({formValues, setFormValues, sectionId, id}) => {
     // Initialize variable for selected and options to display

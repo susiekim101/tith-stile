@@ -1,4 +1,4 @@
-import styles from "../css/ProgressBar.module.css";
+import styles from "./ProgressBar.module.css";
 
 const ProgressBar = ({index, total}) => {
     console.log(index);

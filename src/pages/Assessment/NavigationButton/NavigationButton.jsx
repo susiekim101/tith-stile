@@ -1,6 +1,9 @@
-import styles from "../../css/Assessment/NavigationButton.module.css";
+import styles from "./NavigationButton.module.css";
 import {useEffect, useState} from "react";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
+import skip from "../assets/skip-icon.svg";
+import prev from "../assets/left-arrow.svg";
+import next from "../assets/right-arrow.svg";
 
 const NavigationButton = ({index, setIndex, total, handleSubmit}) => {
     const [skipIcon, setSkipURL] = useState(null);
@@ -24,7 +27,7 @@ const NavigationButton = ({index, setIndex, total, handleSubmit}) => {
                                 onClick={() => setIndex(prev => Math.max(0, prev - 1))}
                                 disabled={index === 0}
                                 className={styles.prev} >
-                                ← Previous
+                                <img src={prev} className={styles.icon}/>
                             </button>)
             }
 
@@ -33,8 +36,7 @@ const NavigationButton = ({index, setIndex, total, handleSubmit}) => {
                                         onClick={() => setIndex(prev => Math.min(total - 1, prev + 1))}
                                         disabled={index === total-1}
                                         className={styles.skipContainer}>
-                                            <div className={styles.skip}> Skip </div>
-                                            {skipIcon && <img src={skipIcon} className={styles.skipIcon}/>}
+                                            <img src={skip} className={styles.icon}/>
                                         </button>) : 
                                         (<p></p>)
                 }
@@ -45,7 +47,7 @@ const NavigationButton = ({index, setIndex, total, handleSubmit}) => {
                                         onClick={() => setIndex(prev => Math.min(total - 1, prev + 1))}
                                         disabled={index === total - 1}
                                         className={styles.next}>
-                                        Next →
+                                        <img src={next} className={styles.icon}/>
                                     </button>) : 
                                     (<button
                                         type="button"

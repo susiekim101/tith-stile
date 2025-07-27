@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth, db } from "../firebase/config";
+import { auth, db } from "../../firebase/config";
 import { doc, setDoc } from "firebase/firestore";
-import QuestionsRenderer from "../components/Assessment/QuestionsRenderer";
+import QuestionsRenderer from "./components/QuestionsRenderer";
 
 const saveFormToFirestore = async (results) => {
   if (!auth.currentUser) return;

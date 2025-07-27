@@ -1,4 +1,4 @@
-import styles from "../../css/Assessment/DateInput.module.css";
+import styles from "./DateInput.module.css";
 
 const DateInput = ({formValues, setFormValues, id}) => {
     const handleResponse = (date) => {

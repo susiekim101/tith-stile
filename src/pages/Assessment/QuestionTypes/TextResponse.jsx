@@ -1,4 +1,4 @@
-import styles from "../../css/Assessment/TextResponse.module.css";
+import styles from "../QuestionTypes/TextResponse.module.css";
 
 const TextResponse = ({formValues, setFormValues, id}) => {
     const handleResponse = (text) => {

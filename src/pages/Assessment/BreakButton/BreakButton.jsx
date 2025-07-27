@@ -1,13 +1,15 @@
 import {useRef, useEffect, useState} from "react";
-import {getDownloadURL, getStorage, ref} from "firebase/storage";
-import styles from "../../css/Assessment/BreakButton.module.css";
+// import {getDownloadURL, getStorage, ref} from "firebase/storage";
+import styles from "../../Assessment//BreakButton/BreakButton.module.css";
+import coffee from "../assets/coffee.svg";
 
 const BreakButton = () => {
     const dialogRef = useRef(null);
     const timeoutRef = useRef(null);
     const TIMER = 1; // MINUTES
-    const [coffeeIcon, setCoffeeURL] = useState(null);
+    // const [coffeeIcon, setCoffeeURL] = useState(null);
 
+    /*
     useEffect(() => {
         const storage = getStorage();
         const coffeeRef = ref(storage, "icons/coffee.png");
@@ -19,7 +21,7 @@ const BreakButton = () => {
         timeoutRef.current = setTimeout(openDialog, TIMER * 60 * 1000);
 
         return () => {clearTimeout(timeoutRef.current)};
-    }, []);
+    }, []);*/
 
     const openDialog = () => {
         dialogRef.current?.showModal();
@@ -46,7 +48,7 @@ const BreakButton = () => {
             <dialog ref={dialogRef}>
                 <div className={styles.dialogContainer}>
                     <div className={styles.iconContainer}>
-                        <img src={coffeeIcon} className={styles.dialogIcon}></img>
+                        <img src={coffee} className={styles.dialogIcon}></img>
                     </div>
 
                     <div className={styles.dialogTitle}>Break Time!</div>

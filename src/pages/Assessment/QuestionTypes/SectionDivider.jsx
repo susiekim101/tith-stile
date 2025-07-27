@@ -1,9 +1,9 @@
-import {doc, getDoc} from "firebase/firestore";
-import {useEffect, useState} from "react";
-import {db} from "../../firebase/config";
-import styles from "../../css/Assessment/SectionDivider.module.css";
+import { doc, getDoc } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { db } from "../../../firebase/config";
+import styles from "../QuestionTypes/SectionDivider.module.css";
 
-const SectionDivider = ({sectionId, id}) => {
+const SectionDivider = ({ sectionId, id }) => {
     const [brief, setBrief] = useState("");
     const [section, setSection] = useState("");
 
@@ -13,7 +13,7 @@ const SectionDivider = ({sectionId, id}) => {
             const docSnap = await getDoc(docRef);
 
 
-            if(docSnap.exists()) {
+            if (docSnap.exists()) {
                 setBrief(docSnap.data().brief);
                 setSection(docSnap.data().section);
             } else {
