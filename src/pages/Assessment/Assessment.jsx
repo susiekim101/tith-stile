@@ -19,7 +19,7 @@ const saveFormToFirestore = async (results) => {
   }
 };
 
-const Quiz = () => {
+const Assessment = () => {
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState({});
 
@@ -45,4 +45,4 @@ const Quiz = () => {
   );
 }
 
-export default Quiz;
+export default Assessment;

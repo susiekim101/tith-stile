@@ -117,3 +117,8 @@
   height: 2em;
   width: 2em;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

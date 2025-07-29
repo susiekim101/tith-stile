@@ -13,7 +13,7 @@ export default function AuthModal({ onClose }) {
     if (previousResults) {
       navigate("/results", { state: { quizData: previousResults } });
     } else {
-      navigate("/quiz");
+      navigate("/assessment");
     }
   };
 

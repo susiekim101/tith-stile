@@ -16,7 +16,8 @@ import ProgressBar from "../ProgressBar/ProgressBar";
 import BreakButton from "../BreakButton/BreakButton";
 import DateInput from "./DateInput";
 import logOut from "../assets/log-out.svg";
-import { logout } from "../../../firebase/config";
+import { logout } from "../../../firebase/auth";
+import { Link } from "react-router-dom";
 
 
 const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
@@ -25,6 +26,7 @@ const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
     const [totalQuestions, setTotalQuestions] = useState(0);
     let questionComponent;
     let cardStyle = styles.questionCard;
+
 
     // Fetch questions from Firestore and store in array
     useEffect(() => {
@@ -127,9 +129,9 @@ const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
             break;
         case "image upload":
             questionComponent = <ImageUpload
-                formValues={formValues}
                 setFormValues={setFormValues}
-                id={id} />
+                id={id} 
+                />
             break;
         default:
             questionComponent = <p>Unsupported question type</p>
@@ -140,12 +142,14 @@ const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
             <div className={styles.questionsContainer}>
                 <div>
                     <div className={styles.header}>
-                        <button type="button"
-                            onClick={() => handleLogout}
-                            className={styles.logoutContainer}>
-                            <img src={logOut} className={styles.logoutIcon}/>
-                            <div>Log Out</div>
-                        </button>
+                        <Link to="/landing">
+                            <button type="button"
+                                onClick={() => handleLogout}
+                                className={styles.logoutContainer}>
+                                <img src={logOut} className={styles.logoutIcon}/>
+                                <div>Log Out</div>
+                            </button>
+                        </Link>
                         <BreakButton />
                     </div>
 

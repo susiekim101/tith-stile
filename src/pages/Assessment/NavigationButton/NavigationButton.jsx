@@ -1,12 +1,10 @@
 import styles from "./NavigationButton.module.css";
-import {useEffect, useState} from "react";
-import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import skip from "../assets/skip-icon.svg";
 import prev from "../assets/left-arrow.svg";
 import next from "../assets/right-arrow.svg";
 
 const NavigationButton = ({index, setIndex, total, handleSubmit}) => {
-    const [skipIcon, setSkipURL] = useState(null);
+    /*const [skipIcon, setSkipURL] = useState(null);
 
     useEffect(() => {
         const storage = getStorage();
@@ -15,7 +13,7 @@ const NavigationButton = ({index, setIndex, total, handleSubmit}) => {
         getDownloadURL(skipRef)
             .then(url => setSkipURL(url))
             .catch(error => console.error("Failed to fetch skip icon: ", error));
-    }, []); 
+    }, []); */
 
     return (
         <>
