@@ -16,6 +16,7 @@ import ProgressBar from "../ProgressBar/ProgressBar";
 import BreakButton from "../BreakButton/BreakButton";
 import DateInput from "./DateInput";
 import logOut from "../assets/log-out.svg";
+import { logout } from "../../../firebase/config";
 
 
 const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
@@ -57,6 +58,14 @@ const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
     const currentQuestion = questions[index];
     if (!currentQuestion)
         return <p className={styles.loading}>Loading Question...</p>
+
+    const handleLogout = async () => {
+        try {
+            await logout();
+        } catch (err) {
+            console.error("Logout failed: ", err);
+        }
+    }
 
     const id = questions[index].id;
     const sectionId = questions[index].sectionId;
@@ -132,7 +141,7 @@ const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
                 <div>
                     <div className={styles.header}>
                         <button type="button"
-                            onClick={() => console.log("Temporary button clicked.")}
+                            onClick={() => handleLogout}
                             className={styles.logoutContainer}>
                             <img src={logOut} className={styles.logoutIcon}/>
                             <div>Log Out</div>
