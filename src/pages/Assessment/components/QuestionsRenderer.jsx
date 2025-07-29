@@ -15,6 +15,7 @@ import styles from "../Assessment.module.css";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import BreakButton from "../BreakButton/BreakButton";
 import DateInput from "./DateInput";
+import logOut from "../assets/log-out.svg";
 
 
 const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
@@ -131,8 +132,10 @@ const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
                 <div>
                     <div className={styles.header}>
                         <button type="button"
-                            onClick={() => console.log("Temporary button clicked.")}>
-                            <div>Temporary Button</div>
+                            onClick={() => console.log("Temporary button clicked.")}
+                            className={styles.logoutContainer}>
+                            <img src={logOut} className={styles.logoutIcon}/>
+                            <div>Log Out</div>
                         </button>
                         <BreakButton />
                     </div>

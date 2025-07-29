@@ -34,7 +34,6 @@
 /* QUIZ LABEL */
 .labelContainer{
   width: 100%;
-  margin: 1rem 0;
 }
 
 .label {
@@ -107,3 +106,14 @@
   margin: 0 0 0.5rem 0;
 }
 
+.logoutContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
+.logoutIcon {
+  height: 2em;
+  width: 2em;
+}

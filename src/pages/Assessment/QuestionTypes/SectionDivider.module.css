@@ -1,6 +1,13 @@
 .sectionContainer {
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2rem;
+    overflow-y: auto;
+    margin: auto 0;
+    height: 100%;
 }
+
 .section {
     font-family: "OrganGrinder";
     font-size: 4rem;
