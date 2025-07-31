@@ -1,28 +1,33 @@
-import { 
-        getStorage, 
-        ref, 
-        uploadBytes, 
-        getDownloadURL, 
-        listAll, 
-        deleteObject 
+import { useState, DragEvent, ChangeEvent } from "react";
+import {
+    getStorage,
+    ref,
+    uploadBytes,
+    getDownloadURL,
+    listAll,
+    deleteObject,
 } from "firebase/storage";
-import { auth } from "../../../firebase/config";
+import { auth, storage } from "../../../firebase/config";
+import styles from "../QuestionTypes/ImageUpload.module.css";
+import upload from "../assets/upload.svg";
+import uploadcomplete from "../assets/upload-complete.svg";
 
-const ImageUpload = ({setFormValues, id}) => {
+const ImageUpload = ( {formValues, setFormValues, id } ) => {
     const MAX_FILES = 5;
     const user = auth.currentUser;
     const userId = user?.uid;
+    const [selectedImages, setSelectedImages] = useState([]);
+    const [isDragging, setIsDragging] = useState(false);
 
+    if(!formValues[id]) {
+        formValues[id] = [];
+    }
     const deleteImages = async () => {
-        const storage = getStorage();
         const folderRef = ref(storage, `user-images/${userId}`);
 
         try {
-            // Fetch list of all objects in folder
-            const result = await listAll(folderRef);
-            // Create a promise to delete all objects
-            const deletePromises = result.items.map((itemRef) => deleteObject(itemRef));
-
+            const images = await listAll(folderRef);
+            const deletePromises = images.items.map((itemRef) => deleteObject(itemRef)); 
             await Promise.all(deletePromises);
             console.log("All images deleted for user");
         } catch (error) {
@@ -30,37 +35,95 @@ const ImageUpload = ({setFormValues, id}) => {
         }
     }
 
-    const handleImageUpload = async (files) => {
-        // Convers uploaded files into array
-        const fileList = Array.from(files).slice(0, MAX_FILES);
-        const storage = getStorage();
-
-
+    const handleImageUpload = async (imageList = []) => {
         await deleteImages();
-        // Array of promises
-        const uploadPromise = fileList.map(async (file) => {
+
+        const uploadPromise = imageList.map(async (image) => {
             if(!userId) {
                 console.error("User not authenticated");
                 return;
             }
-            const imageRef = ref(storage, `user-images/${userId}/${file.name}`);
-            await uploadBytes(imageRef, file);
+            // Obtain reference to image
+            const imageRef = ref(storage, `user-images/${userId}/${image.name}`);
+            // Upload image to imageRef
+            await uploadBytes(imageRef, image);
+            // Obtain URL to uploaded image
             return await getDownloadURL(imageRef);
         });
 
         try {
             const urls = await Promise.all(uploadPromise);
             setFormValues((prev) => ({...prev, [id]: urls}));
+            console.log(formValues[id]);
         } catch (error) {
-            console.error("Upload failed:", error);
+            console.error("Upload failed: ", error);
         }
+    };
+    const onImagesSelected = (images) => {
+        if (!images || images.length === 0) 
+            return;
+        const trimmedImages = Array.from(images).slice(0, MAX_FILES);
+        setSelectedImages(trimmedImages);
+        handleImageUpload(trimmedImages); 
+    };
+
+    const handleDragOver = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsDragging(true);
+        console.log("is dragging");
+    };
+
+    const handleDragLeave = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsDragging(false);
+        console.log("stopped dragging");
+    }
+
+    const handleDrop = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsDragging(false);
+        onImagesSelected(e.dataTransfer.files);
+        console.log("handle dragging");
+    }
+
+    const handleImageInputChange = (e) => {
+        onImagesSelected(e.target.files);
     };
 
     return (
         <>
-            <input type="file" accept="image/*" onChange={(e) => handleImageUpload(e.target.files, userId)} multiple/>
+        <div
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+            className={`${styles.uploadContainer} ${isDragging ? "styles.dragging" : ""}`}
+        >
+            <input 
+                type="file"
+                accept="image/*"
+                multiple
+                onChange={handleImageInputChange}
+                className={styles.hiddenInput}
+                id="image-upload"
+            />
+            <label 
+                htmlFor="image-upload"
+                className={styles.uploadButton}
+            >
+                <div>{(selectedImages.length == 0 && formValues[id].length == 0) ? <img src={upload} className={styles.uploadIcon}/> : <img src={uploadcomplete} className={styles.uploadIcon}/>}</div>
+                <div className={styles.uploadText}>Upload Images</div>
+            </label>
+
+            {console.log("Selected Images Length: ", selectedImages.length)}
+            {console.log("Form Values Length: ", formValues[id].length)}
+
+        </div>
         </>
     );
+
 }
 
 export default ImageUpload;

@@ -10,14 +10,12 @@ import SectionDivider from "../QuestionTypes/SectionDivider";
 import ImageUpload from "../QuestionTypes/ImageUpload";
 
 import NavBar from "../NavigationButton/NavigationButton";
+import HeaderButton from "../Header/HeaderButtons";
 
 import styles from "../Assessment.module.css";
 import ProgressBar from "../ProgressBar/ProgressBar";
-import BreakButton from "../BreakButton/BreakButton";
 import DateInput from "./DateInput";
-import logOut from "../assets/log-out.svg";
-import { logout } from "../../../firebase/auth";
-import { Link } from "react-router-dom";
+
 
 
 const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
@@ -60,14 +58,6 @@ const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
     const currentQuestion = questions[index];
     if (!currentQuestion)
         return <p className={styles.loading}>Loading Question...</p>
-
-    const handleLogout = async () => {
-        try {
-            await logout();
-        } catch (err) {
-            console.error("Logout failed: ", err);
-        }
-    }
 
     const id = questions[index].id;
     const sectionId = questions[index].sectionId;
@@ -129,6 +119,7 @@ const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
             break;
         case "image upload":
             questionComponent = <ImageUpload
+                formValues={formValues}
                 setFormValues={setFormValues}
                 id={id} 
                 />
@@ -141,17 +132,7 @@ const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
         <>
             <div className={styles.questionsContainer}>
                 <div>
-                    <div className={styles.header}>
-                        <Link to="/landing">
-                            <button type="button"
-                                onClick={() => handleLogout}
-                                className={styles.logoutContainer}>
-                                <img src={logOut} className={styles.logoutIcon}/>
-                                <div>Log Out</div>
-                            </button>
-                        </Link>
-                        <BreakButton />
-                    </div>
+                    <HeaderButton/>
 
                     <div>
                         <div className={styles.barContainer}>
@@ -183,6 +164,7 @@ const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
                         </div>
                     </div>
                 </div>
+                
                 <NavBar
                     index={index}
                     setIndex={setIndex}
