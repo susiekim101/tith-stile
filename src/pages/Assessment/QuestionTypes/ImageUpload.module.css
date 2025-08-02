@@ -1,0 +1,47 @@
+.uploadContainer {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed gray;
+    text-align: center;
+    
+}
+
+.dragging {
+    border-color: blue;
+    background-color: white;
+}
+
+.hiddenInput {
+    display: none;
+}
+
+.uploadButton {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    gap: 1em;
+}
+
+.uploadButton:hover {
+    cursor: pointer;
+}
+
+.uploadIcon {
+    width: 7em;
+    height: 7em;
+}
+
+.uploadText {
+    font-size: 1em;
+    border: 2px solid var(--main-pink);
+    background-color: var(--main-pink);
+    border-radius: 50px;
+    padding: 0.5em;
+}

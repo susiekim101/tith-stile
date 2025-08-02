@@ -1,0 +1,19 @@
+.dateResponse {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.datearea {
+  background-color: var(--main-mustard);
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  flex: 0 0 auto;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
+}

@@ -1,0 +1,15 @@
+.barContainer {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 10px;
+    background-color: var(--main-mustard);
+    border-radius: 10px;
+}
+
+.fillBar {
+    height: 100%;
+    background-color: var(--main-maroon);
+    transition: 1s ease-in-out;
+    border-radius: 10px;
+}

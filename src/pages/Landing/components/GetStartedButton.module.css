@@ -1,4 +1,4 @@
-button {
+.button {
   border-radius: 5rem;
   padding: 0.5em 5em;
   border: none;
@@ -6,7 +6,7 @@ button {
   margin-top: 1rem;
 }
 
-button:hover {
+.button:hover {
   cursor: pointer;
   background-color: #e1c2cfd8;
 }

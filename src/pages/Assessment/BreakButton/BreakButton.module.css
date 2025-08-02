@@ -1,0 +1,70 @@
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--main-beige);
+  color: var(--main-maroon);
+  padding: 1rem;
+  border-radius: 15px;
+  width: 50vw;
+  height: 35vh;
+}
+
+dialog::backdrop {
+    background-color: rgba(200, 200, 200, 0.5);
+}
+
+.button {
+    font-size: 1em;
+    background-color: var(--main-mustard);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.dialogContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.dialogClose {
+    background-color: var(--main-mustard);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 1em;
+}
+
+.dialogClose:hover {
+    cursor: pointer;
+    background-color: var(--main-mustard);
+}
+.dialogTitle {
+    font-family: "OrganGrinder";
+    font-size: 3em;
+}
+
+.dialogText {
+    font-size: 1.5em;
+}
+
+.iconContainer {
+    display: flex;
+    justify-content: center;
+    height: 5em;
+}
+
+.dialogIcon {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    
+}
