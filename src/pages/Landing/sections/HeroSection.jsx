@@ -4,7 +4,7 @@ import AuthModal from "../AuthModal/AuthModal";
 import { useState } from "react";
 
 const HeroSection = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [authOpen, setAuthOpen] = useState(false);
   return (
     <>
       <section className={styles.hero}>
@@ -25,10 +25,10 @@ const HeroSection = () => {
         <GetStartedButton
           textColor="text-dark"
           bgColor="bgMuave"
-          onClick={() => setShowModal(true)}
+          onClick={() => setAuthOpen(true)}
         />
 
-        {showModal && <AuthModal onClose={() => setShowModal(false)} />}
+        <AuthModal open={authOpen} onOpenChange={setAuthOpen} />
       </section>
     </>
   );

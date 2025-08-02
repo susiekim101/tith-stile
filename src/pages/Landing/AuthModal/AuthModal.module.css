@@ -12,15 +12,23 @@
   background: white;
   padding: 2rem;
   border-radius: 1rem;
-  width: 100%;
+  width: 90vw;
   max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  position: relative;
-  overflow: hidden;
+  position: fixed; /* Key: position fixed */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center it */
+  z-index: 1001;
 }
 
+/* Close button */
 .closeButton {
   position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
   border-radius: 50%;
   background-color: red;
   color: white;
@@ -28,13 +36,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  border: none;
-  line-height: 1;
   height: 20px;
   width: 20px;
-  top: 0em;
-  right: 1rem;
+  border: none;
+  line-height: 1;
   cursor: pointer;
 }
 
@@ -42,6 +47,7 @@
   background-color: rgb(215, 2, 2);
 }
 
+/* Toggle button header */
 .toggleHeader {
   background-color: #bcc5bf;
   border-radius: 10px;
@@ -65,41 +71,36 @@
   text-align: center;
   transition: background-color 0.2s ease;
   border-radius: 5px;
-  color: black;
 }
 
 .toggleHeader button:focus,
 .toggleHeader button.active {
   background-color: #ddeee2;
-  color: black;
 }
 
-.form {
-}
-
+/* Form and inputs */
 .form input {
   width: 100%;
   background: #e2dace;
   border: 0.5px solid black;
   border-radius: 5px;
   padding: 0.5rem 0.4rem;
-  margin: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
   color: black;
 }
 
 .form input:focus {
-  margin: 0;
   outline: none;
   box-shadow: none;
 }
 
+/* Error and submit */
 .errorText {
   color: red;
-  font-size: 1rem;
-  line-height: 0.5rem;
+  font-size: 0.8rem;
   margin: 0;
   padding: 0;
-  font-size: 0.8rem;
 }
 
 .submitButton {
@@ -109,4 +110,5 @@
   border: none;
   padding: 0.6rem 1rem;
   cursor: pointer;
+  margin-top: 1rem;
 }

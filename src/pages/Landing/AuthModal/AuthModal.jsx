@@ -1,15 +1,16 @@
 import { useState } from "react";
+import * as Dialog from "@radix-ui/react-dialog";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 import { useNavigate } from "react-router-dom";
 import styles from "./AuthModal.module.css";
 
-export default function AuthModal({ onClose }) {
+export default function AuthModal({ open, onOpenChange }) {
   const [mode, setMode] = useState("login");
   const navigate = useNavigate();
 
   const handleSuccess = (previousResults) => {
-    onClose();
+    onOpenChange(false); // close dialog
     if (previousResults) {
       navigate("/results", { state: { quizData: previousResults } });
     } else {
@@ -18,22 +19,36 @@ export default function AuthModal({ onClose }) {
   };
 
   return (
-    <div className={styles.modalOverlay}>
-      <div className={styles.modalContent}>
-        <button className={styles.closeButton} onClick={onClose}>
-          x
-        </button>
+    <Dialog.Root open={open} onOpenChange={onOpenChange}>
+      <Dialog.Overlay className={styles.modalOverlay} />
+
+      <Dialog.Content
+        className={styles.modalContent}
+        aria-labelledby="dialog-title"
+        aria-describedby="dialog-description"
+      >
+        <Dialog.Title id="dialog-title" style={{ display: "none" }}>
+          {mode === "login" ? "Log In" : "Sign Up"}
+        </Dialog.Title>
+
+        <Dialog.Close asChild>
+          <button className={styles.closeButton} aria-label="Close modal">
+            x
+          </button>
+        </Dialog.Close>
 
         <div className={styles.toggleHeader}>
           <button
             className={mode === "login" ? styles.active : ""}
             onClick={() => setMode("login")}
+            type="button"
           >
             Log In
           </button>
           <button
             className={mode === "signup" ? styles.active : ""}
             onClick={() => setMode("signup")}
+            type="button"
           >
             Sign Up
           </button>
@@ -44,7 +59,7 @@ export default function AuthModal({ onClose }) {
         ) : (
           <SignupForm onSuccess={handleSuccess} />
         )}
-      </div>
-    </div>
+      </Dialog.Content>
+    </Dialog.Root>
   );
 }
