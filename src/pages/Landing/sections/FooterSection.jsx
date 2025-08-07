@@ -4,7 +4,7 @@ import AuthModal from "../AuthModal/AuthModal";
 import { useState } from "react";
 
 const FooterSection = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [authOpen, setAuthOpen] = useState(false);
   return (
     <section className={styles.footer}>
       <h1>Ready to Transform Your Space?</h1>
@@ -21,10 +21,10 @@ const FooterSection = () => {
       <GetStartedButton
         textColor="text-light"
         bgColor="bgMaroon"
-        onClick={() => setShowModal(true)}
+        onClick={() => setAuthOpen(true)}
       />
 
-      {showModal && <AuthModal onClose={() => setShowModal(false)} />}
+      <AuthModal open={authOpen} onOpenChange={setAuthOpen} />
     </section>
   );
 };
