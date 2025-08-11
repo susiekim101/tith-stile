@@ -3,7 +3,8 @@
   flex-direction: column;
   justify-content: space-between;
   width: 90vw;
-  height: 95vh;
+  height: auto;
+  min-height: 100vh;
   margin: 1rem;
 }
 
@@ -112,6 +113,10 @@
   justify-content: flex-start;
   align-items: center;
   gap: 5px;
+}
+
+.logoutText:hover {
+  cursor: pointer;
 }
 
 .logoutIcon {
