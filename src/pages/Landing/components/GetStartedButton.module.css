@@ -8,7 +8,6 @@
 
 .button:hover {
   cursor: pointer;
-  background-color: #e1c2cfd8;
 }
 
 .bgMuave {
@@ -19,10 +18,14 @@
   background-color: #640a09;
 }
 
+.bgYellow {
+  background-color: #cda532;
+}
+
 .text-dark {
-  color: black;
+  color: #640a09;
 }
 
 .text-light {
-  color: white;
+  color: #fff9f2;
 }

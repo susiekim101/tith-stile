@@ -1,25 +1,37 @@
-.h1 {
-  margin-bottom: 0;
+.overview {
+  background: #fff5e1;
+  border: 1px solid red;
 }
 
-.cardContainer {
-  margin-top: 3rem;
+.heading {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.stepList {
   display: flex;
-  gap: 5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 0 auto;
+  width: fit-content;
   flex-wrap: wrap;
-  justify-content: center;
+}
+.step {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  text-align: left;
 }
 
-@media (max-width: 768px) {
-  .cardContainer {
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .cardContainer {
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-  }
+.badge {
+  display: inline-block;
+  background: #7a1e1e;
+  color: white;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+  font-weight: bold;
 }
