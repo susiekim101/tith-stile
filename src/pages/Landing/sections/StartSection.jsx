@@ -9,7 +9,7 @@ const StartSection = () => {
   return (
     <section className={styles.start}>
       <div className={styles.transform}>
-        <h2>Ready to Transform Your Space?</h2>
+        <h2 className={styles.title}>Ready to Transform Your Space?</h2>
         <p>
           At Tori in the House, we do our best to practice ethical storytelling
           and honor your dignity. We will never use your real name or

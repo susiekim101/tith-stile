@@ -2,7 +2,38 @@
   background: #f9f0e3;
   text-align: center;
   padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: none;
+  font-size: 1rem;
+  text-shadow: none;
 }
+
+.logo {
+  font-family: "OrganGrinder";
+  box-shadow: none;
+}
+
+.location {
+  font-size: 0.8rem;
+}
+
+.email {
+  text-decoration: underline;
+  font-size: 0.9rem;
+  margin: 2rem;
+}
+
+.email:hover {
+  text-decoration: underline;
+}
+
+.npo,
+.taxId {
+  font-size: 0.9rem;
+}
+
 .socials {
   display: flex;
   justify-content: center;
@@ -11,6 +42,5 @@
 }
 .small {
   margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #555;
+  font-size: 0.7rem;
 }

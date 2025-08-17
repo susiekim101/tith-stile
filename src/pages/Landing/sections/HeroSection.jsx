@@ -9,7 +9,8 @@ const HeroSection = () => {
     <>
       <section className={styles.hero}>
         <h1 className={styles.title}>
-          Welcome to <br /> TORI IN THE HOUSE
+          Welcome to <br />
+          <span className={styles.logo}>Stile Profile</span>
         </h1>
         <p className={styles.description}>
           We’re truly so glad you’re here. Let’s collaborate to create a home
