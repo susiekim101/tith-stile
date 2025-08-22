@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Lavender (Lavandula angustifolia)",
+    "description": "Fresh, floral aroma that gently supports relaxation and calm.",
+    "tid_benefits": [
+      "Calming",
+      "Restorative",
+      "Stress recovery",
+      "Emotional regulation",
+      "Sleep support"
+    ],
+    "supports": "Survivors of PTSD, C-PTSD, sexual assault, trafficking, domestic abuse, incarceration, foster care, systemic trauma, cultural trauma, racism, gender-based violence. Individuals diagnosed with anxiety, depression, bipolar disorder, schizophrenia, dissociative disorders, substance use disorder, HIV/AIDS, chronic illness, IDDs, neurodivergence. LGBTQIA individuals, immigrants, undocumented individuals, survivors of medical system trauma, housing insecurity, ACEs, and SDOH inequities."
+  },
+  {
+    "name": "Roman Chamomile (Chamaemelum nobile)",
+    "description": "Soft, apple-like floral aroma known for easing distress and supporting rest.",
+    "tid_benefits": [
+      "Restorative",
+      "Soothing",
+      "Clarity",
+      "Stress relief",
+      "Emotional balance"
+    ],
+    "supports": "Survivors of systemic trauma, racism, sexual violence, trafficking, domestic abuse, incarceration, foster care. Individuals diagnosed with PTSD, depression, anxiety, bipolar disorder, schizophrenia, dissociative disorders, HIV/AIDS, chronic illness, IDDs, neurodivergence. LGBTQIA individuals, immigrants, undocumented individuals, survivors of medical system trauma, ACEs, SDOH inequities."
+  },
+  {
+    "name": "Neroli (Citrus aurantium var. amara)",
+    "description": "Floral-citrus scent, uplifting yet gentle; helps reduce trauma-related hypervigilance.",
+    "tid_benefits": [
+      "Uplifting",
+      "Clarity",
+      "Mood support",
+      "Centering",
+      "Nervous system balance"
+    ],
+    "supports": "Survivors of systemic trauma, racism, identity trauma, sexual assault, trafficking, domestic abuse, incarceration, foster care. Individuals diagnosed with PTSD, anxiety, depression, bipolar disorder, dissociative disorders, substance use disorder, HIV/AIDS, chronic illness, IDDs, neurodivergence, schizophrenia. LGBTQIA individuals, immigrants, undocumented individuals, survivors of medical trauma, housing insecurity, ACEs, SDOH inequities."
+  }
+]
