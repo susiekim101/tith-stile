@@ -75,7 +75,7 @@
 
 .toggleHeader button:focus,
 .toggleHeader button.active {
-  background-color: #ddeee2;
+  background-color: var(--main-teal);
 }
 
 /* Form and inputs */
@@ -104,7 +104,7 @@
 }
 
 .submitButton {
-  background-color: #cda532;
+  background-color: var(--main-mustard);
   color: white;
   border-radius: 5px;
   border: none;

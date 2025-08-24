@@ -1,38 +1,87 @@
-.p {
-  max-width: 50%;
-  font-size: 1rem;
-  margin: 0 auto;
+.hero {
+  background: #e9c7d3;
   text-align: center;
+  padding: 6rem 0 0;
+  position: relative;
+}
+.title {
+  font-size: 2rem;
+  color: #5a1c1c;
+  margin-bottom: 1rem;
+  font-family: "OrganGrinder";
 }
 
-.h1 {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  font-size: 3rem;
+.logo {
+  font-size: 5rem;
+  text-shadow: 0.1px 0 0 currentColor, -0.1px 0 0 currentColor;
 }
 
-.heroLogo {
-  margin-top: 0;
-  padding-top: 0;
+.description {
+  max-width: 50vw;
+  margin: auto;
 }
 
-@media (max-width: 768px) {
-  .p {
-    font-size: 0.95rem;
-    max-width: 80%;
+.wave {
+  display: block;
+  width: 100%;
+}
+
+.lampGraphic {
+  position: absolute;
+  width: 5.5rem;
+  height: auto;
+  transform: rotate(-10deg);
+  bottom: 5rem;
+}
+
+.chairGraphic {
+  position: absolute;
+  width: 5.5rem;
+  height: auto;
+  transform: rotate(7deg);
+  right: 3rem;
+  top: 1rem;
+}
+
+/* Media queries for graphic positioning adjustments */
+/* Tablet and up */
+@media (min-width: 718px) {
+  .chairGraphic {
+    right: 4rem;
+    top: 1rem;
   }
-
-  .h1 {
-    font-size: 2.2rem;
+  .lampGraphic {
+    bottom: 7rem;
+    left: 2rem;
   }
 }
 
-@media (max-width: 480px) {
-  .p {
-    font-size: 0.9rem;
-    max-width: 80%;
+@media (min-width: 949px) {
+  .chairGraphic {
+    width: 7rem;
+    height: auto;
+    right: 6rem;
+    top: 1.5rem;
   }
-  .h1 {
-    font-size: 1.8rem;
+  .lampGraphic {
+    width: 7rem;
+    height: auto;
+    bottom: 10rem;
+    left: 6rem;
+  }
+}
+
+@media (min-width: 1028px) {
+  .chairGraphic {
+    width: 7rem;
+    height: auto;
+    right: 10rem;
+    top: 2rem;
+  }
+  .lampGraphic {
+    width: 7rem;
+    height: auto;
+    bottom: 12rem;
+    left: 10rem;
   }
 }

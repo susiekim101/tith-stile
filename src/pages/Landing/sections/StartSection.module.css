@@ -1,85 +1,25 @@
-.wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  padding: 0 10rem;
-}
-
-.left {
-  flex: 0 1 60%;
-  max-width: 60%;
-}
-
-.right {
-  flex: 0 1 40%;
-  max-width: 40%;
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.img {
-  width: 340px;
-  height: 380px;
-  background-color: red;
-  border-radius: 1rem;
-  display: block;
-}
-
-.checklistItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  max-width: 50rem;
-  margin: 0 auto;
-  padding: 0.5rem 0;
-}
-
-.checkIcon {
-  width: 1.5rem;
-  height: 1.5rem;
-  flex-shrink: 0;
-}
-
-.checklistText {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: flex-start;
-}
-
-.checklistTitle {
-  font-size: 1.25rem;
-  font-weight: 600;
+.start {
+  background: var(--main-teal);
+  text-align: center;
+  padding: 5rem 2rem;
   margin: 0;
 }
 
-.checklistDescription {
-  font-size: 1rem;
-  line-height: 1.6rem;
-  margin: 0;
-  text-align: left;
-  max-width: 40ch;
+.title {
+  font-size: clamp(1rem, 5.5vw, 3rem);
+
+  margin-bottom: 2rem;
+  font-family: "OrganGrinder";
 }
 
-@media (max-width: 786px) {
-  .wrapper {
-    padding: 0 2rem;
-    flex-direction: column;
-    align-items: stretch;
-  }
+.transform {
+  background-color: #e9c7d3;
+  padding: 5rem;
+  color: #7a1e1e;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
 
-  .left,
-  .right {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  .right {
-    height: auto;
-    margin-top: 1rem;
-  }
+.transform p {
+  max-width: 600px;
+  margin: 0 auto 0.5rem;
 }

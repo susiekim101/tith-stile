@@ -1,37 +1,49 @@
 .footer {
-  background-color: #e1c2cf;
-  padding: 1rem 4rem 4rem;
-  margin-bottom: 3rem;
-}
-
-.h1 {
-  font-size: 1rem;
-}
-
-.p {
-  max-width: 50%;
-  font-size: 1rem;
-  margin: 0 auto;
+  background: var(--main-beige);
   text-align: center;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: none;
+  font-size: 1rem;
+  text-shadow: none;
 }
 
-@media (max-width: 768px) {
-  .p {
-    font-size: 0.95rem;
-    max-width: 80%;
-  }
-
-  .h1 {
-    font-size: 2.2rem;
-  }
+.logo {
+  font-family: "OrganGrinder";
+  box-shadow: none;
 }
 
-@media (max-width: 480px) {
-  .p {
-    font-size: 0.9rem;
-    max-width: 80%;
-  }
-  .h1 {
-    font-size: 1.8rem;
-  }
+.location {
+  font-size: 0.8rem;
+}
+
+.email {
+  text-decoration: underline;
+  font-size: 0.9rem;
+  margin: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.email:hover {
+  text-decoration: underline;
+  color: var(--main-maroon);
+  transform: rotate(-4deg);
+}
+
+.npo,
+.taxId {
+  font-size: 0.9rem;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.small {
+  margin-top: 1rem;
+  font-size: 0.7rem;
 }

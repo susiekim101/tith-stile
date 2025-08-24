@@ -19,7 +19,6 @@ function Landing() {
     <div>
       <HeroSection />
       <OverviewSection />
-      <SupportSection />
       <StartSection />
       <FooterSection />
     </div>
