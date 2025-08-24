@@ -1,6 +1,8 @@
 import GetStartedButton from "../components/GetStartedButton";
 import styles from "./HeroSection.module.css";
 import AuthModal from "../AuthModal/AuthModal";
+import lampGraphic from "../../../assets/graphics/bannersLAMP4.png";
+import chairGraphic from "../../../assets/graphics/chairicon11.png";
 import { useState } from "react";
 
 const HeroSection = () => {
@@ -8,6 +10,16 @@ const HeroSection = () => {
   return (
     <>
       <section className={styles.hero}>
+        <img
+          className={styles.lampGraphic}
+          src={lampGraphic}
+          alt="Lamp graphic"
+        ></img>
+        <img
+          className={styles.chairGraphic}
+          src={chairGraphic}
+          alt="Chair graphic"
+        ></img>
         <h1 className={styles.title}>
           Welcome to <br />
           <span className={styles.logo}>Stile Profile</span>

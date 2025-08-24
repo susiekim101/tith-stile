@@ -23,10 +23,13 @@
   text-decoration: underline;
   font-size: 0.9rem;
   margin: 2rem;
+  transition: transform 0.2s ease;
 }
 
 .email:hover {
   text-decoration: underline;
+  color: #640a09;
+  transform: rotate(-4deg);
 }
 
 .npo,

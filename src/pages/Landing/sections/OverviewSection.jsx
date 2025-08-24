@@ -4,7 +4,7 @@ import styles from "./OverviewSection.module.css";
 const OverviewSection = () => {
   return (
     <>
-      <section id="overview">
+      <section className={styles.overview}>
         <h2 className={styles.heading}>Here’s What to Expect</h2>
         <div className={styles.stepList}>
           <div className={styles.step}>
