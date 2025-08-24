@@ -7,14 +7,18 @@ const ProgressBar = ({index, total}) => {
     const percentage = Math.round((current/total) * 100);
 
     return (
-        <>
-        <div className={styles.barContainer}>
-            <div className={styles.fillBar}
-                style={{width: `${percentage}%`}}>
-                    {console.log(percentage)}
+        <div className={styles.progressContainer}>
+            <div className={styles.barContainer}>
+                <div className={styles.fillBar}
+                    style={{width: `${percentage}%`}}>
+                        {console.log(percentage)}
+                </div>
+            </div>
+
+            <div className={styles.textContainer}>
+                <p className={styles.completeText}>{percentage}% complete</p>
             </div>
         </div>
-        </>
     );
 }
 
