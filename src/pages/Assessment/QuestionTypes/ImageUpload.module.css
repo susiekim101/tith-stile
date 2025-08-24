@@ -1,17 +1,25 @@
+.answerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+
 .uploadContainer {
     width: 70%;
     height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px dashed gray;
     text-align: center;
-    
 }
 
 .dragging {
-    border-color: blue;
-    background-color: white;
+    border-color: var(--main-maroon);
+    background-color: var(--accent-beige);
 }
 
 .hiddenInput {
@@ -22,15 +30,20 @@
     height: 100%;
     width: 100%;
     display: flex;
+    border: 2px dashed gray;
+    border-radius: 2rem;
+    background-color: var(--main-beige);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    gap: 1em;
 }
 
 .uploadButton:hover {
     cursor: pointer;
+    background-color: var(--accent-beige);
+    border: 2px dashed var(--main-maroon);
+    border-radius: 2rem;
 }
 
 .uploadIcon {
@@ -38,10 +51,41 @@
     height: 7em;
 }
 
+.dragText {
+    font-size: 1em;
+    margin: 1em;
+}
+
 .uploadText {
     font-size: 1em;
-    border: 2px solid var(--main-pink);
+    border-radius: 20px;
+    padding: 0.5em 0.7em;
+}
+
+.uploadText:hover {
     background-color: var(--main-pink);
-    border-radius: 50px;
-    padding: 0.5em;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
+
+.deleteText {
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0.5em 0.7em;
+}
+
+.deleteText:hover {
+    background-color: var(--main-teal);
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
+
+.footer {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5em;
+    margin-top: 1em;
+
 }

@@ -21,7 +21,7 @@ const HeaderButton = () => {
                     onClick={() => handleLogout}
                     className={styles.logoutContainer}>
                     <img src={logOut} className={styles.logoutIcon}/>
-                    <div>Log Out</div>
+                    <div className={styles.logoutText}>Log Out</div>
                 </button>
             </Link>
             <BreakButton />
