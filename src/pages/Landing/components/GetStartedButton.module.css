@@ -20,19 +20,19 @@
 }
 
 .bgMuave {
-  background-color: #e1c2cf;
+  background-color: var(--main-pink);
 }
 
 .bgMaroon {
-  background-color: #640a09;
+  background-color: var(--main-maroon);
 }
 
 .bgYellow {
-  background-color: #cda532;
+  background-color: var(--main-mustard);
 }
 
 .text-dark {
-  color: #640a09;
+  color: var(--main-maroon);
 }
 
 .text-light {

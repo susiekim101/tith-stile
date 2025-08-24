@@ -1,5 +1,5 @@
 .footer {
-  background: #f9f0e3;
+  background: var(--main-beige);
   text-align: center;
   padding: 3rem 2rem;
   display: flex;
@@ -28,7 +28,7 @@
 
 .email:hover {
   text-decoration: underline;
-  color: #640a09;
+  color: var(--main-maroon);
   transform: rotate(-4deg);
 }
 

@@ -1,5 +1,5 @@
 .overview {
-  background: #f9f0e3;
+  background: var(--main-beige);
   margin-top: 1rem;
   border: none;
   margin-bottom: 0;
