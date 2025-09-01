@@ -1,7 +1,7 @@
 import styles from "./NavigationButton.module.css";
-import skip from "../assets/skip-icon.svg";
-import prev from "../assets/left-arrow.svg";
-import next from "../assets/right-arrow.svg";
+import skip from "../../../assets/icons/skip-icon.svg";
+import prev from "../../../assets/icons/left-arrow.svg";
+import next from "../../../assets/icons/right-arrow.svg";
 
 const NavigationButton = ({index, setIndex, total, handleSubmit}) => {
     /*const [skipIcon, setSkipURL] = useState(null);

@@ -2,7 +2,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../../firebase/config";
 // import { getDownloadURL, getStorage, ref } from "firebase/storage";
-import check from "../assets/check-icon.svg";
+import check from "../../../assets/icons/check-icon.svg";
 import styles from "./SelectImage.module.css";
 import ToggleSelection from "../components/ToggleSelection";
 

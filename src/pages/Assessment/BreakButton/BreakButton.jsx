@@ -1,7 +1,7 @@
 import {useRef, useEffect, useState} from "react";
 // import {getDownloadURL, getStorage, ref} from "firebase/storage";
 import styles from "../../Assessment//BreakButton/BreakButton.module.css";
-import coffee from "../assets/coffee.svg";
+import coffee from "../../../assets/icons/coffee.svg";
 
 const BreakButton = () => {
     const dialogRef = useRef(null);

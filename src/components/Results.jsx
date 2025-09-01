@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import getQuizOutput from "../utils/getQuizOutput";
 import { useLocation } from "react-router-dom";
-import CloverSvg from "../assets/svg/clover.svg";
 import styles from "../css/Results.module.css";
 import { Link } from "react-router-dom";
-import tealclover from "../assets/tealclover.png";
 import { auth, db } from "../firebase/config";
 import { doc, setDoc } from "firebase/firestore";
 
