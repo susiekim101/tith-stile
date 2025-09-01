@@ -4,16 +4,6 @@ import prev from "../../../assets/icons/left-arrow.svg";
 import next from "../../../assets/icons/right-arrow.svg";
 
 const NavigationButton = ({index, setIndex, total, handleSubmit}) => {
-    /*const [skipIcon, setSkipURL] = useState(null);
-
-    useEffect(() => {
-        const storage = getStorage();
-        const skipRef = ref(storage, "icons/skip-icon.png");
-
-        getDownloadURL(skipRef)
-            .then(url => setSkipURL(url))
-            .catch(error => console.error("Failed to fetch skip icon: ", error));
-    }, []); */
 
     return (
         <>

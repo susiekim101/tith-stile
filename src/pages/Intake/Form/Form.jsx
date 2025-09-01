@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { db } from "../../../firebase/config";
-import { collection, getDoc, getDocs, doc, query, orderBy } from "firebase/firestore";
+import { collection, getDoc, getDocs, doc, query, orderBy, updateDoc } from "firebase/firestore";
 import styles from "./Form.module.css";
 import QuestionType from "../QuestionType/QuestionType";
 
 const Form = () => {
     const [userId, setUserId] = useState(null);
-    const [sections, setSections] = useState([]);
     const [responses, setResponses] = useState([]);
+    const [sections, setSections] = useState([]);
     const auth = getAuth();
 
     useEffect(() => {
@@ -53,8 +53,14 @@ const Form = () => {
         fetchSections();
     }, []);
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await updateDoc(doc(db, "form", userId), responses);
+        console.log("Intake form submited");
+    };
+
     return (
-        <form className={styles.container}>
+        <form id="intakeForm" onSubmit={handleSubmit} className={styles.container}>
             {
                 sections.map((section) => (
                     <div key={section.id} className={styles.section}>

@@ -3,19 +3,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    width: 100%;
 }
 
-.label {
+.required {
+    font-size:medium;
+    display: inline-block;
+}
+
+.label, .checkboxLabel {
     font-size: medium;
     margin-left: 2px;
     display: flex;
     flex-direction: row;
     gap: 2px;
-}
-
-.label::after {
-    content: " *";
-    color: --var(main-maroon);
+    margin-bottom: 0.5rem;
 }
 
 .textInput, .dateInput {
@@ -41,12 +43,9 @@
 }
 
 .checkboxLabel {
-    font-size: medium;
-    display: flex;
-    flex-direction: column;
     text-align: left;
-    gap: 5px;
 }
+
 .checkboxItem {
     display: flex;
     flex-direction: row;

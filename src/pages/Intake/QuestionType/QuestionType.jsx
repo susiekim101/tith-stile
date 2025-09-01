@@ -29,14 +29,16 @@ const QuestionType = ({question, responses, setResponses}) => {
         case "text":
             return (
                 <div className={styles.question}>
-                    <label htmlFor={id} className={styles.label}>{label}</label>
+                    <label htmlFor={id} className={styles.label}>{`${label} ${required ? "*" : ""}`}</label>
                     <input type="text" id={id} name={label} className={styles.textInput} placeholder={placeholder} required={required} onChange={(e) => handleResponseChange(e.target.value)}/>
                 </div>
             );
         case "checkbox":
             return (
                 <div className={styles.question}>
-                    <div className={styles.checkboxLabel}>{label}
+                    <div className={styles.checkboxLabel}>
+                        {`${label} ${required ? "*" : ""}`}
+                    </div>
                     {options.map((o) => (
                         <label key={o} className={styles.checkboxItem}>
                             <input className={styles.defaultCheckbox} type="checkbox" checked={responses[id] ? responses[id].includes(o) : false} onChange={() => handleCheckboxChange(o)}/>
@@ -44,13 +46,12 @@ const QuestionType = ({question, responses, setResponses}) => {
                             {o}
                         </label>
                     ))}
-                    </div>
                 </div>
             )
         case "date":
             return (
                 <div className={styles.question}>
-                    <label htmlFor={id} className={styles.label}>{label}</label>
+                    <label htmlFor={id} className={styles.label}>{`${label} ${required ? "*" : ""}`}</label>
                     <input type="date" id={id} name={label} className={styles.dateInput} required={required} onChange={(e) => handleResponseChange(e.target.value)}/>
                 </div>
             )

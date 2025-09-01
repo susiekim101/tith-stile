@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebase/config";
 import { doc, setDoc } from "firebase/firestore";
 import QuestionsRenderer from "./components/QuestionsRenderer";
+import styles from "./Assessment.module.css";
 
 const saveFormToFirestore = async (results) => {
   if (!auth.currentUser) return;
@@ -33,8 +34,9 @@ const Assessment = () => {
   return (
     <>
       <form
-      onSubmit={handleSubmit}>
-
+      onSubmit={handleSubmit}
+      className={styles.form}
+      >
         <QuestionsRenderer
           formValues={formValues}
           setFormValues={setFormValues}

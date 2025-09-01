@@ -7,6 +7,7 @@ import Signup from "./pages/Signup";
 import Assessment from "./pages/Assessment/Assessment.jsx";
 import Intake from "./pages/Intake/Intake.jsx";
 import "./css/colors.css";
+import Buffer from "./pages/Intake/Buffer/Buffer.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/assessment" element={<Assessment />} />
         <Route path="/intake" element={<Intake />} />
+        <Route path="/buffer" element={<Buffer />} />
       </Routes>
     </BrowserRouter>
   );
