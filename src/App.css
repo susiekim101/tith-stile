@@ -2,12 +2,12 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: 'OrganGrinder';
-    src: url('../src/assets/fonts/OrganGrinder.woff2') format('woff2'),
-        url('../src/assets/fonts/OrganGrinder.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "OrganGrinder";
+  src: url("../src/assets/fonts/OrganGrinder.woff2") format("woff2"),
+    url("../src/assets/fonts/OrganGrinder.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 #root {
@@ -17,6 +17,12 @@
   text-align: center;
   min-height: 100vh;
   font-family: "Didact Gothic", sans-serif;
+  /* Simulate bold font */
+  font-weight: 400;
+  line-height: 1.2em;
+  letter-spacing: 0.01em;
+  font-weight: bolder;
+  text-shadow: 0.3px 0 0 currentColor, -0.5px 0 0 currentColor;
 }
 
 .logo {
