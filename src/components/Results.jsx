@@ -1,3 +1,6 @@
+{
+  /*
+
 import React, { useEffect, useState } from "react";
 import getQuizOutput from "../utils/getQuizOutput";
 import { useLocation } from "react-router-dom";
@@ -6,13 +9,6 @@ import { Link } from "react-router-dom";
 import { auth, db } from "../firebase/config";
 import { doc, setDoc } from "firebase/firestore";
 
-/*
-const tempImages = [
-  "https://plus.unsplash.com/premium_photo-1670360414483-64e6d9ba9038?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1608556984739-26328c578559?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://plus.unsplash.com/premium_photo-1670076513880-f58e3c377903?q=80&w=1436&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-];
-*/
 
 const captionKeys = ["interiorDesign", "colorPalette", "furnitureDesign"];
 
@@ -20,7 +16,7 @@ const Results = () => {
   const { state } = useLocation();
   const previous = state?.previous;
   console.log("previous", previous);
-  /*extracting json*/
+
   const location = useLocation();
   const quizData = location.state?.quizData;
   console.log(quizData);
@@ -171,3 +167,6 @@ const Results = () => {
 };
 
 export default Results;
+
+*/
+}

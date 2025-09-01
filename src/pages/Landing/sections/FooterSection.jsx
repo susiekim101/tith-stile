@@ -1,31 +1,28 @@
 import styles from "./FooterSection.module.css";
-import GetStartedButton from "../components/GetStartedButton";
-import AuthModal from "../AuthModal/AuthModal";
-import { useState } from "react";
 
 const FooterSection = () => {
-  const [authOpen, setAuthOpen] = useState(false);
   return (
-    <section className={styles.footer}>
-      <h1>Ready to Transform Your Space?</h1>
-      <p className={styles.p}>
-        At Tori in the House, we do our best to practice ethical storytelling
-        and honor your dignity. We will never use your real name or any
-        identifying details without your permission.{" "}
+    <footer className={styles.footer}>
+      <p className={styles.logo}>TORI IN THE HOUSE</p>
+      <p className={styles.location}>Los Angeles, CA</p>
+      <a className={styles.email} href="mailto:info@torinthehouse.org">
+        info@torinthehouse.org
+      </a>
+      <p className={styles.npo}>
+        Tori in the House is a registered 501(C)(3) nonprofit organization.{" "}
       </p>
-      <p className={styles.p}>
-        If there’s a name or nickname you’d like us to use in any future
-        storytelling (such as in photos, videos, or captions), feel free to
-        share it in the quiz.
-      </p>
-      <GetStartedButton
-        textColor="text-light"
-        bgColor="bgMaroon"
-        onClick={() => setAuthOpen(true)}
-      />
+      <p className={styles.taxId}> Tax ID: 99-4846300</p>
 
-      <AuthModal open={authOpen} onOpenChange={setAuthOpen} />
-    </section>
+      {/*
+      <div className={styles.socials}>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">YouTube</a>
+      </div>
+      */}
+
+      <p className={styles.small}>© Tori in the House</p>
+    </footer>
   );
 };
 
