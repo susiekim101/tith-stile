@@ -5,6 +5,7 @@ import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup";
 import Results from "./components/Results.jsx";
 import Assessment from "./pages/Assessment/Assessment.jsx";
+import Intake from "./pages/Intake/Intake.jsx";
 import "./css/colors.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/results" element={<Results />} />
         <Route path="/assessment" element={<Assessment />} />
+        <Route path="/intake" element={<Intake />} />
       </Routes>
     </BrowserRouter>
   );
