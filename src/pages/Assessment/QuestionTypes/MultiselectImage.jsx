@@ -2,7 +2,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../../firebase/config";
 // import { getDownloadURL, getStorage, ref } from "firebase/storage";
-import check from "../assets/check-icon.svg";
+import check from "../../../assets/icons/check-icon.svg";
 import styles from "./SelectImage.module.css";
 import ToggleSelection from "../components/ToggleSelection";
 
@@ -32,15 +32,6 @@ const MultiselectImage = ({ formValues, setFormValues, sectionId, id }) => {
         };
         fetchOptions();
     }, [id]);
-/*
-    useEffect(() => {
-        const storage = getStorage();
-        const checkRef = ref(storage, "icons/check.png");
-
-        getDownloadURL(checkRef)
-            .then(url => setCheckURL(url))
-            .catch(error => console.error("Failed to fetch icon, ", error))
-    }, []);*/
 
     return (
         <>

@@ -1,0 +1,77 @@
+.question {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.required {
+    font-size:medium;
+    display: inline-block;
+}
+
+.label, .checkboxLabel {
+    font-size: medium;
+    margin-left: 2px;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.textInput, .dateInput {
+    display: flex;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    background-color: var(--main-beige);
+    color: black;
+    padding: 0 0.5rem;
+}
+
+.textInput {
+    width: 100%;
+}
+
+.textInput:focus, .dateInput {
+    border-color: var(--main-maroon);
+}
+
+.textInput:invalid, .dateInput:invalid {
+    border-color: var(--main-pink);
+    border-width: 1px;
+}
+
+.checkboxLabel {
+    text-align: left;
+}
+
+.checkboxItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+}
+
+.defaultCheckbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.customCheckbox {
+    height: 12px;
+    width: 12px;
+    background-color: var(--main-beige);
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.defaultCheckbox:checked + .customCheckbox,
+.defaultCheckbox:hover + .customCheckbox {
+    background-color: var(--main-pink);
+}
+

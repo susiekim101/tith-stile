@@ -25,7 +25,9 @@ const SectionDivider = ({ sectionId, id }) => {
 
     return (
         <div className={styles.sectionContainer}>
-            {section && (<p className={styles.section}>{section}</p>)}
+            <div className={styles.upperContainer}>
+                {section && (<p className={styles.section}>{section}</p>)}
+            </div>
             {brief && (<p className={styles.brief}>{brief}</p>)}
         </div>
     );

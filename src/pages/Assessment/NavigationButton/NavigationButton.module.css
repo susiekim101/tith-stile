@@ -12,7 +12,8 @@
     box-shadow: 0px 4px 5px rgb(143, 143, 143);
     padding: 0.5rem 1rem;
     border-radius: 10px;
-    font-size: 1.5em;
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .next, .submitForm {
@@ -23,6 +24,7 @@
     cursor: pointer;
     background-color: #cf9db2
 }
+
 .prev {
   background-color: #FFF9F2;
 }

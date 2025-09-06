@@ -1,0 +1,26 @@
+.container {
+    width: 70vw;
+    margin: 0 auto;
+    text-align: right;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.submit {
+
+    padding: 0 1rem;
+    border-radius: 10px;
+    font-size: x-large;
+    transition: transform 0.24s ease-in-out;
+}
+
+.submit:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.submit:disabled {
+    cursor: not-allowed;
+    background-color: rgb(196, 196, 196);
+    opacity: 0.3;
+}

@@ -1,13 +1,17 @@
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .questionsContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 90vw;
   height: auto;
-  min-height: 100vh;
   margin: 1rem;
 }
-
 
 .loading {
   font-size: 3rem;
@@ -19,7 +23,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 0.2rem 0;
+  margin: 0.5rem 0;
 }
 
 .sectionTitle {
@@ -27,9 +31,9 @@
   color: white;
   width: auto;
   height: 100%;
-  font-size: 1.2em;
-  border-radius: 1rem;
-  padding: 0.5rem 1rem;
+  font-size: 1em;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.5rem;
 }
 
 /* QUIZ LABEL */
@@ -38,7 +42,7 @@
 }
 
 .label {
-  font-size: 2.3em;
+  font-size: 1.7em;
   font-weight: 700;
   width: 100%;
   line-height: 1.2;
@@ -47,10 +51,12 @@
 /* DESCRIPTION */
 .descriptionContainer {
   width: 100%;
+  margin: 0.3rem 0;
 }
 
 .description {
-  font-size: 1.5em;
+  font-size: 1.2em;
+  color: #640b09b9;
 }
 
 /* PROGRESS BAR */
@@ -68,7 +74,7 @@
 }
 
 .questionContainer {
-  height: 30rem;
+  height: 25rem;
 }
 
 .imageContainer {
@@ -124,8 +130,4 @@
   width: 2em;
 }
 
-a {
-  font-size: 1.2em;
-  text-decoration: none;
-  color: inherit;
-}
+/*   font-size: 1.2em; */

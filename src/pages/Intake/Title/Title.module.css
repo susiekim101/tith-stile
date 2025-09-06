@@ -1,0 +1,23 @@
+.titleContainer {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.title {
+    font-size: 3rem;
+    color: white;
+    padding: 0.3rem 1.5rem;
+    border-radius: 20px;
+    width: fit-content;
+    background-color: var(--main-mustard);
+    border-color: var(--main-mustard);
+    font-family: "OrganGrinder";
+}
+
+.sub {
+    font-size: 1.1rem;
+}

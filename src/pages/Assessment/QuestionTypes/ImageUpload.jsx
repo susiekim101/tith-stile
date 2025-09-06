@@ -9,8 +9,8 @@ import {
 } from "firebase/storage";
 import { auth, storage } from "../../../firebase/config";
 import styles from "../QuestionTypes/ImageUpload.module.css";
-import upload from "../assets/upload.svg";
-import uploadcomplete from "../assets/upload-complete.svg";
+import upload from "../../../assets/icons/upload.svg";
+import uploadcomplete from "../../../assets/icons/upload-complete.svg";
 
 const ImageUpload = ( {formValues, setFormValues, id } ) => {
     const MAX_FILES = 5;
