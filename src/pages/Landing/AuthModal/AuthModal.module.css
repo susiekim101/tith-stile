@@ -9,7 +9,7 @@
 }
 
 .modalContent {
-  background: white;
+  background-color: var(--main-beige);
   padding: 2rem;
   border-radius: 1rem;
   width: 90vw;
@@ -27,26 +27,23 @@
 /* Close button */
 .closeButton {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  border-radius: 50%;
-  background-color: red;
-  color: white;
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 20px;
-  width: 20px;
-  border: none;
-  line-height: 1;
-  cursor: pointer;
+  top: 1rem;
+  right: 1rem;
+  color: var(--main-maroon);
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.3s ease-in;
 }
 
 .closeButton:hover {
-  background-color: rgb(215, 2, 2);
+  cursor: pointer;
+  transform: scale(1.07);
 }
 
+.title {
+  font-size: 2rem;
+  margin: 1rem 0 rem;
+}
 /* Toggle button header */
 .toggleHeader {
   background-color: #bcc5bf;
@@ -111,4 +108,18 @@
   padding: 0.6rem 1rem;
   cursor: pointer;
   margin-top: 1rem;
+  width: 100%;
+}
+
+.footer {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.caption {
+  opacity: 0.7;
+}
+
+.alternative:hover {
+  text-decoration: underline;
 }

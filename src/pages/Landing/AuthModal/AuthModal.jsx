@@ -4,10 +4,14 @@ import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 import { useNavigate } from "react-router-dom";
 import styles from "./AuthModal.module.css";
+import { CircleX } from "lucide-react";
 
 export default function AuthModal({ open, onOpenChange }) {
   const [mode, setMode] = useState("login");
   const navigate = useNavigate();
+  const title = mode == "login" ? "Log In" : "Sign Up";
+  const alternative = mode == "login" ? "Don't have an account?" : "Already have an account?"
+  const altLink = mode == "login" ? "Sign Up" : "Log In"
 
   const handleSuccess = (previousResults) => {
     onOpenChange(false); // close dialog
@@ -32,12 +36,14 @@ export default function AuthModal({ open, onOpenChange }) {
         </Dialog.Title>
 
         <Dialog.Close asChild>
-          <button className={styles.closeButton} aria-label="Close modal">
-            x
-          </button>
+          <CircleX className={styles.closeButton}/>
         </Dialog.Close>
 
-        <div className={styles.toggleHeader}>
+        <div className={styles.title}>
+          {title}
+        </div>
+     
+        {/*<div className={styles.toggleHeader}>
           <button
             className={mode === "login" ? styles.active : ""}
             onClick={() => setMode("login")}
@@ -52,12 +58,28 @@ export default function AuthModal({ open, onOpenChange }) {
           >
             Sign Up
           </button>
-        </div>
+        </div>*/}
 
         {mode === "login" ? (
           <LoginForm onSuccess={handleSuccess} />
         ) : (
           <SignupForm onSuccess={handleSuccess} />
+        )}
+        
+        {mode == "login" ? (
+          <div className={styles.footer}>
+            <span className={styles.caption}>Don't have an account? </span>
+            <button className={styles.alternative}
+                    onClick={() => setMode("signup")}
+                    type="button">Sign Up</button>
+          </div>
+        ) : (
+          <div className={styles.footer}>
+            <span className={styles.caption}>Already have an account? </span>
+            <button className={styles.alternative}
+                    onClick={() => setMode("login")}
+                    type="button">Log In</button>
+          </div>
         )}
       </Dialog.Content>
     </Dialog.Root>

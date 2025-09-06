@@ -1,8 +1,8 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing/Landing.jsx";
-import Login from "./pages/Login.jsx";
-import Signup from "./pages/Signup";
+import LoginForm from "./pages/Landing/AuthModal/LoginForm.jsx";
+import SignupForm from "./pages/Landing/AuthModal/SignupForm.jsx";
 /*import Results from "./components/Results.jsx";*/
 import Assessment from "./pages/Assessment/Assessment.jsx";
 import Intake from "./pages/Intake/Intake.jsx";
@@ -15,8 +15,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/landing" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/signup" element={<SignupForm />} />
         <Route path="/assessment" element={<Assessment />} />
         <Route path="/intake" element={<Intake />} />
         <Route path="/buffer" element={<Buffer />} />
