@@ -3,6 +3,7 @@
     margin: 0 auto;
     text-align: right;
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .submit {
@@ -16,5 +17,10 @@
 .submit:hover {
     cursor: pointer;
     transform: scale(1.05);
+}
 
+.submit:disabled {
+    cursor: not-allowed;
+    background-color: rgb(196, 196, 196);
+    opacity: 0.3;
 }

@@ -14,7 +14,7 @@ const QuestionType = ({question, responses, setResponses}) => {
 
     const handleCheckboxChange = (response) => {
         setResponses((prev) => {
-            const current = responses[id] || [];
+            const current = prev[id] || [];
             const newSelection = current.includes(response) ? current.filter((o) => o !== response) : [...current, response];
 
             return {
