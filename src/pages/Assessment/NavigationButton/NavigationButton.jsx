@@ -2,6 +2,7 @@ import styles from "./NavigationButton.module.css";
 import skip from "../../../assets/icons/skip-icon.svg";
 import prev from "../../../assets/icons/left-arrow.svg";
 import next from "../../../assets/icons/right-arrow.svg";
+import { ArrowRight, ArrowLeft, SkipForward } from "lucide-react";
 
 const NavigationButton = ({index, setIndex, total, handleSubmit}) => {
 
@@ -15,7 +16,7 @@ const NavigationButton = ({index, setIndex, total, handleSubmit}) => {
                                 onClick={() => setIndex(prev => Math.max(0, prev - 1))}
                                 disabled={index === 0}
                                 className={styles.prev} >
-                                <img src={prev} className={styles.icon}/>
+                                <ArrowLeft className={styles.icon}/>
                             </button>)
             }
 
@@ -24,7 +25,7 @@ const NavigationButton = ({index, setIndex, total, handleSubmit}) => {
                                         onClick={() => setIndex(prev => Math.min(total - 1, prev + 1))}
                                         disabled={index === total-1}
                                         className={styles.skipContainer}>
-                                            <img src={skip} className={styles.icon}/>
+                                            <SkipForward className={styles.icon}/>
                                         </button>) : 
                                         (<p></p>)
                 }
@@ -35,7 +36,7 @@ const NavigationButton = ({index, setIndex, total, handleSubmit}) => {
                                         onClick={() => setIndex(prev => Math.min(total - 1, prev + 1))}
                                         disabled={index === total - 1}
                                         className={styles.next}>
-                                        <img src={next} className={styles.icon}/>
+                                        <ArrowRight className={styles.icon}/>
                                     </button>) : 
                                     (<button
                                         type="button"

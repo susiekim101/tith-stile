@@ -2,26 +2,12 @@ import {useRef, useEffect, useState} from "react";
 // import {getDownloadURL, getStorage, ref} from "firebase/storage";
 import styles from "../../Assessment//BreakButton/BreakButton.module.css";
 import coffee from "../../../assets/icons/coffee.svg";
+import { Coffee } from "lucide-react";
 
 const BreakButton = () => {
     const dialogRef = useRef(null);
     const timeoutRef = useRef(null);
     const TIMER = 1; // MINUTES
-    // const [coffeeIcon, setCoffeeURL] = useState(null);
-
-    /*
-    useEffect(() => {
-        const storage = getStorage();
-        const coffeeRef = ref(storage, "icons/coffee.png");
-
-        getDownloadURL(coffeeRef)
-            .then(url => setCoffeeURL(url))
-            .catch(error => console.error("Failed to fetch coffee icon, ", error));
-
-        timeoutRef.current = setTimeout(openDialog, TIMER * 60 * 1000);
-
-        return () => {clearTimeout(timeoutRef.current)};
-    }, []);*/
 
     const openDialog = () => {
         dialogRef.current?.showModal();
@@ -47,12 +33,12 @@ const BreakButton = () => {
 
             <dialog ref={dialogRef}>
                 <div className={styles.dialogContainer}>
-                    <div className={styles.iconContainer}>
-                        <img src={coffee} className={styles.dialogIcon}></img>
-                    </div>
+                    <div className={styles.upperContainer}>
+                        <Coffee className={styles.dialogIcon}/>
 
-                    <div className={styles.dialogTitle}>Break Time!</div>
-                    <div className={styles.dialogText}>Take a moment to rest and recharge. When you're ready, click the button below to continue with your design assessment.</div>
+                        <div className={styles.dialogTitle}>Break Time!</div>
+                        <div className={styles.dialogText}>Take a moment to rest and recharge. When you're ready, click the button below to continue with your design assessment.</div>
+                    </div>
                     <button type="button" 
                             onClick={closeDialog}
                             className={styles.dialogClose}>Close</button>

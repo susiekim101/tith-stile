@@ -1,0 +1,44 @@
+.container {
+    background-color: white;
+    width: 70vw;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.icon {
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--main-mustard);
+    border-radius: 50%;
+    padding: 1rem;
+    color: white;
+}
+.title {
+    font-size: 3rem;
+    font-family: "OrganGrinder";
+}
+
+.caption {
+    font-size: medium;
+}
+
+.button {
+    background-color: var(--main-pink);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: inline-flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    width: 1.5rem;
+    height: 1.5rem;
+}

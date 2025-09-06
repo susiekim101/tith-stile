@@ -9,7 +9,7 @@ const Intake = ({ }) => {
 
     return (
         <div>
-            <Header/>
+            <Header intake={true}/>
             <Title/>
             <Form/>
             <Submit/>

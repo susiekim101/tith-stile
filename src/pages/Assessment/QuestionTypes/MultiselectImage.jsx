@@ -32,15 +32,6 @@ const MultiselectImage = ({ formValues, setFormValues, sectionId, id }) => {
         };
         fetchOptions();
     }, [id]);
-/*
-    useEffect(() => {
-        const storage = getStorage();
-        const checkRef = ref(storage, "icons/check.png");
-
-        getDownloadURL(checkRef)
-            .then(url => setCheckURL(url))
-            .catch(error => console.error("Failed to fetch icon, ", error))
-    }, []);*/
 
     return (
         <>

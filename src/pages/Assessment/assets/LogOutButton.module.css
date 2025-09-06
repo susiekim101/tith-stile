@@ -1,0 +1,13 @@
+.logOut {
+    font-size: medium;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.logOut:hover {
+    cursor: pointer;
+}
+
+.logoutIcon {
+    width: 1rem;
+}

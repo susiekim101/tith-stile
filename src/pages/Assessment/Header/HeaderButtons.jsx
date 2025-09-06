@@ -3,6 +3,7 @@ import logOut from "../../../assets/icons/log-out.svg";
 import { logout } from "../../../firebase/auth";
 import BreakButton from "../BreakButton/BreakButton";
 import styles from "../Assessment.module.css";
+import LogOutButton from "../assets/LogOutButton";
 
 const HeaderButton = () => {
     const handleLogout = async () => {
@@ -16,15 +17,8 @@ const HeaderButton = () => {
     return (
         <>
         <div className={styles.header}>
-            <Link to="/landing">
-                <button type="button"
-                    onClick={() => handleLogout}
-                    className={styles.logoutContainer}>
-                    <div className={styles.logoutText}>Log Out</div>
-                    <img src={logOut} className={styles.logoutIcon}/>
-                </button>
-            </Link>
             <BreakButton />
+            <LogOutButton handleLogout={handleLogout}/>
         </div>
         </>
     );
