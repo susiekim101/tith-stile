@@ -10,13 +10,37 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "JosefinSans";
+  src: url("../src/assets/fonts/JosefinSans-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JosefinSans";
+  src: url("../src/assets/fonts/JosefinSans-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JosefinSans";
+  src: url("../src/assets/fonts/JosefinSans-Light.ttf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 #root {
   max-width: 100vw;
   margin: 0;
   padding: 0;
   text-align: center;
   min-height: 100vh;
-  font-family: "Didact Gothic", sans-serif;
+  font-family: "JosefinSans", sans-serif;
 }
 
 html,
