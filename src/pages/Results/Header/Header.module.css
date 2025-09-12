@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 1.5rem;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.left:hover {
+    cursor: pointer;
+}
+
+.redoIcon {
+    width: 1rem;
+    height: 1rem;
+}

@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textContainer {
+    color: black;
+    width: 70%;
+    
+}
+
+.text {
+
+}
+
+.colorsContainer {
+    margin: 1rem;
+    padding: 1rem;
+    width: 50%;
+    min-width: 400px;
+    gap: 1rem;
+    background-color: var(--main-pink);
+    border-radius: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    place-items: center;
+}
+
+.colorBlob {
+    border-radius: 50%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.chevron {
+    width: 3rem;
+    height: 3rem;
+    margin: 2rem;
+}
