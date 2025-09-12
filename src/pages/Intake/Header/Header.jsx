@@ -18,14 +18,13 @@ const Header = ({intake}) => {
         <div className={styles.container}>
             <div className={styles.header}>
                 {intake ? (
-                    <div className={styles.headerLeft}>
+                    <Link to="/assessment"className={styles.headerLeft}>
                         <span>Not a Tori in the House client?</span>
-
-                        <Link to="/assessment" className={styles.link}>
+                        <span className={styles.link}>
                             Skip to Stile Assessment
                             <ArrowRight className={styles.arrow}/>
-                        </Link>
-                    </div>
+                        </span>
+                    </Link>
                     ) : <div></div>
                 }
                 

@@ -8,8 +8,8 @@
 }
 
 .datearea {
-  background-color: var(--main-mustard);
-  color: white;
+  background-color: var(--main-teal);
+  color: black;
   border-radius: 5px;
   padding: 5px;
   flex: 0 0 auto;

@@ -5,12 +5,14 @@ import { collection, getDoc, getDocs, doc, query, orderBy, updateDoc } from "fir
 import styles from "./Form.module.css";
 import QuestionType from "../QuestionType/QuestionType";
 import Submit from "../Submit/Submit";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
     const [userId, setUserId] = useState(null);
     const [responses, setResponses] = useState([]);
     const [sections, setSections] = useState([]);
     const auth = getAuth();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {

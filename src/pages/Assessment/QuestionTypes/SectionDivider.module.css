@@ -15,11 +15,11 @@
 .section {
     font-family: "OrganGrinder";
     font-size: 3rem;
-    color: white;
+    color: var(--main-maroon);
 }
 
 .brief {
     font-size: 1.2rem;
-    color: white;
     height: 70%;
+    color: black;
 }

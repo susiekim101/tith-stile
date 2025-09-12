@@ -31,7 +31,7 @@
 }
 
 .imageBorder:hover .imageSelect {
-    border: 5px solid var(--main-maroon);
+    border: 5px solid var(--main-pink);
 }
 
 .imageOption {
@@ -60,12 +60,12 @@
 .imageSelect, .imageFilled {
     height: 1.5em;
     width: 1.5em;
-    border: 2px solid var(--main-maroon);
+    border: 2px solid var(--main-pink);
     border-radius: 5px;
 }
 
 .imageFilled {
-    background-color: var(--main-maroon);
+    background-color: var(--main-pink);
 }
 
 .check {

@@ -1,11 +1,18 @@
 .logOut {
-    font-size: medium;
+    font-size: small;
+    align-items: center;
     display: flex;
     gap: 0.5rem;
+    background-color: var(--main-pink);
+    color: black;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    transition: transform 0.24s ease-in-out;
 }
 
 .logOut:hover {
     cursor: pointer;
+    transform: scale(1.05);
 }
 
 .logoutIcon {
