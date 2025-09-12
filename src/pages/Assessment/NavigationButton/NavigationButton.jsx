@@ -1,7 +1,4 @@
 import styles from "./NavigationButton.module.css";
-import skip from "../../../assets/icons/skip-icon.svg";
-import prev from "../../../assets/icons/left-arrow.svg";
-import next from "../../../assets/icons/right-arrow.svg";
 import { ArrowRight, ArrowLeft, SkipForward } from "lucide-react";
 
 const NavigationButton = ({index, setIndex, total, handleSubmit}) => {

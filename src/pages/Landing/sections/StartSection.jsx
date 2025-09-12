@@ -1,5 +1,4 @@
 import styles from "./StartSection.module.css";
-import StartChecklist from "../components/StartChecklist";
 import GetStartedButton from "../components/GetStartedButton";
 import AuthModal from "../AuthModal/AuthModal";
 import { useState } from "react";
