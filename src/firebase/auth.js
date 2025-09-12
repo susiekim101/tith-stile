@@ -3,10 +3,10 @@ import {
   signInWithEmailAndPassword,
   signOut,
   signInWithPopup,
-  GoogleAuthProvider,
 } from "firebase/auth";
-
 import { auth, provider } from "./config";
+import { getAuth } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 export const signup = async (email, password) => {
   try {
@@ -64,14 +64,15 @@ export const loginWithGoogle = async () => {
   }
 };
 
-export const logout = async () => {
+export async function logout(navigate) {
+  const auth = getAuth();
   try {
     await signOut(auth);
-    console.log("User logged out");
+    navigate("/landing");
   } catch (error) {
-    console.error("Error logging out:", error);
+    console.error("Error logging out: ", error);
     throw error;
   }
-};
+}
 
 export const authInstance = auth;

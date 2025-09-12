@@ -31,7 +31,7 @@ const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
         const fetchQuestions = async () => {
             const assessQuery = query(collection(db, "assessment"), orderBy("index"));
             const sectionSnap = await getDocs(assessQuery);
-
+            console.log("Fetched sectionSnap");
             let allQuestions = [];
 
             for (const sectionDoc of sectionSnap.docs) {
@@ -121,8 +121,8 @@ const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
             questionComponent = <ImageUpload
                 formValues={formValues}
                 setFormValues={setFormValues}
-                id={id} 
-                />
+                id={id}
+            />
             break;
         default:
             questionComponent = <p>Unsupported question type</p>
@@ -132,7 +132,7 @@ const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
         <>
             <div className={styles.questionsContainer}>
                 <div>
-                    <HeaderButton/>
+                    <HeaderButton />
 
                     <div>
                         <div className={styles.barContainer}>
@@ -164,7 +164,7 @@ const QuestionsRenderer = ({ formValues, setFormValues, handleSubmit }) => {
                         </div>
                     </div>
                 </div>
-                
+
                 <NavBar
                     index={index}
                     setIndex={setIndex}

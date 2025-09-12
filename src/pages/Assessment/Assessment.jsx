@@ -34,8 +34,8 @@ const Assessment = () => {
   return (
     <>
       <form
-      onSubmit={handleSubmit}
-      className={styles.form}
+        onSubmit={handleSubmit}
+        className={styles.form}
       >
         <QuestionsRenderer
           formValues={formValues}

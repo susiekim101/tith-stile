@@ -16,10 +16,10 @@ const HeaderButton = () => {
 
     return (
         <>
-        <div className={styles.header}>
-            <BreakButton />
-            <LogOutButton handleLogout={handleLogout}/>
-        </div>
+            <div className={styles.header}>
+                <BreakButton />
+                <LogOutButton handleLogout={handleLogout} />
+            </div>
         </>
     );
 }
