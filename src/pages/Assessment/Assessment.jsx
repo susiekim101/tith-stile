@@ -9,8 +9,9 @@ const saveFormToFirestore = async (results) => {
   if (!auth.currentUser) return;
 
   const userId = auth.currentUser.uid;
+  
   try {
-    await setDoc(doc(db, "form", userId), {
+    await setDoc(doc(db, "user responses", userId), {
       results,
       timestamp: new Date(),
     });

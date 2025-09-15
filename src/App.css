@@ -52,6 +52,7 @@ body {
   color: #650909;
   overflow: scroll;
   overscroll-behavior: none;
+  scroll-behavior: smooth;
 }
 
 a {

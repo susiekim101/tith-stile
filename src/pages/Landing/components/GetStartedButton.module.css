@@ -4,7 +4,6 @@
   border: none;
   font-size: 1rem;
   margin-top: 1rem;
-  font-family: "Didact Gothic", sans-serif;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }

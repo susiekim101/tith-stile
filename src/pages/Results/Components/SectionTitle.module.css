@@ -1,0 +1,28 @@
+.titleContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.title {
+    position: relative;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    font-size: 1.5rem;
+    background-color: var(--main-maroon);
+    color: white;
+    padding: 0.5rem 0;
+    height: fit-content;
+    
+    @media (min-width: 780px) {
+        font-size: 2rem;
+    }
+}
+
+.title::after {
+    content: ".";
+    writing-mode: horizontal-tb;
+    position: absolute;
+    bottom: 0rem;
+    right:  0.7rem;
+    color: white;
+}

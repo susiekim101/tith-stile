@@ -3,10 +3,10 @@ import {
   signInWithEmailAndPassword,
   signOut,
   signInWithPopup,
+  updateProfile,
 } from "firebase/auth";
 import { auth, provider } from "./config";
 import { getAuth } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 
 export const signup = async (email, password) => {
   try {
@@ -72,6 +72,17 @@ export async function logout(navigate) {
   } catch (error) {
     console.error("Error logging out: ", error);
     throw error;
+  }
+}
+
+export async function setDisplayName(name) {
+  if(auth.currentUser) {
+    await updateProfile(auth.currentUser, {
+      displayName: name
+    });
+    console.log("Display name updates");
+  } else {
+    console.log("No user is signed in");
   }
 }
 

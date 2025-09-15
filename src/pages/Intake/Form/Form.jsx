@@ -6,6 +6,8 @@ import styles from "./Form.module.css";
 import QuestionType from "../QuestionType/QuestionType";
 import Submit from "../Submit/Submit";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../../../firebase/config";
+import { setDisplayName } from "../../../firebase/auth";
 
 const Form = () => {
     const [userId, setUserId] = useState(null);
@@ -59,7 +61,10 @@ const Form = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(userId);
-        await setDoc(doc(db, "form", userId), responses, { merge: true });
+        const name = `${responses.fname} ${responses.lname}`;
+        await setDisplayName(name);
+        const docName = `${name}_${userId}`;
+        await setDoc(doc(db, "form", docName), responses, { merge: true });
         navigate("/buffer");
         console.log("Intake form submited");
     };

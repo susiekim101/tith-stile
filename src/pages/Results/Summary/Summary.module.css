@@ -18,13 +18,14 @@
     margin: 1rem;
     padding: 1rem;
     width: 50%;
-    min-width: 400px;
+    min-width: 350px;
     gap: 1rem;
     background-color: var(--main-pink);
     border-radius: 50px;
 
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     place-items: center;
 }
 

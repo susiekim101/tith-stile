@@ -1,0 +1,70 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    margin: 2rem 0;
+    color: black;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    padding: 0 2rem;
+    margin: 2rem 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titleContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    position: relative;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    font-size: 1.5rem;
+    background-color: var(--main-maroon);
+    color: white;
+    padding: 0.5rem 0;
+
+    @media (min-width: 780px) {
+        font-size: 2rem;
+    }
+}
+
+.title::after {
+    content: ".";
+    writing-mode: horizontal-tb;
+    position: absolute;
+    bottom: 0rem;
+    right:  0.7rem;
+    color: white;
+}
+
+.imagesGrid {
+    width: 80%;
+    flex-shrink: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 0.5rem;
+
+    @media (min-width: 780px) {
+        gap: 2.5rem;
+    }
+}
+
+.image {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.text {
+    width: 70%;
+    margin: 1rem;
+}

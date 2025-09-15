@@ -1,0 +1,56 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0;
+    color: black;
+}
+
+.divider {
+    position: absolute;
+    inset: -8rem 0;
+    z-index: 0;
+}
+
+.dividerBottom {
+    position: absolute;
+    inset: 30rem 0;
+    z-index: 0;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.imagesGrid {
+    flex-shrink: 0;
+    width: 70%;
+    max-width: 50rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2rem;
+}
+
+.image {
+    min-height: 0;
+    min-width: 0;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border: 1px solid var(--main-maroon);
+    border-radius: 2rem;
+}
+
+.text {
+    width: 50%;
+    margin: 1rem;
+    z-index: 10;
+}

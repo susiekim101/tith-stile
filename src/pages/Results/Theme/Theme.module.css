@@ -4,7 +4,7 @@
 }
 .theme {
     font-family: "OrganGrinder";
-    font-size: min(4rem, 8vw);
+    font-size: min(3.5rem, 6vw);
     color: black;
     text-decoration: underline;
     text-decoration-thickness: 2px;
