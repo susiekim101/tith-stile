@@ -4,6 +4,7 @@ import {
   signOut,
   signInWithPopup,
   updateProfile,
+  signInAnonymously
 } from "firebase/auth";
 import { auth, provider } from "./config";
 import { getAuth } from "firebase/auth";
@@ -83,6 +84,16 @@ export async function setDisplayName(name) {
     console.log("Display name updates");
   } else {
     console.log("No user is signed in");
+  }
+}
+
+export async function signinAnon() {
+  try {
+    const auth = getAuth();
+    await signInAnonymously(auth);
+    console.log("Signed in anonymously");
+  } catch (error) {
+    console.error(error.message);
   }
 }
 

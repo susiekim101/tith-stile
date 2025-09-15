@@ -6,10 +6,14 @@ import QuestionsRenderer from "./components/QuestionsRenderer";
 import styles from "./Assessment.module.css";
 
 const saveFormToFirestore = async (results) => {
-  if (!auth.currentUser) return;
+  const [userId, setUserId] = useState(null);
 
-  const userId = auth.currentUser.uid;
-  
+  if (!auth.currentUser) {
+    setUserId(crypto.randomUUID());
+  } else {
+    setUserId(auth.currentUser.uid);
+  }
+
   try {
     await setDoc(doc(db, "user responses", userId), {
       results,

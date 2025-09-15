@@ -9,8 +9,7 @@ import {
 } from "firebase/storage";
 import { auth, storage } from "../../../firebase/config";
 import styles from "../QuestionTypes/ImageUpload.module.css";
-import upload from "../../../assets/icons/upload.svg";
-import uploadcomplete from "../../../assets/icons/upload-complete.svg";
+import { Upload, CircleCheckBig } from "lucide-react";
 
 const ImageUpload = ({ formValues, setFormValues, id }) => {
     const MAX_FILES = 5;
@@ -115,7 +114,7 @@ const ImageUpload = ({ formValues, setFormValues, id }) => {
                 />
 
                 <label htmlFor="image-upload" className={styles.uploadButton}>
-                    <div>{(selectedImages.length == 0 && formValues[id].length == 0) ? <img src={upload} className={styles.uploadIcon} /> : <img src={uploadcomplete} className={styles.uploadIcon} />}</div>
+                    <div>{(selectedImages.length == 0 && formValues[id].length == 0) ? <Upload className={styles.uploadIcon} /> : <CircleCheckBig className={styles.uploadIcon} />}</div>
                     <div className={styles.dragText}>Drag & Drop</div>
                 </label>
 

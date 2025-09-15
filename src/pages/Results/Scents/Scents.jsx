@@ -6,12 +6,12 @@ const Scents = ({images, text}) => {
     return (
         <div className={styles.container}>
             <div className={styles.main}> 
-                <SectionTitle title="scents"/>
+                <div className={styles.title}>scents</div>
                 
-                <div className={styles.imagesGrid}>
-                    {images.map((image) => (
-                        <img src={image} className={styles.image}/>
-                    ))}
+                    <div className={styles.imagesGrid}>
+                        {images.map((image) => (
+                            <img src={image} className={styles.image}/>
+                        ))}
                 </div>
             </div>
 

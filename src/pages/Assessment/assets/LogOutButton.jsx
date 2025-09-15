@@ -4,6 +4,7 @@ import { LogOut, LogIn } from "lucide-react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { logout } from "../../../firebase/auth";
 
 const LogOutButton = ({handleLogout}) => {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -16,7 +17,7 @@ const LogOutButton = ({handleLogout}) => {
             setLoggedIn(false);
         }
     })
-    
+
     return (
         <div>
             {loggedIn ? (

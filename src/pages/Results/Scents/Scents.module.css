@@ -10,10 +10,10 @@
 
 .main {
     width: 100%;
+    height: 100%;
     display: flex;
-    padding: 0 2rem;
     margin: 2rem 0;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -46,8 +46,16 @@
     color: white;
 }
 
+.imagesContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+}
+
 .imagesGrid {
-    width: 80%;
+    width: 60%;
     flex-shrink: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);

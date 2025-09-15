@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom";
-import logOut from "../../../assets/icons/log-out.svg";
 import { logout } from "../../../firebase/auth";
 import BreakButton from "../BreakButton/BreakButton";
 import styles from "../Assessment.module.css";
 import LogOutButton from "../assets/LogOutButton";
+import { useNavigate } from "react-router-dom";
 
 const HeaderButton = () => {
+    const navigate = useNavigate();
+
     const handleLogout = async () => {
         try {
-            await logout();
+            console.log("Logging out.");
+            await logout(navigate);
         } catch (err) {
             console.error("Logout failed: ", err);
         }

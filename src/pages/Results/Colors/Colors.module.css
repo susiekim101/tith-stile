@@ -45,8 +45,6 @@
     aspect-ratio: 1 / 1;
     object-fit: cover;
     display: block;
-    border: 1px solid var(--main-maroon);
-    border-radius: 2rem;
 }
 
 .text {
