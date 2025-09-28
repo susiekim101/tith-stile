@@ -1,13 +1,18 @@
 .titleContainer {
-    width: 100%;
     display: flex;
     justify-content: center;
+    padding: 0 2rem;
+
+    @media (min-width: 780px) {
+        padding: 3rem;
+    }    
 }
+
 .title {
     position: relative;
     writing-mode: vertical-lr;
     text-orientation: upright;
-    font-size: 1.5rem;
+    font-size: 1rem;
     background-color: var(--main-maroon);
     color: white;
     padding: 0.5rem 0;
@@ -22,7 +27,12 @@
     content: ".";
     writing-mode: horizontal-tb;
     position: absolute;
-    bottom: 0rem;
-    right:  0.7rem;
+    bottom: 0.2rem;
+    right: 0.3rem;
     color: white;
+
+    @media (min-width: 780px) {
+        bottom: 0;
+        right: 0.7rem;
+    }
 }

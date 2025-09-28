@@ -9,6 +9,7 @@ const Survey = () => {
     const [loading, setLoading] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [userId, setUserId] = useState(null);
+    const [survey, setSurvey] = useState("");
     const auth = getAuth();
 
     useEffect(() => {
@@ -28,10 +29,10 @@ const Survey = () => {
 
         try {
             if(userId) {            
-                const docRef = doc(db, "form", userId);
+                const docRef = doc(db, "user-responses", userId);
                 await setDoc(docRef, {"survey": response }, { merge: true });
             } else {
-                // await setDoc(doc(db, "form", "anonResponses"), {merge: true});
+
             }
         } catch (err) {
             console.error(err);

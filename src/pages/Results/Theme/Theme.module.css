@@ -47,8 +47,7 @@
 
 .image {
     height: min(30rem, 80vw);
-    width: min(20rem, 53vw);
-
+    aspect-ratio: 1 / 1;
     object-fit: cover;
 }
 
@@ -63,6 +62,6 @@
 
 .caption {
     text-align: center;
-    width: min(25rem, 53vw);
+    width: min(32rem, 80vw);
     color: black;
 }
