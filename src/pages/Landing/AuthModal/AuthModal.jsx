@@ -25,7 +25,7 @@ export default function AuthModal({ open, onOpenChange }) {
   };
 
   const handleProceed = async () => {
-    // await signinAnon();
+    await signinAnon();
     navigate("/assessment");
   }
 

@@ -6,7 +6,6 @@ const NavigationButton = ({index, setIndex, total, handleSubmit}) => {
     return (
         <>
         <div className={styles.footerButtons}>
-            {console.log(`Index: ${index}, Total: ${total}`)}
             {index === 0 ? 
                 (<p></p>) : (<button
                                 type="button"
