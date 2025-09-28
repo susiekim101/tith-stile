@@ -29,10 +29,10 @@ const ImageUpload = ({ formValues, setFormValues, id }) => {
             const images = await listAll(folderRef);
             const deletePromises = images.items.map((itemRef) => deleteObject(itemRef));
             await Promise.all(deletePromises);
-            console.log("selectedImages.length: ", selectedImages.length);
+            // console.log("selectedImages.length: ", selectedImages.length);
             setSelectedImages([]);
             formValues[id] = [];
-            console.log("All images deleted for user");
+            // console.log("All images deleted for user");
         } catch (error) {
             console.error("Error deleting user images: ", error);
         }

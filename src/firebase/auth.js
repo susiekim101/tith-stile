@@ -8,6 +8,7 @@ import {
 } from "firebase/auth";
 import { auth, provider } from "./config";
 import { getAuth } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 export const signup = async (email, password) => {
   try {
@@ -16,26 +17,29 @@ export const signup = async (email, password) => {
       email,
       password
     );
-    const user = userCredential.user;
-    console.log("User signed up:", user);
-    return user;
+    setPersistence(auth, sessionPersistence)
+      .then(() => {
+        const user = userCredential.user;
+        console.log("User signed up:", user);
+        return user;
+      })
   } catch (error) {
     console.error("Error signing up:", error);
     throw error;
   }
 };
 
-export const signupWithGoogle = async () => {
-  try {
-    const userCredential = await signInWithPopup(auth, provider);
-    const user = userCredential.user;
-    console.log("User signed up:", user);
-    return user;
-  } catch (error) {
-    console.error("Error signing up:", error);
-    throw error;
-  }
-};
+// export const signupWithGoogle = async () => {
+//   try {
+//     const userCredential = await signInWithPopup(auth, provider);
+//     const user = userCredential.user;
+//     console.log("User signed up:", user);
+//     return user;
+//   } catch (error) {
+//     console.error("Error signing up:", error);
+//     throw error;
+//   }
+// };
 
 export const login = async (email, password) => {
   try {

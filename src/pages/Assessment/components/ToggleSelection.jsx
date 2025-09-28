@@ -25,7 +25,7 @@ const ToggleSelection = (select, option, setFormValues, id) => {
             };
         }
 
-        console.log("updated form values: ", newFormValues);
+        // console.log("updated form values: ", newFormValues);
         return newFormValues;
     });
 };
