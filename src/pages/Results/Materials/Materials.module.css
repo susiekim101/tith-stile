@@ -1,0 +1,22 @@
+.container {
+    margin: 3rem 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    @media (min-width: 780px) {
+        gap: 5rem;
+    }
+}
+
+.imageContainer {
+    height: 100%;
+}
+
+.image {
+    width: min(30rem, 60vw);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}

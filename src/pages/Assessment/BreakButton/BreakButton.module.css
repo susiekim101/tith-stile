@@ -15,11 +15,11 @@ dialog::backdrop {
 }
 
 .button {
-    font-size: medium;
-    background-color: var(--main-mustard);
-    color: white;
-    padding: 0.3rem 0.5rem;
-    border-radius: 10px;
+    font-size: small;
+    background-color: var(--main-pink);
+    color: black;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
     transition: transform 0.24s ease-in-out;
 }
 

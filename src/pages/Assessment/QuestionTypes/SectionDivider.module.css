@@ -1,25 +1,21 @@
 .sectionContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     padding: 0 2rem;
     overflow-y: auto;
     margin: auto 0;
     height: 100%;
 }
 
-.upperContainer {
-    height: 30%;
-    padding: 3rem;
-}
 .section {
     font-family: "OrganGrinder";
     font-size: 3rem;
-    color: white;
+    color: var(--main-maroon);
+    margin: 2rem 0;
 }
 
 .brief {
     font-size: 1.2rem;
-    color: white;
-    height: 70%;
+    color: black;
+    margin-bottom: 1rem;
 }

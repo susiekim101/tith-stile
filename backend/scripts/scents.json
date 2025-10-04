@@ -1,0 +1,147 @@
+[
+  {
+    "scent": "Frankincense",
+    "description": "Frankincense offers a warm, resinous, slightly citrus-woody aroma that is grounding and restorative. It’s especially suited for those needing calm, steadiness, and clarity—supporting focus in ADHD, easing anxiety or hyperarousal in PTSD, and providing orientation during evening confusion. Respiratory safe; use caution in pregnancy; safe for children 10+ and pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Ffrankincense.svg?alt=media&token=a12c9eb7-825f-4df3-a519-1f2d1bde9856"
+  },
+  {
+    "scent": "Myrrh",
+    "description": "Myrrh carries a deep, earthy, resinous aroma with balsamic undertones that feels both grounding and restorative. It’s well-suited for those seeking emotional steadiness during overwhelming moments, particularly when navigating depression, trauma, or chronic pain. Not respiratory safe; use caution in pregnancy; safe for children 12+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fmyrrh.svg?alt=media&token=02d002f6-207a-4f2c-97d9-f1d130810515"
+  },
+  {
+    "scent": "Sandalwood",
+    "description": "Sandalwood has a smooth, creamy, woody aroma with soft balsamic sweetness that feels deeply comforting and restorative. It’s ideal for those seeking calm, stability, and emotional balance—easing anxiety, insomnia, and evening restlessness while supporting mood regulation. Respiratory safe; use caution in pregnancy; safe for children 2+ and pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fsandalwood.svg?alt=media&token=5cdf71b5-07ab-4283-8f14-485774a413cd"
+  },
+  {
+    "scent": "Palo Santo",
+    "description": "Palo Santo carries a woody, citrusy, slightly smoky aroma with resinous depth that feels both grounding and restorative. It’s especially suited for those needing steadiness and emotional regulation, supporting survivors navigating anxiety, insomnia, or trauma-related overwhelm. Not respiratory safe; use caution in pregnancy; safe for children 12+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fpalosanto.svg?alt=media&token=3dde467d-1204-420a-815d-9ae1869f25fc"
+  },
+  {
+    "scent": "Cedarwood",
+    "description": "Cedarwood offers a fresh, clean, woody aroma with subtle resinous undertones that bring a sense of balance and grounding. It supports clarity and calm, helping regulate focus for ADHD, easing anxiety, and reducing agitation. Respiratory safe; use caution in pregnancy; safe for children 10+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fcypress.svg?alt=media&token=97a69bb2-c78f-4934-8562-684a7c82bee1"
+  },
+  {
+    "scent": "Hinoki",
+    "description": "Hinoki has an intense smoky-woody aroma with resinous sharpness that delivers strong grounding and anchoring support. It’s especially fitting for those managing trauma-related agitation, anxiety, or insomnia, offering containment and steadiness when emotions feel overwhelming. Not respiratory safe; use caution in pregnancy; safe for children 12+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fhiba.svg?alt=media&token=f0705912-b5ce-46e3-99e2-e1c34472dcb8"
+  },
+  {
+    "scent": "Vetiver",
+    "description": "Vetiver has a deep, earthy, smoky aroma with woody undertones that provide strong grounding and stability. It’s especially helpful for easing hyperarousal, emotional flooding, anxiety, or difficulty resting—supporting survivors in finding safety and steadiness, particularly during evening agitation. Respiratory safe; use caution in pregnancy; safe for children 2+ and pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fvetiver.svg?alt=media&token=cf1ed107-8837-4408-8f90-e1b9b4ac34f7"
+  },
+  {
+    "scent": "Copaiba",
+    "description": "Copaiba has a mild, sweet, resinous aroma with gentle woody undertones that provide grounding and supportive balance. It’s especially suited for easing both physical and emotional pain, helping survivors feel safe and cared for while managing trauma or chronic illness. Respiratory safe; pregnancy safe; safe for children 2+ and pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fcopaiba.svg?alt=media&token=66939b2e-ec49-4f4b-9d6f-5891cc82f07b"
+  },
+  {
+    "scent": "Neroli",
+    "description": "Neroli has a sweet, floral-citrus aroma with honeyed undertones that feels soothing and elevating. It’s well-suited for easing anxiety, depression, grief, or trauma-related overwhelm, offering gentle emotional uplift and calm regulation. Respiratory safe; use caution in pregnancy; safe for children 2+ and pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fneroli.svg?alt=media&token=3eb26fc0-7a8b-43fe-907b-ae717d07e7d9"
+  },
+  {
+    "scent": "Ylang Ylang",
+    "description": "Ylang Ylang has an exotic, rich, sweet floral aroma with soft fruity undertones that brings both comfort and balance. It’s especially supportive for calming anxiety, easing mood swings, and fostering emotional steadiness during times of agitation or trauma-related overwhelm. Not respiratory safe; use caution in pregnancy; safe for children 2+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fylangylang.svg?alt=media&token=03a316b9-0f24-461c-a4d5-61cde644598a"
+  },
+  {
+    "scent": "Plumeria",
+    "description": "Plumeria has a rich, creamy, tropical floral aroma with soft sweetness and depth that feels deeply comforting and regulating. It’s especially helpful for easing panic, hyperarousal, or mood swings, offering calm stability and a sense of safety during overwhelm. Respiratory safe; use caution in pregnancy; safe for children 10+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fplumeria.svg?alt=media&token=348e5107-3fa2-4d7f-bf66-598f8506619d"
+  },
+  {
+    "scent": "Osmanthus",
+    "description": "Osmanthus has a soft, fruity-floral aroma with apricot and honey-like undertones that brings gentle uplift and balance. It’s especially supportive for easing depressive heaviness, calming anxiety, and steadying scattered focus, creating a sense of safety and calm. Respiratory safe; use caution in pregnancy; safe for children 10+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fosmanthus.svg?alt=media&token=1ef7d1eb-d13d-4edc-858c-2924db610796"
+  },
+  {
+    "scent": "Tuberose",
+    "description": "Tuberose has an intense, creamy white floral aroma with spicy undertones that feels bold yet restorative. It’s especially supportive for grounding dissociation, easing anxiety, and uplifting depressive states, helping restore emotional steadiness without overwhelm. Not respiratory safe; use caution in pregnancy; safe for children 10+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Ftuberose.svg?alt=media&token=29db8220-9585-40e5-a482-e62684713990"
+  },
+  {
+    "scent": "Kewra",
+    "description": "Kewra has a sweet, fresh green-floral aroma with watery undertones that brings balance and calm. It’s supportive for easing anxious spirals, regulating overstimulation, and steadying emotional intensity, especially for survivors navigating trauma or neurodivergence. Respiratory safe; use caution in pregnancy; safe for children 10+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fkewra.svg?alt=media&token=e042d69c-9c80-4e15-9651-2fd3c331e685"
+  },
+  {
+    "scent": "Lavender",
+    "description": "Lavender has a soft, fresh floral-herbal aroma with clean green undertones that feels calming and restorative. It’s especially supportive for easing panic, anxiety, insomnia, and overstimulation, helping restore balance and safe rest. Respiratory safe; pregnancy safe; safe for children 2+ and pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Flavender.svg?alt=media&token=fab3cade-5b65-4df9-96dc-03a6b6a6de91"
+  },
+  {
+    "scent": "Chamomile",
+    "description": "Chamomile has a soft, sweet apple-like floral aroma with gentle herbaceous undertones that feels soothing and comforting. It’s especially supportive for easing anxiety, racing thoughts, and nighttime restlessness, fostering calm routines and safe emotional regulation. Respiratory safe; pregnancy safe; safe for children 2+ and pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fchamomile.svg?alt=media&token=2f1f7162-428e-48bb-b8bc-33b1145c114f"
+  },
+  {
+    "scent": "Marjoram",
+    "description": "Marjoram has a warm, herbaceous, slightly spicy aroma with gentle sweetness that offers comfort and balance. It’s especially supportive for easing muscular tension, chronic pain flare-ups, and trauma-related stress, while fostering calm emotional steadiness. Respiratory safe; use caution in pregnancy; safe for children 10+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fmarjoram.svg?alt=media&token=3b189ed9-e9af-4015-83d0-4dd9b973a963"
+  },
+  {
+    "scent": "Tulsi",
+    "description": "Tulsi has a fresh, green, slightly spicy-peppery aroma that feels energizing and clarifying. It’s especially supportive for reducing fatigue, uplifting mood, and aiding focus in ADHD, while restoring steadiness after trauma-related stress. Respiratory safe; use caution in pregnancy; safe for children 10+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Ftulsi.svg?alt=media&token=8c49313a-059c-477f-9eed-f18b262ac58b"
+  },
+  {
+    "scent": "Yerba Buena",
+    "description": "Yerba Buena has a cool, minty-fresh aroma with gentle sweetness that feels invigorating and clarifying. It’s especially supportive for reducing fatigue, uplifting mood, and fostering alert focus without overstimulation, helping survivors regain balance and clarity. Respiratory safe; use caution in pregnancy; safe for children 10+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fyerbabuena.svg?alt=media&token=38b58677-497c-4f2c-9d38-173a3d7e2c6e"
+  },
+  {
+    "scent": "Cardamom",
+    "description": "Cardamom has a warm, sweet, spicy aroma with balsamic undertones that feels comforting and restorative. It’s especially supportive for easing tension, promoting respiratory ease, and calming anxious overwhelm, while fostering emotional balance and steadiness. Respiratory safe; pregnancy safe; safe for children 2+ and pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fcardamom.svg?alt=media&token=5b6a36ee-2c21-4037-bbb5-fa64b791411a"
+  },
+  {
+    "scent": "Ginseng",
+    "description": "Ginseng has an earthy, spicy, slightly sweet aroma that enhances vitality and balance. It’s especially supportive for easing trauma-related fatigue, depression, and cognitive fog, helping restore steady energy and resilience. Not respiratory safe; use caution in pregnancy; safe for children 12+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fginseng.svg?alt=media&token=02964d76-cb01-489a-8158-73de0cb62aeb"
+  },
+  {
+    "scent": "Oudwood",
+    "description": "Oudwood has a rich, smoky, resinous woody scent with deep warmth that feels grounding and restorative. It’s especially supportive for survivors managing PTSD, anxiety, insomnia, chronic pain, or neurodivergence—offering depth, containment, and emotional steadiness during overwhelm. Not respiratory safe; use caution in pregnancy; safe for children 12+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Foudwood.svg?alt=media&token=5c390e01-c8bd-4530-942c-5fc934bd45a5"
+  },
+  {
+    "scent": "Bergamot",
+    "description": "Bergamot has a fresh, citrusy, slightly floral scent that feels balancing and uplifting. It helps regulate mood swings, ease grief, and support focus for ADHD or trauma-related anxiety, restoring steadiness and emotional safety. Respiratory safe; use caution in pregnancy; safe for children 6+ and pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fbergamot.svg?alt=media&token=e7806c45-7364-4784-96db-bb0d1f0b3524"
+  },
+  {
+    "scent": "Tarocco Blood Orange",
+    "description": "Tarocco Blood Orange carries a sweet, citrusy aroma with berry-like undertones that feels comforting and restorative. It’s especially helpful for easing anxiety, grief, and depression while supporting trauma-related insomnia and PTSD. Respiratory safe; pregnancy safe; safe for children 2+ and pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Ftaroccobloodorange.svg?alt=media&token=830f8021-0d9e-4965-a4ef-c80710ccaa48"
+  },
+  {
+    "scent": "Passion Fruit",
+    "description": "Passion Fruit has a sweet, tropical fruity-floral scent with a calming undertone that feels soothing and regulating. It’s especially supportive for easing mood swings, nighttime restlessness, and trauma-related agitation, helping restore nervous system balance. Respiratory safe; use caution in pregnancy; safe for children 10+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fpassionfruit.svg?alt=media&token=807db83f-dd86-445d-a44c-f41ad899fd51"
+  },
+  {
+    "scent": "Vanilla",
+    "description": "Vanilla has a sweet, warm, creamy aroma with soft gourmand undertones that feels deeply comforting and familiar. It helps soothe anxiety, stabilize mood swings, and foster emotional steadiness by grounding survivors in safe sensory memory. Respiratory safe; pregnancy safe; safe for children 2+ and pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fvanilla.svg?alt=media&token=bf28ed55-ec84-4b1a-b37d-247e07974189"
+  },
+  {
+    "scent": "Clary Sage",
+    "description": "Clary Sage has a fresh, herbaceous-floral aroma with soft tea-like sweetness and gentle green undertones that feels balancing and grounding. It’s especially helpful for easing anxiety, mood swings, trauma-linked insomnia, and hormonal stress, fostering safety and steadiness. Respiratory safe; use caution in pregnancy (avoid early); safe for children 10+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fclarysage.svg?alt=media&token=3b2b525d-9492-4e20-9eb3-95d581315941"
+  },
+  {
+    "scent": "Nerolina",
+    "description": "Nerolina offers a soft floral-herbaceous aroma with gentle woody undertones that is calming and balancing. It supports survivors by easing sensory overwhelm, softening trauma-linked insomnia, and steadying nervous system regulation. Respiratory safe; use caution in pregnancy; safe for children 10+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fneroli.svg?alt=media&token=3eb26fc0-7a8b-43fe-907b-ae717d07e7d9"
+  },
+  {
+    "scent": "Juniper Berry",
+    "description": "Juniper Berry has a fresh, woody, pine-like aroma with crisp green brightness that feels clarifying and restorative. It’s especially supportive for easing PTSD, ADHD, anxiety, bipolar mood swings, and insomnia—helping reduce racing thoughts, calm tension, and steady the nervous system into evening readiness. Respiratory safe; use caution in early pregnancy; safe for children 10+; not safe for pets.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/stile-profile-a44c6.firebasestorage.app/o/results-images%2Fscents%2Fjuniperberry.svg?alt=media&token=17693cda-083a-41ed-8565-2ad2b8514376"
+  }
+]

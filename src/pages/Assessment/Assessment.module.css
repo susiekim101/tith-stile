@@ -23,7 +23,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
+  font-size: small;
 }
 
 .sectionTitle {
@@ -32,8 +33,8 @@
   width: auto;
   height: 100%;
   font-size: 1em;
-  border-radius: 0.5rem;
-  padding: 0.3rem 0.5rem;
+  border-radius: 1rem;
+  padding: 0.3rem 1rem;
 }
 
 /* QUIZ LABEL */
@@ -46,6 +47,7 @@
   font-weight: 700;
   width: 100%;
   line-height: 1.2;
+  color: black;
 }
 
 /* DESCRIPTION */
@@ -56,7 +58,7 @@
 
 .description {
   font-size: 1.2em;
-  color: #640b09b9;
+  color: black;
 }
 
 /* PROGRESS BAR */
@@ -96,7 +98,7 @@
 }
 
 .sectionCard {
-  background-color: var(--main-mustard);
+  background-color: var(--main-teal); 
 }
 
 .imageCard {

@@ -7,16 +7,17 @@
 }
 
 .submit {
-
-    padding: 0 1rem;
-    border-radius: 10px;
-    font-size: x-large;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: large;
     transition: transform 0.24s ease-in-out;
+    background-color: var(--main-teal);
+    color: black;
 }
 
 .submit:hover {
     cursor: pointer;
-    transform: scale(1.05);
+    background-color: var(--light-teal);
 }
 
 .submit:disabled {

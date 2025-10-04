@@ -31,7 +31,7 @@ export default function LoginForm({ onSuccess }) {
   };
 
   const checkForPrevResults = async (user) => {
-    const docRef = doc(db, "form", user.uid);
+    const docRef = doc(db, "user-responses", user.uid);
     const docSnap = await getDoc(docRef);
     return docSnap.exists() ? docSnap.data() : null;
   };

@@ -4,7 +4,9 @@ import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 import { useNavigate } from "react-router-dom";
 import styles from "./AuthModal.module.css";
-import { CircleX } from "lucide-react";
+import { Link } from "react-router-dom";
+import { CircleX, ArrowRight } from "lucide-react";
+import { signinAnon } from "../../../firebase/auth";
 
 export default function AuthModal({ open, onOpenChange }) {
   const [mode, setMode] = useState("login");
@@ -21,6 +23,11 @@ export default function AuthModal({ open, onOpenChange }) {
       navigate("/assessment");
     }
   };
+
+  const handleProceed = async () => {
+    await signinAnon();
+    navigate("/assessment");
+  }
 
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
@@ -42,23 +49,6 @@ export default function AuthModal({ open, onOpenChange }) {
         <div className={styles.title}>
           {title}
         </div>
-     
-        {/*<div className={styles.toggleHeader}>
-          <button
-            className={mode === "login" ? styles.active : ""}
-            onClick={() => setMode("login")}
-            type="button"
-          >
-            Log In
-          </button>
-          <button
-            className={mode === "signup" ? styles.active : ""}
-            onClick={() => setMode("signup")}
-            type="button"
-          >
-            Sign Up
-          </button>
-        </div>*/}
 
         {mode === "login" ? (
           <LoginForm onSuccess={handleSuccess} />
@@ -68,19 +58,29 @@ export default function AuthModal({ open, onOpenChange }) {
         
         {mode == "login" ? (
           <div className={styles.footer}>
-            <span className={styles.caption}>Don't have an account? </span>
-            <button className={styles.alternative}
-                    onClick={() => setMode("signup")}
-                    type="button">Sign Up</button>
+            <div>
+              <span className={styles.caption}>Don't have an account? </span>
+              <button className={styles.alternative}
+                      onClick={() => setMode("signup")}
+                      type="button">Sign Up</button>
+            </div>
+
+            <Link to="/assessment" onClick={handleProceed} className={styles.proceed}>
+              Or proceed without signing in
+              <ArrowRight className={styles.proceedButton}/>
+            </Link>
           </div>
         ) : (
           <div className={styles.footer}>
-            <span className={styles.caption}>Already have an account? </span>
-            <button className={styles.alternative}
-                    onClick={() => setMode("login")}
-                    type="button">Log In</button>
+            <div>
+              <span className={styles.caption}>Already have an account? </span>
+              <button className={styles.alternative}
+                      onClick={() => setMode("login")}
+                      type="button">Log In</button>
+            </div>
           </div>
         )}
+
       </Dialog.Content>
     </Dialog.Root>
   );

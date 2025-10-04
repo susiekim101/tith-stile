@@ -1,19 +1,23 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import {getStorage } from "firebase/storage"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCpMnPJC_ZmA3gVZBaEMvRcgDVX_fLZWmc",
-  authDomain: "hack2impact-69417.firebaseapp.com",
-  projectId: "hack2impact-69417",
-  storageBucket: "hack2impact-69417.firebasestorage.app",
-  appId: "1:54015197809:web:995c75057abbf0eeded1d0",
+  apiKey: "AIzaSyAszIgswvPZpXRVPrbIPpFQkwBRwZQXsKw",
+  authDomain: "stile-profile-a44c6.firebaseapp.com",
+  projectId: "stile-profile-a44c6",
+  storageBucket: "stile-profile-a44c6.firebasestorage.app",
+  messagingSenderId: "351489981052",
+  appId: "1:351489981052:web:d3a2ff680821082bdc27f9",
+  measurementId: "G-TB9Q21G4CP"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const provider = new GoogleAuthProvider();

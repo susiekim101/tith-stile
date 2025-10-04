@@ -21,17 +21,19 @@
     border-radius: 0.5em;
     padding: 0.5em;
     gap: 5px;
-    background-color: var(--main-beige);
+    background-color: var(--main-teal);
+    transition: background-color 0.5s ease-in-out;
+    transition: border-width 1s ease-in-out;
 }
 
 .imageBorder:hover {
-    background-color: #f9e9d2;
+    background-color: var(--light-teal);
     cursor: pointer;
-
+    
 }
 
 .imageBorder:hover .imageSelect {
-    border: 5px solid var(--main-maroon);
+    border-width: 5px;
 }
 
 .imageOption {
@@ -60,12 +62,12 @@
 .imageSelect, .imageFilled {
     height: 1.5em;
     width: 1.5em;
-    border: 2px solid var(--main-maroon);
+    border: 2px solid var(--main-pink);
     border-radius: 5px;
 }
 
 .imageFilled {
-    background-color: var(--main-maroon);
+    background-color: var(--main-pink);
 }
 
 .check {
@@ -73,6 +75,7 @@
 }
 
 .checkMark {
+    color: white;
     position: absolute;
     top: 50%;
     left: 50%;

@@ -3,11 +3,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing/Landing.jsx";
 import LoginForm from "./pages/Landing/AuthModal/LoginForm.jsx";
 import SignupForm from "./pages/Landing/AuthModal/SignupForm.jsx";
-/*import Results from "./components/Results.jsx";*/
 import Assessment from "./pages/Assessment/Assessment.jsx";
 import Intake from "./pages/Intake/Intake.jsx";
 import "./css/colors.css";
 import Buffer from "./pages/Intake/Buffer/Buffer.jsx";
+import Results from "./pages/Results/Results.jsx";
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
         <Route path="/assessment" element={<Assessment />} />
         <Route path="/intake" element={<Intake />} />
         <Route path="/buffer" element={<Buffer />} />
+        <Route path="/results" element={<Results />} />
       </Routes>
     </BrowserRouter>
   );

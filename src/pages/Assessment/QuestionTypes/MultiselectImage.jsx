@@ -1,16 +1,15 @@
 import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../../firebase/config";
-// import { getDownloadURL, getStorage, ref } from "firebase/storage";
-import check from "../../../assets/icons/check-icon.svg";
 import styles from "./SelectImage.module.css";
 import ToggleSelection from "../components/ToggleSelection";
+import { Check } from "lucide-react";
 
 const MultiselectImage = ({ formValues, setFormValues, sectionId, id }) => {
     const [options, setOptions] = useState([]);
     const [description, setDescription] = useState("");
     const [select, setSelection] = useState(0);
-    // const [checkIcon, setCheckURL] = useState(null);
+
     const selected = formValues[id] || [];
 
     // Modular Firebase Firestore query
@@ -49,7 +48,7 @@ const MultiselectImage = ({ formValues, setFormValues, sectionId, id }) => {
                         <div className={styles.imageFooter}>
                             <div className={styles.check}>
                                 <div className={`${selected.includes(opt.label) ? styles.imageFilled : styles.imageSelect}`}></div>
-                                {selected.includes(opt.label) ? (<img src={check} className={styles.checkMark} />) : ""}
+                                {selected.includes(opt.label) ? (<Check className={styles.checkMark} />) : ""}
                             </div>
 
                             <div className={styles.imageCaption}>{opt.label}</div>

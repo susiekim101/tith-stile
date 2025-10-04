@@ -22,7 +22,7 @@
 
 .next:hover, .submitForm:hover {
     cursor: pointer;
-    background-color: #cf9db2
+    background-color: var(--light-pink);
 }
 
 .prev {
@@ -31,7 +31,7 @@
 
 .prev:hover, .skipContainer:hover {
   cursor: pointer;
-  background-color: #e8dbce;
+  background-color: #fdfdfc;
 }
 
 .skipContainer {
@@ -45,5 +45,6 @@
 .icon {
   width: 100%;
   height: 100%;
+  color: black;
 }
 

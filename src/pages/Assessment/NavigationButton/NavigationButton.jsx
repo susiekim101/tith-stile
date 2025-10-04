@@ -1,7 +1,4 @@
 import styles from "./NavigationButton.module.css";
-import skip from "../../../assets/icons/skip-icon.svg";
-import prev from "../../../assets/icons/left-arrow.svg";
-import next from "../../../assets/icons/right-arrow.svg";
 import { ArrowRight, ArrowLeft, SkipForward } from "lucide-react";
 
 const NavigationButton = ({index, setIndex, total, handleSubmit}) => {
@@ -9,7 +6,6 @@ const NavigationButton = ({index, setIndex, total, handleSubmit}) => {
     return (
         <>
         <div className={styles.footerButtons}>
-            {console.log(`Index: ${index}, Total: ${total}`)}
             {index === 0 ? 
                 (<p></p>) : (<button
                                 type="button"

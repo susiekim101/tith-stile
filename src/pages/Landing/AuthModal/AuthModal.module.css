@@ -114,12 +114,30 @@
 .footer {
   margin-top: 0.3rem;
   font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .caption {
   opacity: 0.7;
 }
 
-.alternative:hover {
+.alternative:hover, .proceed:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
+
+.proceed {
+  display: flex;
+  opacity: 0.7;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.proceedButton {
+  width: 1rem;
+  height: 1rem;
+}
+

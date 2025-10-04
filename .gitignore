@@ -23,4 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 *.env
-backend/service-key.json
+backend/firebase-key.json
+backend/tts-service-account.json

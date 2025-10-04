@@ -3,10 +3,12 @@ import {
   signInWithEmailAndPassword,
   signOut,
   signInWithPopup,
-  GoogleAuthProvider,
+  updateProfile,
+  signInAnonymously
 } from "firebase/auth";
-
 import { auth, provider } from "./config";
+import { getAuth } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 export const signup = async (email, password) => {
   try {
@@ -15,26 +17,29 @@ export const signup = async (email, password) => {
       email,
       password
     );
-    const user = userCredential.user;
-    console.log("User signed up:", user);
-    return user;
+    setPersistence(auth, sessionPersistence)
+      .then(() => {
+        const user = userCredential.user;
+        console.log("User signed up:", user);
+        return user;
+      })
   } catch (error) {
     console.error("Error signing up:", error);
     throw error;
   }
 };
 
-export const signupWithGoogle = async () => {
-  try {
-    const userCredential = await signInWithPopup(auth, provider);
-    const user = userCredential.user;
-    console.log("User signed up:", user);
-    return user;
-  } catch (error) {
-    console.error("Error signing up:", error);
-    throw error;
-  }
-};
+// export const signupWithGoogle = async () => {
+//   try {
+//     const userCredential = await signInWithPopup(auth, provider);
+//     const user = userCredential.user;
+//     console.log("User signed up:", user);
+//     return user;
+//   } catch (error) {
+//     console.error("Error signing up:", error);
+//     throw error;
+//   }
+// };
 
 export const login = async (email, password) => {
   try {
@@ -64,14 +69,36 @@ export const loginWithGoogle = async () => {
   }
 };
 
-export const logout = async () => {
+export async function logout(navigate) {
+  const auth = getAuth();
   try {
     await signOut(auth);
-    console.log("User logged out");
+    navigate("/landing");
   } catch (error) {
-    console.error("Error logging out:", error);
+    console.error("Error logging out: ", error);
     throw error;
   }
-};
+}
+
+export async function setDisplayName(name) {
+  if(auth.currentUser) {
+    await updateProfile(auth.currentUser, {
+      displayName: name
+    });
+    console.log("Display name updates");
+  } else {
+    console.log("No user is signed in");
+  }
+}
+
+export async function signinAnon() {
+  try {
+    const auth = getAuth();
+    await signInAnonymously(auth);
+    console.log("Signed in anonymously");
+  } catch (error) {
+    console.error(error.message);
+  }
+}
 
 export const authInstance = auth;

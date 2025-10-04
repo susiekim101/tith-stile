@@ -9,17 +9,16 @@ import {
 } from "firebase/storage";
 import { auth, storage } from "../../../firebase/config";
 import styles from "../QuestionTypes/ImageUpload.module.css";
-import upload from "../../../assets/icons/upload.svg";
-import uploadcomplete from "../../../assets/icons/upload-complete.svg";
+import { Upload, CircleCheckBig } from "lucide-react";
 
-const ImageUpload = ( {formValues, setFormValues, id } ) => {
+const ImageUpload = ({ formValues, setFormValues, id }) => {
     const MAX_FILES = 5;
     const user = auth.currentUser;
     const userId = user?.uid;
     const [selectedImages, setSelectedImages] = useState([]);
     const [isDragging, setIsDragging] = useState(false);
 
-    if(!formValues[id]) {
+    if (!formValues[id]) {
         formValues[id] = [];
     }
 
@@ -28,12 +27,12 @@ const ImageUpload = ( {formValues, setFormValues, id } ) => {
 
         try {
             const images = await listAll(folderRef);
-            const deletePromises = images.items.map((itemRef) => deleteObject(itemRef)); 
+            const deletePromises = images.items.map((itemRef) => deleteObject(itemRef));
             await Promise.all(deletePromises);
-            console.log("selectedImages.length: ", selectedImages.length);
+            // console.log("selectedImages.length: ", selectedImages.length);
             setSelectedImages([]);
             formValues[id] = [];
-            console.log("All images deleted for user");
+            // console.log("All images deleted for user");
         } catch (error) {
             console.error("Error deleting user images: ", error);
         }
@@ -43,7 +42,7 @@ const ImageUpload = ( {formValues, setFormValues, id } ) => {
         await deleteImages();
 
         const uploadPromise = imageList.map(async (image) => {
-            if(!userId) {
+            if (!userId) {
                 console.error("User not authenticated");
                 return;
             }
@@ -57,7 +56,7 @@ const ImageUpload = ( {formValues, setFormValues, id } ) => {
 
         try {
             const urls = await Promise.all(uploadPromise);
-            setFormValues((prev) => ({...prev, [id]: urls}));
+            setFormValues((prev) => ({ ...prev, [id]: urls }));
             setSelectedImages(imageList);
             console.log(formValues[id]);
         } catch (error) {
@@ -65,10 +64,10 @@ const ImageUpload = ( {formValues, setFormValues, id } ) => {
         }
     };
     const onImagesSelected = (images) => {
-        if (!images || images.length === 0) 
+        if (!images || images.length === 0)
             return;
         const trimmedImages = Array.from(images).slice(0, MAX_FILES);
-        handleImageUpload(trimmedImages); 
+        handleImageUpload(trimmedImages);
     };
 
     const handleDragOver = (e) => {
@@ -105,7 +104,7 @@ const ImageUpload = ( {formValues, setFormValues, id } ) => {
                 onDrop={handleDrop}
                 className={`${styles.uploadContainer} ${isDragging ? styles.dragging : ""}`}
             >
-                <input 
+                <input
                     type="file"
                     accept="image/*"
                     multiple
@@ -114,8 +113,8 @@ const ImageUpload = ( {formValues, setFormValues, id } ) => {
                     id="image-upload"
                 />
 
-                <label htmlFor="image-upload"className={styles.uploadButton}>
-                    <div>{(selectedImages.length == 0 && formValues[id].length == 0) ? <img src={upload} className={styles.uploadIcon}/> : <img src={uploadcomplete} className={styles.uploadIcon}/>}</div>
+                <label htmlFor="image-upload" className={styles.uploadButton}>
+                    <div>{(selectedImages.length == 0 && formValues[id].length == 0) ? <Upload className={styles.uploadIcon} /> : <CircleCheckBig className={styles.uploadIcon} />}</div>
                     <div className={styles.dragText}>Drag & Drop</div>
                 </label>
 
@@ -129,9 +128,9 @@ const ImageUpload = ( {formValues, setFormValues, id } ) => {
                     Upload Images
                 </label>
 
-                {(selectedImages.length !== 0 || formValues[id].length !== 0) && 
-                    <button 
-                        className={styles.deleteText} 
+                {(selectedImages.length !== 0 || formValues[id].length !== 0) &&
+                    <button
+                        className={styles.deleteText}
                         onClick={deleteImages}
                         type="button"
                     >
